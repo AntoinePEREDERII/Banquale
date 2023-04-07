@@ -3,10 +3,51 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Banquale.Views.BalancePage"
              Title="BalancePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <Grid RowDefinitions="auto, auto, *" HorizontalOptions="Center">
+        <Grid BackgroundColor="Beige"
+              RowDefinitions="auto, 35, auto"
+              ColumnDefinitions="100, 100"
+              MinimumHeightRequest="100"
+              Grid.Row="1"
+              Margin="30, 50, 30, 50"> <!-- gauche, haut, droite, bas-->
+            <Label
+                Text="Compte Professionnel"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"/>
+            <Label
+                Text="Mme Perotte" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" /> <!-- colspan permet de redefinir la taille de la colonne -->
+            <Label
+                Text="Solde"
+                Grid.Row="2"
+                HorizontalOptions="Center" />
+            <Label
+                Text="1999,99 €"
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalOptions="Center" />
+            
+            <!--<Grid ColumnDefinitions="auto, auto" Grid.Row="2" >
+                <Label
+                    Text="Solde"
+                    WidthRequest="75"/>
+                <Label
+                    Text="1999,00 €"
+                    Grid.Column="1"
+                    MinimumWidthRequest="70"
+                    HorizontalOptions=""/>
+
+            </Grid>-->
+                
+
+        </Grid>
+        <Grid RowDefinitions="auto" Grid.Row="2">
+            <Label
+                Text="Hello, World" />
+
+        </Grid>
+
+
+    </Grid>
+
 </ContentPage>
