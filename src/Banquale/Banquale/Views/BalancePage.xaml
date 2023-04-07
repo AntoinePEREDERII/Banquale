@@ -1,52 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Banquale.Views.BalancePage"
              Title="BalancePage">
 
-    <Grid RowDefinitions="auto, auto, *" HorizontalOptions="Center">
-        <Grid BackgroundColor="Beige"
-              RowDefinitions="auto, 35, auto"
-              ColumnDefinitions="100, 100"
-              MinimumHeightRequest="100"
-              Grid.Row="1"
-              Margin="30, 50, 30, 50"> <!-- gauche, haut, droite, bas-->
+    <Grid RowDefinitions="auto, auto, *"
+          HorizontalOptions="Fill"
+          BackgroundColor="Aquamarine">
+
+        <Grid BackgroundColor="Black"
+                RowDefinitions="auto, 35, auto"
+                ColumnDefinitions="*, *"
+                MinimumHeightRequest="120"
+                Grid.Row="1"
+                Margin="120, 50, 120, 50"> <!--gauche, haut, droite, bas-->
             <Label
                 Text="Compte Professionnel"
                 Grid.ColumnSpan="2"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Center"
+                Margin="0, 25, 0, 0"/>
             <Label
-                Text="Mme Perotte" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" /> <!-- colspan permet de redefinir la taille de la colonne -->
+                Text="Mme Perotte"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center" />  <!--colspan permet de redefinir la taille de la colonne--> 
             <Label
-                Text="Solde"
+                Text="Solde" 
                 Grid.Row="2"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center" /><!-- list:list<Note> -->
             <Label
                 Text="1999,99 €"
                 Grid.Row="2"
                 Grid.Column="1"
-                HorizontalOptions="Center" />
-            
-            <!--<Grid ColumnDefinitions="auto, auto" Grid.Row="2" >
-                <Label
-                    Text="Solde"
-                    WidthRequest="75"/>
-                <Label
-                    Text="1999,00 €"
-                    Grid.Column="1"
-                    MinimumWidthRequest="70"
-                    HorizontalOptions=""/>
-
-            </Grid>-->
-                
+                HorizontalOptions="Center" />             
 
         </Grid>
-        <Grid RowDefinitions="auto" Grid.Row="2">
+
+        <Grid
+            RowDefinitions="auto, 50, auto"
+            Grid.Row="2"
+            BackgroundColor="BlanchedAlmond">
+            <BoxView
+                Color="Gray"
+                AbsoluteLayout.LayoutBounds="0, 10, 200, 5"
+                Grid.Row="0"
+                HeightRequest="2"/>
             <Label
-                Text="Hello, World" />
+                Text="Hello, World"
+                Grid.Row="1" />
+            <BoxView
+                Color="Gray"
+                AbsoluteLayout.LayoutBounds="0, 10, 200, 5"
+                Grid.Row="2"
+                HeightRequest="2"/>
 
         </Grid>
-
+            
 
     </Grid>
 

@@ -6,10 +6,38 @@
     xmlns:local="clr-namespace:Banquale.Views"
     Shell.FlyoutBehavior="Disabled">
     <TabBar>
-    <ShellContent
-        Title="Solde"
-        ContentTemplate="{DataTemplate local:BalancePage}"
-        Route="MainPage" />
+
+        <Tab Title="Acceuil"
+             Icon="home.png">
+
+            <ShellContent
+            ContentTemplate="{DataTemplate local:BalancePage}"/>
+
+        </Tab>
+        
+        <Tab Title="Transactions"
+             Icon="swipe_account_icon.png">
+
+            <ShellContent
+                ContentTemplate="{DataTemplate local:BalancePage}"/>
+
+        </Tab>
+
+        <Tab Title="Aide"
+             Icon="help_icon.png">
+
+            <ShellContent
+            ContentTemplate="{DataTemplate local:BalancePage}"/>
+
+        </Tab>
+        
+        <Tab Title="Déconnexion"
+             Icon="swipe_account_icon.png">
+
+            <ShellContent
+                ContentTemplate="{DataTemplate local:BalancePage}"/>
+
+        </Tab>
 
     </TabBar>
 

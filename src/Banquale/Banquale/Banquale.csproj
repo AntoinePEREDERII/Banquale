@@ -53,8 +53,20 @@
 
 	<ItemGroup>
 	  <None Remove="Views\" />
+	  <None Remove="Resources\Images\account_balance_FILL0_wght400_GRAD0_opsz48.svg" />
+	  <None Remove="Resources\Images\home_FILL0_wght400_GRAD0_opsz48.png" />
+	  <None Remove="Resources\Images\accountIcon.svg" />
+	  <None Remove="Resources\Images\backArrowIcon.svg" />
+	  <None Remove="Resources\Images\swipeAccountIcon.svg" />
+	  <None Remove="Resources\Images\helpIcon.svg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Views\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\account_icon.svg" />
+	  <BundleResource Include="Resources\Images\back_arrow_icon.svg" />
+	  <BundleResource Include="Resources\Images\swipe_account_icon.svg" />
+	  <BundleResource Include="Resources\Images\help_icon.svg" />
 	</ItemGroup>
 </Project>
