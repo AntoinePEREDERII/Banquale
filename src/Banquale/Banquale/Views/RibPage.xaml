@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Banquale.Views.RibPage">
+
+    <VerticalStackLayout>
+
+        <Label 
+            Text="RIB"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label
+            Text="FR 5466 4654 4554 433"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
+
+        <Grid
+            RowDefinitions="auto, auto"
+            ColumnDefinitions="auto, auto">
+
+            <Label
+                Text="Nom"/>
+            <Label
+                Text="Prenom"
+                Grid.Column="1"/>
+
+            <Label
+                Text="Carinne"
+                Grid.Row="1"
+                Grid.Column="1"/>
+            <Label
+                Text="Perotte"
+                Grid.Row="1"/>
+
+        </Grid>
+
+    </VerticalStackLayout>
+
+</ContentPage>

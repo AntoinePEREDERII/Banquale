@@ -19,7 +19,7 @@
              Icon="swipe_account_icon.png">
 
             <ShellContent
-                ContentTemplate="{DataTemplate local:BalancePage}"/>
+                ContentTemplate="{DataTemplate local:MenuTransferPage}"/>
 
         </Tab>
 
@@ -27,7 +27,7 @@
              Icon="help_icon.png">
 
             <ShellContent
-            ContentTemplate="{DataTemplate local:BalancePage}"/>
+            ContentTemplate="{DataTemplate local:RibPage}"/>
 
         </Tab>
         
@@ -35,7 +35,7 @@
              Icon="swipe_account_icon.png">
 
             <ShellContent
-                ContentTemplate="{DataTemplate local:BalancePage}"/>
+                ContentTemplate="{DataTemplate local:TransferPage}"/>
 
         </Tab>
 
