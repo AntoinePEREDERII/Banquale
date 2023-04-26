@@ -24,6 +24,11 @@
             Title="Connection"
             ContentTemplate="{DataTemplate view:ConnectionPage}"
             Route="Views" />
+
+        <ShellContent
+            Title="Categorie"
+            ContentTemplate="{DataTemplate view:CategoryPage}"
+            Route="Views" />
     </TabBar>
 
 </Shell>
