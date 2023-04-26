@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Banquale.Views.HelpPage"
+             Title="HelpPage"
+             NavigationPage.HasBackButton="True"
+             NavigatedTo="BalanceView"
+             NavigationPage.BackButtonTitle="Back">
+    
+    <VerticalStackLayout>
+
+        <SearchBar Text="Quel est votre demande ?" />
+        <ListView BackgroundColor="Red" />
+
+        <SearchBar Text="Quel est le sujet de votre demande ?" />
+        <ListView BackgroundColor="Red" />
+
+        <Editor Placeholder="Decrivez votre demande ici."
+                MinimumHeightRequest="100"/>
+
+        <Button
+            Text="Envoyer" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
