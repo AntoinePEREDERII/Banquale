@@ -3,7 +3,8 @@
     x:Class="Banquale.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Banquale.Views"
+    xmlns:local="clr-namespace:Banquale"
+    xmlns:view="clr-namespace:Banquale.Views"
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False">
 
@@ -11,14 +12,18 @@
 
         <ShellContent
             Title="Solde"
-            ContentTemplate="{DataTemplate local:BalancePage}"
+            ContentTemplate="{DataTemplate view:BalancePage}"
             Route="Views" />
 
         <ShellContent
-            Title="Solde"
-            ContentTemplate="{DataTemplate local:BalancePage}"
+            Title="Choix compte"
+            ContentTemplate="{DataTemplate view:SwitchAccountPage}"
             Route="Views" />
-
+        
+        <ShellContent
+            Title="Connection"
+            ContentTemplate="{DataTemplate view:ConnectionPage}"
+            Route="Views" />
     </TabBar>
 
 </Shell>

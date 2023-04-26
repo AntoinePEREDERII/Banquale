@@ -58,9 +58,14 @@
 	  <None Remove="Views\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Views\" />
+	  <MauiXaml Remove="Resources\Images\Images.xaml" />
 	</ItemGroup>
 	<ItemGroup>
-	  <MauiXaml Remove="Resources\Images\Images.xaml" />
+	  <MauiXaml Update="Views\ConnectionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\SwitchAccountPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 </Project>

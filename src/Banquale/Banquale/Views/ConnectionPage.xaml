@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Banquale.Views.ConnectionPage"
+             Title="ConnectionPage">
+	<StackLayout>
+		<Frame BackgroundColor="#C8C8C8" CornerRadius="20" Margin="20, 250, 20, 0">
+			<Entry Placeholder="Identifiant"
+                   PlaceholderColor="#6E6E6E"
+                   TextColor="#212121"
+                   MaxLength="20"
+                   MinimumWidthRequest="275"
+                   HorizontalOptions="CenterAndExpand"
+                   HorizontalTextAlignment="Center">
+				<Entry.FontSize>
+					Large
+				</Entry.FontSize>
+			</Entry>
+		</Frame>
+
+		<Frame BackgroundColor="#C8C8C8" CornerRadius="10" Margin="20, 75, 20, 0">
+			<Entry Placeholder="Mot de passe"
+                   PlaceholderColor="#6E6E6E"
+                   TextColor="#212121"
+                   IsPassword="True"
+                   MinimumWidthRequest="275"
+                   MaxLength="20"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center">
+				<Entry.FontSize>
+					Large
+				</Entry.FontSize>
+			</Entry>
+		</Frame>
+
+		<Button Text="Se connecter"
+            BorderWidth="2"
+            BorderColor="Black"
+            HorizontalOptions="Fill"
+            BackgroundColor="Gray"
+            TextColor="Black"
+            MinimumHeightRequest="75"
+            Margin="10,75,10,0">
+			<Button.FontSize>
+				Large
+			</Button.FontSize>
+		</Button>
+	</StackLayout>
+</ContentPage>
