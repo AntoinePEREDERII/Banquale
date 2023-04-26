@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Banquale.Views"
              x:Class="Banquale.Views.SwitchAccountPage"
-             Title="SwitchAccountPage">
-	<ContentPage.Resources>
-		<Style TargetType="Button">
-			<Setter Property="BorderColor" Value="Black" />
-			<Setter Property="BorderWidth" Value="2" />
-			<Setter Property="BackgroundColor" Value="Gray" />
-			<Setter Property="TextColor" Value="Black" />
-			<Setter Property="FontSize" Value="Large" />
-			<Setter Property="MinimumHeightRequest" Value="75" />
-			<Setter Property="HorizontalOptions" Value="Fill" />
-			<Setter Property="VerticalOptions" Value="Center"/>
-			<Setter Property="Margin" Value="0,50,0,0" />
-			<Setter Property="LineBreakMode" Value="WordWrap" />
-		</Style>
-	</ContentPage.Resources>
+             Title="SwitchAccountPage"
+             BackgroundColor="White">
+	
 
 	<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
 
-		<Button Text="Compte Personnel                          Mme Tatouille"/>
+        <local:SwitchAccountView/>
 
-		<Button Text="Compte Professionel           Entreprise Bonnefois"/>
+        <local:SwitchAccountView/>
 
-		<Button Text="Déconnexion"/>
 
-	</StackLayout>
+        <Button Text="Déconnexion"
+                BorderWidth="2"
+                BorderColor="Black"
+                HorizontalOptions="Fill"
+                BackgroundColor="Gray"
+                TextColor="Black"
+                MinimumHeightRequest="75"
+                MinimumWidthRequest="375"
+                Margin="10,65,0,0"
+                FontSize="Large"/>
+
+    </StackLayout>
 </ContentPage>
