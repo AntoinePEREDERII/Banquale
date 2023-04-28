@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Banquale.Model
 {
     
-    class Client: Personne
+    public class Client: Personne
     {
         public Client(string nom, string prenom, string mdp) : base(nom, prenom, mdp)
         {

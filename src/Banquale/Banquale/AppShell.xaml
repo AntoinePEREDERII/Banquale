@@ -16,7 +16,7 @@
 
         <ShellContent
             Title="Solde"
-            ContentTemplate="{DataTemplate local:BalancePage}"
+            ContentTemplate="{DataTemplate local:NewPage1}"
             Route="Views" />
 
     </TabBar>

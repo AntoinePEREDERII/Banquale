@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Banquale.Model
 {
-    class Personne
+    public class Personne
     {
         public string Nom { get; private set; }
 

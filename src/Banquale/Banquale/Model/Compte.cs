@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Banquale.Model
 {
-    class Compte
+    public class Compte
     {
         public int Solde { get; set; }
 

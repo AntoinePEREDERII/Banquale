@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Banquale.Model
 {
-    class Transactions
+    public class Transactions
     {
         public int Type { get; private set; }
 
