@@ -5,9 +5,11 @@
              x:Class="Banquale.Views.SwitchAccountPage"
              Title="SwitchAccountPage"
              BackgroundColor="White">
-	
 
-	<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+    
+                <!-- Version StackLayout, moins efficace pour la responsivity -->
+
+    <!--<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
 
         <local:SwitchAccountView/>
 
@@ -25,5 +27,47 @@
                 Margin="10,65,0,0"
                 FontSize="Large"/>
 
-    </StackLayout>
+    </StackLayout>-->
+    
+
+    <Grid RowDefinitions="3*, 2*, *, 2*, *, 2*, 3*">
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <local:SwitchAccountView Grid.Column="1"/>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <local:SwitchAccountView Grid.Column="1"/>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Text="Déconnexion"
+                BorderWidth="2"
+                BorderColor="Black"
+                HorizontalOptions="Fill"
+                BackgroundColor="Gray"
+                TextColor="Black"
+                MinimumHeightRequest="75"
+                MinimumWidthRequest="375"
+                FontSize="Large"/>
+        </Grid>
+
+    </Grid>
 </ContentPage>
