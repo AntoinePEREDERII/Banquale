@@ -13,7 +13,7 @@ public partial class BalancePage : ContentPage
 
 	public async void OnButtonClicked(object sender, EventArgs e)
 	{
-		await Navigation.PushAsync(new NewPage1());
+		await Shell.Current.Navigation.PushAsync(new NewPage1());
 	}
 
 }
