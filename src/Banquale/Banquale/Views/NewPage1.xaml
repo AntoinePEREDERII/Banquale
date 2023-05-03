@@ -12,5 +12,9 @@
         <Button
             Text="Click me"
             Clicked="Button_Clicked"/>
+
+        <ListView
+            ItemsSource="{Binding Client}" />
+
     </VerticalStackLayout>
 </ContentPage>
