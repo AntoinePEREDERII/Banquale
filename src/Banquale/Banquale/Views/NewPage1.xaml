@@ -1,8 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Banquale.Views.NewPage1"
-             Title="NewPage1">
+             xmlns:model="clr-namespace:Banquale.Model"
+             x:Class="Banquale.Views.NewPage1">
+
+    <ContentPage.BindingContext>
+        <model:Manager/>
+    </ContentPage.BindingContext>
+
+
     <VerticalStackLayout>
         <Label 
             Text="Welcome to .NET MAUI!"
@@ -13,8 +19,21 @@
             Text="Click me"
             Clicked="Button_Clicked"/>
 
-        <ListView
-            ItemsSource="{Binding Client}" />
+        <Button
+            Clicked="ArrowBack" />
+
+        
+        
+
+        <ListView ItemsSource="{Binding ListeClients}" x:Name="ListViewID">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Nom}" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </VerticalStackLayout>
 </ContentPage>

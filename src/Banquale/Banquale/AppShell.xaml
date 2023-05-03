@@ -4,8 +4,12 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Banquale.Views"
-    Shell.FlyoutBehavior="Disabled"
-    Shell.NavBarIsVisible="False">
+    Shell.NavBarIsVisible="True"
+    Shell.NavBarHasShadow="True"
+    NavigationPage.HasNavigationBar="True"
+    NavigationPage.HasBackButton="True"
+    NavigationPage.BackButtonTitle="Retour"
+    Title="Page">
 
     <TabBar>
 
@@ -21,5 +25,7 @@
 
     </TabBar>
 
+    <!--<NavigationPage.BackButtonTitle 
+    -->
 </Shell>
 

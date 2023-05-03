@@ -16,6 +16,10 @@ namespace Banquale.Model
 			return true;
 		}
 
+		public Client GetClient(int place) {
+				return ListeClients[place];
+		}
+
 		public void Donnee()
 		{
 			Client Client1= new Client("Jacques", "Morice", "J'aimeLesFrites");

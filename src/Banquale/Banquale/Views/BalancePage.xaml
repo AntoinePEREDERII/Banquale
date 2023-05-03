@@ -4,7 +4,9 @@
              xmlns:local="clr-namespace:Banquale.Views"
              x:Class="Banquale.Views.BalancePage"
              Title="BalancePage"
+             NavigationPage.HasBackButton="True"
              >
+    
     <Grid RowDefinitions="auto, *">
         <Grid BackgroundColor="Beige"
               HorizontalOptions="Center"
@@ -16,6 +18,8 @@
               Grid.Row="0"
               Margin="30"
               >
+
+            <Button Clicked="OnButtonClicked" />
 
             <Label
                 Text="Compte Professionnel"
