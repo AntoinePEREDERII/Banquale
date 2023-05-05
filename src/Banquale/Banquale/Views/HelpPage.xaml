@@ -3,23 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Banquale.Views.HelpPage"
              Title="HelpPage"
-             NavigationPage.HasBackButton="True"
-             NavigatedTo="BalanceView"
-             NavigationPage.BackButtonTitle="Back">
+             NavigationPage.HasBackButton="True">
     
-    <VerticalStackLayout>
+    <VerticalStackLayout VerticalOptions="Center">
 
-        <SearchBar Text="Quel est votre demande ?" />
-        <ListView BackgroundColor="Red" />
+        <Entry Placeholder="Quel est votre demande ?"
+                   HorizontalOptions="Center" />
 
-        <SearchBar Text="Quel est le sujet de votre demande ?" />
-        <ListView BackgroundColor="Red" />
+        <Entry Placeholder="Quel est le sujet de votre demande ?"
+                   HorizontalOptions="Center" />
 
         <Editor Placeholder="Decrivez votre demande ici."
-                MinimumHeightRequest="100"/>
+                MinimumHeightRequest="100"
+                Margin="10"
+                HorizontalOptions="Center" />
 
         <Button
-            Text="Envoyer" />
+            Text="Envoyer"
+            Margin="100, 0, 100, 0"
+            MinimumHeightRequest="80"/>
 
     </VerticalStackLayout>
 

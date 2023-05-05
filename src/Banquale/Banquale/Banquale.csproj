@@ -63,4 +63,7 @@
 	<ItemGroup>
 	  <MauiXaml Remove="Resources\Images\Images.xaml" />
 	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Syncfusion.Maui.Inputs" Version="21.2.3" />
+	</ItemGroup>
 </Project>
