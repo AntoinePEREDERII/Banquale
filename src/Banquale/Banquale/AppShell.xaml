@@ -18,16 +18,16 @@
             ContentTemplate="{DataTemplate local:BalancePage}"
             Route="Views" />
 
-        
-
-    </TabBar>
-
-    <FlyoutItem>
+        <!--<FlyoutItem>   a pas l'air de servir    -->
         <ShellContent
             Title="Solde"
             ContentTemplate="{DataTemplate local:NewPage1}"
             Route="Views" />
-    </FlyoutItem>
+    <!--</FlyoutItem>-->
+
+    </TabBar>
+
+    
     
     <!--<NavigationPage.BackButtonTitle 
     -->
