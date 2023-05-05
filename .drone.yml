@@ -1,3 +1,10 @@
 kind: pipeline
 type: docker
 name: myFirstPipeline
+
+trigger:
+  branch:
+    - master
+    - C#/model
+  event:
+    - push
