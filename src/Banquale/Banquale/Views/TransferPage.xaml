@@ -3,17 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Banquale.Views.TransferPage">
 
-    <VerticalStackLayout
-        VerticalOptions="Center">
+    <VerticalStackLayout VerticalOptions="Center">
 
-        <SearchBar Placeholder="Destinataire" />
+        <Frame CornerRadius="10"
+               HeightRequest="40"
+               WidthRequest="300"
+               Margin="0, 5, 0, 5"
+               Padding="3">
 
-        <Entry Placeholder="IBAN" />
+            <Entry Placeholder="Destinataire"
+                   HorizontalOptions="Center"
+                   WidthRequest="280"/>
 
-        <Entry Placeholder="Montant" />
+        </Frame>
+
+        <Frame CornerRadius="10"
+               HeightRequest="40"
+               WidthRequest="300"
+               Margin="0, 5, 0, 5"
+               Padding="3">
+
+            <Entry Placeholder="IBAN"
+                   HorizontalOptions="Center"
+                   WidthRequest="280"/>
+
+        </Frame>
+
+        <Frame CornerRadius="10"
+               HeightRequest="40"
+               WidthRequest="300"
+               Margin="0, 5, 0, 5"
+               Padding="3">
+
+            <Entry Placeholder="Montant"
+                   HorizontalOptions="Center"
+                   WidthRequest="280"/>
+
+        </Frame>
 
         <Button
-            Text="Effectuer le virement" />
+            Text="Effectuer le virement"
+            Margin="0, 75, 0, 0"
+            MinimumHeightRequest="80"
+            WidthRequest="300"
+            MaximumWidthRequest="400"/>
 
     </VerticalStackLayout>
 

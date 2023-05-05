@@ -23,7 +23,7 @@
 
         </Tab>
 
-        <Tab Title="Aide"
+        <Tab Title="RIB"
              Icon="help_icon.png">
 
             <ShellContent
@@ -31,11 +31,19 @@
 
         </Tab>
         
-        <Tab Title="Déconnexion"
+        <Tab Title="Transfer"
              Icon="swipe_account_icon.png">
 
             <ShellContent
                 ContentTemplate="{DataTemplate local:TransferPage}"/>
+
+        </Tab>
+
+        <Tab Title="Request"
+             Icon="swipe_account_icon.png">
+
+            <ShellContent
+                ContentTemplate="{DataTemplate local:RequestPage}"/>
 
         </Tab>
 
