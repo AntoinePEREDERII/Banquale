@@ -14,9 +14,9 @@ steps:
   - name: build
     image: mcr.microsoft.com/dotnet/sdk:6.0
     commands:
-      - cd src/Banquale
-      - dotnet restore Banquale.sln
-      - dotnet build Banquale.sln -c Release --no-restore /p:AndroidSdkDirectory=$ANDROID_SDK_ROOT -property:Aapt2ToolPath=$ANDROID_SDK_ROOT/build-tools/33.0.0
-      - dotnet publish Banquale/Banquale.csproj -c Release --no-restore -o $CI_PROJECT_DIR/build/release -f:net6.0-android /p:AndroidSdkDirectory=/usr/lib/android-sdk
+      #- cd src/Banquale
+        #- dotnet restore Banquale.sln
+        #- dotnet build Banquale.sln -c Release --no-restore /p:AndroidSdkDirectory=$ANDROID_SDK_ROOT -property:Aapt2ToolPath=$ANDROID_SDK_ROOT/build-tools/33.0.0
+        #- dotnet publish Banquale/Banquale.csproj -c Release --no-restore -o $CI_PROJECT_DIR/build/release -f:net6.0-android /p:AndroidSdkDirectory=/usr/lib/android-sdk
       # this last line can be replaced by the following one, if you have only one project in your solution:
       #- dotnet publish Banquale.sln -c Release --no-restore -o $CI_PROJECT_DIR/build/release -f:net7.0-android /p:AndroidSdkDirectory=/usr/lib/android-sdk
