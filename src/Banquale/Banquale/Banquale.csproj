@@ -67,10 +67,7 @@
 	  <Folder Include="Views\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <BundleResource Include="Resources\Images\account_icon.svg" />
 	  <BundleResource Include="Resources\Images\back_arrow_icon.svg" />
-	  <BundleResource Include="Resources\Images\swipe_account_icon.svg" />
-	  <BundleResource Include="Resources\Images\help_icon.svg" />
 	  <MauiXaml Remove="Resources\Images\Images.xaml" />
 	</ItemGroup>
 	<ItemGroup>
