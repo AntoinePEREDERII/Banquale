@@ -7,13 +7,10 @@ public partial class HelpPage : ContentPage
 		InitializeComponent();
 	}
 
-    void ContentPage_NavigatedTo(System.Object sender, Microsoft.Maui.Controls.NavigatedToEventArgs e)
+    public async void Send_Clicked(object sender, EventArgs e)
     {
-    }
-
-    void Send_Clicked(System.Object sender, System.EventArgs e)
-    {
-        await Navigation.PushAsync(new BalancePage());
+        await Shell.Current.Navigation.PushAsync(new BalancePage());
 
     }
+
 }
