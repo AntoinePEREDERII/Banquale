@@ -11,9 +11,9 @@ public partial class HelpPage : ContentPage
     {
     }
 
-    void Send_Clicked(System.Object sender, System.EventArgs e)
+    public async void Send_Clicked(Object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new BalancePage());
+        await Shell.Current.Navigation.PushAsync(new BalancePage());
 
     }
 }

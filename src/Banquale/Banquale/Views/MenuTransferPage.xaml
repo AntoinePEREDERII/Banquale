@@ -14,7 +14,8 @@
             Grid.Row="0"
             Margin="20"
             MinimumWidthRequest="160"
-            MinimumHeightRequest="160"/>
+            MinimumHeightRequest="160"
+            Clicked="Transfer_Clicked"/>
 
         <Button
             Text="Demander de l'argent"
@@ -22,7 +23,8 @@
             Grid.Row="0"
             Margin="20"
             MinimumWidthRequest="160"
-            MinimumHeightRequest="160"/>
+            MinimumHeightRequest="160"
+            Clicked="Request_Clicked"/>
 
         <Button
             Text="Afficher mon RIB"
@@ -30,7 +32,8 @@
             Grid.Row="1"
             Margin="20"
             MinimumHeightRequest="160"
-            MinimumWidthRequest="360"/>
+            MinimumWidthRequest="360"
+            Clicked="RIB_Clicked"/>
 
     </Grid>
 
