@@ -10,13 +10,14 @@ namespace Banquale.Model
     
     public class Client: Personne
     {
-        public Client(string nom, string prenom, string mdp) : base(nom, prenom, mdp)
-        {
-            
-        }
 
-        public List<Compte> ListeComptes{ get; private set; }
+        public List<Compte> ListeComptes { get; private set; }
+
+
+        public Client(string nom, string prenom, string mdp) : base(nom, prenom, mdp)
+        {}
 
 
     }
+
 }
