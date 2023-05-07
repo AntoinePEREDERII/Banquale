@@ -9,21 +9,47 @@
     NavigationPage.HasNavigationBar="True"
     NavigationPage.HasBackButton="True"
     NavigationPage.BackButtonTitle="Retour"
-    Title="Page">
+    Title="Page"
+    Shell.FlyoutBehavior="Disabled">
+
 
     <TabBar>
 
-        <ShellContent
-            Title="Solde"
-            ContentTemplate="{DataTemplate local:BalancePage}"
-            Route="Views" />
+        <Tab Icon="home.png"
+             Title="Compte">
 
-        <!--<FlyoutItem>   a pas l'air de servir    -->
-        <ShellContent
-            Title="Solde"
-            ContentTemplate="{DataTemplate local:NewPage1}"
-            Route="Views" />
-    <!--</FlyoutItem>-->
+            <ShellContent
+                Title="Solde"
+                ContentTemplate="{DataTemplate local:BalancePage}"
+                Route="Views" />
+
+        </Tab>
+
+        <Tab Icon="transactions.png"
+             Title="Transactions">
+
+            <ShellContent
+                Title="Solde"
+                ContentTemplate="{DataTemplate local:MenuTransferPage}"
+                Route="Views" />
+
+        </Tab>
+
+        <Tab Icon="help.png"
+             Title="Aide">
+
+            <ShellContent
+                Title="Help"
+                ContentTemplate="{DataTemplate local:HelpPage}"
+                Route="Views" />
+
+        </Tab>
+
+        <Tab Icon="accounts.png"
+             Title="Compte">
+
+            
+        </Tab>
 
     </TabBar>
 
