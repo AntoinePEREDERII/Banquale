@@ -22,7 +22,10 @@
         <Tab Icon="transactions.png"
              Title="Transactions">
 
-            
+            <ShellContent
+                Title="Solde"
+                ContentTemplate="{DataTemplate local:MenuTransferPage}"
+                Route="Views" />
 
         </Tab>
 
