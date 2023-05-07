@@ -33,6 +33,9 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -68,5 +71,9 @@
 	  <BundleResource Include="Resources\Images\back_arrow_icon.svg" />
 	  <BundleResource Include="Resources\Images\swipe_account_icon.svg" />
 	  <BundleResource Include="Resources\Images\help_icon.svg" />
+	  <MauiXaml Remove="Resources\Images\Images.xaml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Syncfusion.Maui.Inputs" Version="21.2.3" />
 	</ItemGroup>
 </Project>

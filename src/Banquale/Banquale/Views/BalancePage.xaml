@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Banquale.Views"
+             x:Class="Banquale.Views.BalancePage"
+             Title="BalancePage"
+             >
+    <Grid RowDefinitions="auto, *">
+        <Grid BackgroundColor="Beige"
+              HorizontalOptions="Center"
+              HeightRequest="100"
+              MaximumHeightRequest="150"
+              WidthRequest="230"
+              RowDefinitions="auto, 35, *"
+              ColumnDefinitions="250, auto"
+              Grid.Row="0"
+              Margin="30"
+              >
+
+            <Label
+                Text="Compte Professionnel"
+                HorizontalOptions="Center"
+                BackgroundColor="AliceBlue"
+                Margin="0, 15, 0, 0"/>
+            <Label
+                Text="Mme Perotte"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                BackgroundColor="SaddleBrown"/> <!-- colspan permet de redefinir la taille de la colonne -->
+            
+            <Grid ColumnDefinitions="*, *" Grid.Row="2" >
+                <Label
+                    Text="Solde"
+                    WidthRequest="75"
+                    HorizontalOptions="Center"/>
+                <Label
+                    Text="1999,00 €"
+                    Grid.Column="1"
+                    MinimumWidthRequest="70"
+                    HorizontalOptions="Center"/>
+
+            </Grid>
+                
+
+        </Grid>
+        <ScrollView
+            Grid.Row="1">
+        <FlexLayout JustifyContent="Center"
+                    AlignItems="Start"
+                    AlignContent="Start"
+                    Direction="Row"
+                    Wrap="Wrap">
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView />
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView />
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView />
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView />
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+            <local:BalanceView/>
+        </FlexLayout>
+        </ScrollView>
+
+    </Grid>
+</ContentPage>
