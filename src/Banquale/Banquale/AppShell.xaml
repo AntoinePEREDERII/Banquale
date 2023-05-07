@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:Banquale.Views"
     Shell.FlyoutBehavior="Disabled">
 
+
     <TabBar>
 
         <Tab Icon="home.png"
@@ -41,6 +42,7 @@
             
 
         </Tab>
+
 
     </TabBar>
 
