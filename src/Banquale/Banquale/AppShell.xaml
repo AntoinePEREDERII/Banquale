@@ -8,15 +8,39 @@
 
     <TabBar>
 
-        <ShellContent
-            Title="Solde"
-            ContentTemplate="{DataTemplate local:BalancePage}"
-            Route="Views" />
+        <Tab Icon="home.png"
+             Title="Compte">
 
-        <ShellContent
-            Title="Help"
-            ContentTemplate="{DataTemplate local:HelpPage}"
-            Route="Views" />
+            <ShellContent
+                Title="Solde"
+                ContentTemplate="{DataTemplate local:BalancePage}"
+                Route="Views" />
+
+        </Tab>
+
+        <Tab Icon="transactions.png"
+             Title="Transactions">
+
+            
+
+        </Tab>
+
+        <Tab Icon="help.png"
+             Title="Aide">
+
+            <ShellContent
+                Title="Help"
+                ContentTemplate="{DataTemplate local:HelpPage}"
+                Route="Views" />
+
+        </Tab>
+
+        <Tab Icon="accounts.png"
+             Title="Compte">
+
+            
+
+        </Tab>
 
     </TabBar>
 
