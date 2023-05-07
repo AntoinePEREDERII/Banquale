@@ -9,43 +9,37 @@
 
     <TabBar>
 
-        <Tab Title="Acceuil"
-             Icon="home.png">
+        <Tab Icon="home.png"
+             Title="Compte">
 
             <ShellContent
-            ContentTemplate="{DataTemplate local:BalancePage}"/>
-
-        </Tab>
-        
-        <Tab Title="Transactions"
-             Icon="swipe_account_icon.png">
-
-            <ShellContent
-                ContentTemplate="{DataTemplate local:MenuTransferPage}"/>
+                Title="Solde"
+                ContentTemplate="{DataTemplate local:BalancePage}"
+                Route="Views" />
 
         </Tab>
 
-        <Tab Title="RIB"
-             Icon="help_icon.png">
+        <Tab Icon="transactions.png"
+             Title="Transactions">
 
-            <ShellContent
-            ContentTemplate="{DataTemplate local:RibPage}"/>
-
-        </Tab>
-        
-        <Tab Title="Transfer"
-             Icon="swipe_account_icon.png">
-
-            <ShellContent
-                ContentTemplate="{DataTemplate local:TransferPage}"/>
+            
 
         </Tab>
 
-        <Tab Title="Request"
-             Icon="swipe_account_icon.png">
+        <Tab Icon="help.png"
+             Title="Aide">
 
             <ShellContent
-                ContentTemplate="{DataTemplate local:RequestPage}"/>
+                Title="Help"
+                ContentTemplate="{DataTemplate local:HelpPage}"
+                Route="Views" />
+
+        </Tab>
+
+        <Tab Icon="accounts.png"
+             Title="Compte">
+
+            
 
         </Tab>
 
