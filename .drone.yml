@@ -29,6 +29,7 @@ steps:
         path: /Documentation
     commands:
       - cd src/Banquale/
+      - workload restore
       - dotnet restore Banquale.sln
       - dotnet build Banquale.sln -c Release --no-restore /p:AndroidSdkDirectory=$ANDROID_SDK_ROOT -property:Aapt2ToolPath=$ANDROID_SDK_ROOT/build-tools/31.0.0
       - dotnet publish Banquale.csproj -c Release --no-restore -o $CI_PROJECT_DIR/build/release -f:net6.0-android /p:AndroidSdkDirectory=/usr/lib/android-sdk
