@@ -66,16 +66,19 @@ steps:
     image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-docdeployer
     failure: ignore
     volumes:
-      - name: docs
+      - name: Documentation
         path: /Documentation
     commands:
-      #- cd Documentation/doxygen
-      #- doxygen Doxyfile
+      - cd Documentation/doxygen
+      - doxygen Doxyfile
       - /entrypoint.sh
     when:
       branch:
         - master
-    depends_on: [ build ]
+      event:
+        - push
+        - pull_request
+    depends_on: [ build, tests ]
 
 volumes:
 - name: docs
