@@ -25,7 +25,7 @@ steps:
   - name: build
     image: mcr.microsoft.com/dotnet/sdk:6.0
     volumes:
-      - name: docs
+      - name: Documentation
         path: /Documentation
     commands:
       - cd src/Banquale/
