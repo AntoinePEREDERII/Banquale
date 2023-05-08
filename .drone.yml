@@ -26,9 +26,9 @@ steps:
     image: mcr.microsoft.com/dotnet/sdk:6.0
     volumes:
       - name: docs
-        path: /docs
+        path: /Documentation
     commands:
-      - cd src/Banquale
+      - cd src/Banquale/
       - dotnet restore Banquale.sln
       - dotnet build Banquale.sln -c Release --no-restore
       - dotnet publish Banquale.sln -c Release --no-restore -o CI_PROJECT_DIR/build/release
@@ -36,7 +36,7 @@ steps:
   - name: tests
     image: mcr.microsoft.com/dotnet/sdk:6.0
     commands:
-      - cd Sources/
+      - cd src/Banquale/
       - dotnet restore Banquale.sln
       - dotnet test Banquale.sln --no-restore
     depends_on: [build]
@@ -44,7 +44,7 @@ steps:
   - name: code-analysis
     image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-dronesonarplugin-dotnet6
     commands:
-      - cd Sources/
+      - cd src/Banquale/
       - dotnet restore Banquale.sln
       - dotnet sonarscanner begin /k:TestCI /d:sonar.host.url=$${PLUGIN_SONAR_HOST} /d:sonar.coverageReportPaths="coveragereport/SonarQube.xml" /d:sonar.coverage.exclusions="Tests/**" /d:sonar.login=$${PLUGIN_SONAR_TOKEN} 
       - dotnet build Banquale.sln -c Release --no-restore
@@ -66,7 +66,7 @@ steps:
     failure: ignore
     volumes:
       - name: docs
-        path: /docs
+        path: /Documentation
     commands:
       #- cd Documentation/doxygen
       #- doxygen Doxyfile
