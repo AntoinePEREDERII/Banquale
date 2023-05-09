@@ -32,8 +32,6 @@ steps:
 #      - workload restore
       - dotnet restore Banquale.sln
       - dotnet build Banquale.sln -c Release --no-restore /p:AndroidSdkDirectory=$ANDROID_SDK_ROOT -property:Aapt2ToolPath=$ANDROID_SDK_ROOT/build-tools/33.0.0
-      - dotnet publish Banquale.sln -c Release --no-restore -o $CI_PROJECT_DIR/build/release -f:net7.0-android /p:AndroidSdkDirectory=/usr/lib/android-sdk
-
   - name: tests
     image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dotnet7-maui:latest
     commands:
@@ -72,7 +70,6 @@ steps:
         - master
       event:
         - push
-        - pull_request
     depends_on: [ build, tests ]
 
 volumes:
