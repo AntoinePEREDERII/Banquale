@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: myFirstPipeline
+name: CI
 
 trigger:
   branch:
