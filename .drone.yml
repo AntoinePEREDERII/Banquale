@@ -63,15 +63,10 @@ steps:
     depends_on: [tests]
 
   - name: generate-and-deploy-docs
-    image: hub.codefirst.iut.uca.fr/thomas.bellembois/codefirst-docdeployer
+    image: hub.codefirst.iut.uca.fr/maxime.batista/codefirst-docdeployer
     failure: ignore
-    volumes:
-      - name: Documentation
-        path: /Documentation
     commands:
-      - cd Documentation/doxygen
-      - doxygen Doxyfile
-      - /entrypoint.sh
+      - /entrypoint.sh -l Documentation/doxygen/Doxyfile -t doxygen 
     when:
       branch:
         - master
