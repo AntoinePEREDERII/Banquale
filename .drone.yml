@@ -64,7 +64,7 @@ steps:
     image: hub.codefirst.iut.uca.fr/maxime.batista/codefirst-docdeployer
     failure: ignore
     commands:
-      - /entrypoint.sh -l Documentation/doxygen/Doxyfile -t doxygen 
+      - /entrypoint.sh -l Documentation/doxygen -t doxygen 
     when:
       branch:
         - master
