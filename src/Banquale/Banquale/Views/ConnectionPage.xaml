@@ -4,10 +4,9 @@
              x:Class="Banquale.Views.ConnectionPage"
              Title="ConnectionPage"
              BackgroundColor="White">
-    
-    
-	<StackLayout>
-		<Frame BackgroundColor="#C8C8C8" CornerRadius="20" Margin="20, 250, 20, 0">
+
+    <StackLayout>
+        <Frame BackgroundColor="#C8C8C8" CornerRadius="20" Margin="20, 250, 20, 0">
             <Entry Placeholder="Identifiant"
                    PlaceholderColor="#6E6E6E"
                    TextColor="#212121"
@@ -18,7 +17,7 @@
                    FontSize="Large"/>
         </Frame>
 
-		<Frame BackgroundColor="#C8C8C8" CornerRadius="10" Margin="20, 75, 20, 0">
+        <Frame BackgroundColor="#C8C8C8" CornerRadius="10" Margin="20, 75, 20, 0">
             <Entry Placeholder="Mot de passe"
                    PlaceholderColor="#6E6E6E"
                    TextColor="#212121"
@@ -41,6 +40,7 @@
             FontSize="Large"/>
 
     </StackLayout>
+
 
 
         <!-- Version avec Grid (moins efficace quand on écrit dans les Entry-->
@@ -109,8 +109,11 @@
         </Grid>
 
     </Grid>-->
+<<<<<<< HEAD
 
     
         
         
+=======
+>>>>>>> origin/master
 </ContentPage>
