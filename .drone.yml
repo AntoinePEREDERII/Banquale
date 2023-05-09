@@ -23,7 +23,7 @@ trigger:
 
 steps:
   - name: build
-    image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dotnet6-maui:latest
+    image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dotnet7-maui:latest
     volumes:
       - name: Documentation
         path: /Documentation
