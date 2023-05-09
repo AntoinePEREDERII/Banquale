@@ -17,6 +17,6 @@
     </ContentView.Resources>
 
     <Button Text=" Compte Personnel &#x0a; Mme Tatouille "/>
-    <!-- &#x0a; sert à faire un retour à la ligne-->
+    <!-- &#x0a; sert à faire un retour à la ligne--> 
 
 </ContentView>
