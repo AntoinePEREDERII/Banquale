@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Banquale.Views.HelpPage">
+    
+    <VerticalStackLayout VerticalOptions="Center">
+
+        <Frame CornerRadius="10"
+               HeightRequest="40"
+               WidthRequest="300"
+               Padding="3">
+
+            <Entry Placeholder="Quel est votre demande ?"
+                   HorizontalOptions="Center"
+                   WidthRequest="280"/>
+
+        </Frame>
+
+        <Frame CornerRadius="10"
+               HeightRequest="40"
+               WidthRequest="300"
+               Margin="0, 5, 0, 5"
+               Padding="3">
+
+            <Entry Placeholder="Quel est le sujet de votre demande ?"
+                   HorizontalOptions="Center"
+                   WidthRequest="280"/>
+
+        </Frame>
+
+        <Frame CornerRadius="10"
+               HeightRequest="250"
+               WidthRequest="300"
+               Margin="0, 0, 0, 10"
+               Padding="15, 5, 15, 5">
+
+            <Editor Placeholder="Decrivez votre demande ici." />
+
+        </Frame>
+
+        <Button
+            Text="Envoyer"
+            Margin="0, 75, 0, 0"
+            MinimumHeightRequest="80"
+            WidthRequest="300"
+            MaximumWidthRequest="400"
+            Clicked="Send_Clicked"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>

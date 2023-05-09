@@ -4,31 +4,52 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Banquale"
-    xmlns:view="clr-namespace:Banquale.Views"
+    xmlns:views="clr-namespace:Banquale.Views"
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False">
 
+
     <TabBar>
 
-        <ShellContent
-            Title="Solde"
-            ContentTemplate="{DataTemplate view:BalancePage}"
-            Route="Views" />
+        <Tab Icon="home.png"
+             Title="Compte">
 
-        <ShellContent
-            Title="Choix compte"
-            ContentTemplate="{DataTemplate view:SwitchAccountPage}"
-            Route="Views" />
-        
-        <ShellContent
-            Title="Connection"
-            ContentTemplate="{DataTemplate view:ConnectionPage}"
-            Route="Views" />
+            <ShellContent
+                Title="Solde"
+                ContentTemplate="{DataTemplate views:BalancePage}"
+                Route="Views" />
 
-        <ShellContent
-            Title="Categorie"
-            ContentTemplate="{DataTemplate view:CategoryPage}"
-            Route="Views" />
+        </Tab>
+
+        <Tab Icon="transactions.png"
+             Title="Transactions">
+
+            <ShellContent
+                Title="Solde"
+                ContentTemplate="{DataTemplate views:MenuTransferPage}"
+                Route="Views" />
+
+        </Tab>
+
+        <Tab Icon="help.png"
+             Title="Aide">
+
+            <ShellContent
+                Title="Help"
+                ContentTemplate="{DataTemplate views:HelpPage}"
+                Route="Views" />
+
+        </Tab>
+
+        <Tab Icon="accounts.png"
+             Title="Compte">
+
+	    <ShellContent
+            	Title="Categorie"
+            	ContentTemplate="{DataTemplate views:CategoryPage}"
+            	Route="Views" />
+        </Tab>
+
     </TabBar>
 
 </Shell>
