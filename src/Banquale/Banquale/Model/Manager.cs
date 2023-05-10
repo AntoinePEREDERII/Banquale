@@ -6,11 +6,23 @@ namespace Banquale.Model
 	{
 		public List<Client> ListeClients { get; private set; }
 
-		public Manager() {
-			ListeClients = new List<Client>();
+
+        public List<Transactions> ListeTransactions { get; private set; }
+        public IPersistanceManager Persistance { get; set; }
+
+		public Manager(IPersistanceManager persistance) {
+            ListeTransactions = new List<Transactions>();
+            ListeClients = new List<Client>();
+			Persistance = persistance;
 		}
 
-		public bool AjouterClient(Client MonClient)
+        public Manager()
+        {
+            ListeClients = new List<Client>();
+			ListeTransactions = new List<Transactions>();
+        }
+
+        public bool AjouterClient(Client MonClient)
 		{
 			ListeClients.Add(MonClient);
 			return true;
@@ -20,15 +32,18 @@ namespace Banquale.Model
 				return ListeClients[place];
 		}
 
-		public void Donnee()
+
+		public void ChargeDonnee()
 		{
-			Client Client1= new Client("Jacques", "Morice", "J'aimeLesFrites");
-			Client Client2 = new Client("Francis", "Begore", "J'aimeLes");
-			Client Client3 = new Client("Michel", "Boudout", "MonMdP");
-			Console.WriteLine(Client1);
-			AjouterClient(Client1);
-			AjouterClient(Client2);
-			AjouterClient(Client3);
+			var donnees = Persistance.ChargeDonnee();
+			foreach (var j in donnees.Item1)
+			{
+				ListeClients.Add(j);
+			}
+			foreach (var i in donnees.Item2)
+			{
+				ListeTransactions.Add(i);
+			}
 		}
     }
 }

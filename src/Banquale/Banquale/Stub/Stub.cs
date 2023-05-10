@@ -13,10 +13,11 @@ namespace Banquale.Stub
             Client Client3 = new Client("Michel", "Boudout", "MonMdP");
             Console.WriteLine(Client1);
             List<Client> ListeClients = new List<Client>();
+            List<Transactions> ListeTransactions = new List<Transactions>();
             ListeClients.Add(Client1);
             ListeClients.Add(Client2);
             ListeClients.Add(Client3);
-            return ListeClients;
+            return (ListeClients, ListeTransactions);
         }
 
         void IPersistanceManager.SauvegardeDonnee(List<Client> c, List<Transactions> t)
