@@ -8,6 +8,7 @@ namespace Banquale.Model
 
 
         public List<Transactions> ListeTransactions { get; private set; }
+
         public IPersistanceManager Persistance { get; set; }
 
 		public Manager(IPersistanceManager persistance) {
