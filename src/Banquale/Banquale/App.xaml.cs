@@ -13,8 +13,8 @@ public partial class App : Application
 	{
 
         MyManager.ChargeDonnee();
-		//MyManager.Persistance = new DataContractPersistance.DataContractPers();
-		//MyManager.SauvegardeDonnee();
+		MyManager.Persistance = new DataContractPersistance.DataContractPers();
+		MyManager.SauvegardeDonnee();
 
         InitializeComponent();
 

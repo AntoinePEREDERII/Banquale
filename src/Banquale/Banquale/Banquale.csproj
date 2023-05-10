@@ -75,6 +75,7 @@
 	  <MauiXaml Remove="Resources\Images\Images.xaml" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Folder Include="Persistances\" />
 	  <Folder Include="Stub\" />
 	  <Folder Include="DataContractPersistance\" />
 	</ItemGroup>
