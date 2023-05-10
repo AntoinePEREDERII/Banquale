@@ -8,7 +8,7 @@ namespace Banquale.Model
 {
     public interface IPersistanceManager
     {
-        (List<Client>, List<Transactions>) ChargeDonnee();
+        public (List<Client>, List<Transactions>) ChargeDonnee();
 
         void SauvegardeDonnee(List<Client> c, List<Transactions> t);
     }

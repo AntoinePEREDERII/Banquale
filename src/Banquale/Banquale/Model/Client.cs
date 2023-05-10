@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Banquale.Model
 {
-    
+    //[DataFrameworks]
     public class Client: Personne
     {
-
+        //[DataMember]
         public List<Compte> ListeComptes { get; private set; }
 
 

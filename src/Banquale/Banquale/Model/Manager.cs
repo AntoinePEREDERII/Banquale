@@ -35,7 +35,7 @@ namespace Banquale.Model
 				return ListeClients[place];
 		}
 
-        public void sauvegardeDonnee()
+        public void SauvegardeDonnee()
         {
             Persistance.SauvegardeDonnee(ListeClients, ListeTransactions);
         }
