@@ -12,9 +12,11 @@ namespace Banquale.Model
         public IPersistanceManager Persistance { get; set; }
 
 		public Manager(IPersistanceManager persistance) {
+
             ListeTransactions = new List<Transactions>();
             ListeClients = new List<Client>();
 			Persistance = persistance;
+
 		}
 
         public Manager()
@@ -33,10 +35,18 @@ namespace Banquale.Model
 				return ListeClients[place];
 		}
 
+        public void sauvegardeDonnee()
+        {
+            Persistance.SauvegardeDonnee(ListeClients, ListeTransactions);
+        }
 
-		public void ChargeDonnee()
+        public void ChargeDonnee()
 		{
 			var donnees = Persistance.ChargeDonnee();
+
+			ListeClients.AddRange(donnees.Item1);
+			ListeTransactions.AddRange(donnees.Item2);
+
 			foreach (var j in donnees.Item1)
 			{
 				ListeClients.Add(j);
@@ -46,6 +56,7 @@ namespace Banquale.Model
 				ListeTransactions.Add(i);
 			}
 		}
+
     }
 }
 

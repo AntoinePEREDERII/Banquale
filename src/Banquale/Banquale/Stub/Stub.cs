@@ -6,7 +6,7 @@ namespace Banquale.Stub
 	public class Stub : IPersistanceManager
 	{
 
-        (List<Client>, List<Transactions>) IPersistanceManager.ChargeDonnee()
+        public (List<Client>, List<Transactions>) ChargeDonnee()
         {
             Client Client1 = new Client("Jacques", "Morice", "J'aimeLesFrites");
             Client Client2 = new Client("Francis", "Begore", "J'aimeLes");
@@ -20,7 +20,7 @@ namespace Banquale.Stub
             return (ListeClients, ListeTransactions);
         }
 
-        void IPersistanceManager.SauvegardeDonnee(List<Client> c, List<Transactions> t)
+        public void SauvegardeDonnee(List<Client> c, List<Transactions> t)
         {
             throw new NotImplementedException();
         }

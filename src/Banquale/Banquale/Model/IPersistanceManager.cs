@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Banquale.Model
 {
-    interface IPersistanceManager
+    public interface IPersistanceManager
     {
         (List<Client>, List<Transactions>) ChargeDonnee();
 
