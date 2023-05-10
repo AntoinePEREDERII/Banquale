@@ -7,10 +7,6 @@ public partial class MenuTransferPage : ContentPage
         InitializeComponent();
 	}
 
-    void ContentPage_NavigatedTo(System.Object sender, Microsoft.Maui.Controls.NavigatedToEventArgs e)
-    {
-    }
-
     public async void RIB_Clicked(Object sender, EventArgs e)
     {
         await Navigation.PushAsync(new RibPage());

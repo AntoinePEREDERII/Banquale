@@ -16,7 +16,7 @@ namespace Banquale.Model
 
         public string Categorie { get; private set; }
 
-        private Transactions( int type, int somme, Compte compteImplique, string categorie) { 
+        public Transactions(int type, int somme, Compte compteImplique, string categorie) { 
             Type = type;
             Somme = somme;
             CompteImplique = compteImplique;
