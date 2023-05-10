@@ -33,7 +33,7 @@ steps:
       # accessible en ligne de commande par ${PLUGIN_SONAR_HOST}
       SONAR_HOST: https://codefirst.iut.uca.fr/sonar/
       # accessible en ligne de commande par ${PLUGIN_SONAR_TOKEN}
-      SONNAR_TOKEN:
+      SONAR_TOKEN:
         from_secret: SECRET_SONAR_LOGIN
     commands:
       - cd src/Banquale/
