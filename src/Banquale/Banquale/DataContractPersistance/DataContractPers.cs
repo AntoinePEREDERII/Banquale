@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Diagnostics;
 using System.Runtime.Serialization;
 using Banquale.Model;
+=======
+﻿using Banquale.Model;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.Serialization;
+using System.Xml;
+>>>>>>> 771dfebd455ecbc2d933450b081c14049561ab24
 
 namespace Banquale.DataContractPersistance
 {
@@ -11,7 +20,11 @@ namespace Banquale.DataContractPersistance
 		public string FileName { get; set; } = "ClientAndTransactionsList.xml";
 
 		public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "..//XML1_folder")/*"/Users/Perederii/SAE/Banquale/src/Banquale/Banquale/XML_folder"*/;
+		
+		public string FileName { get; set; } = "nomFichier.xml";
 
+        	public string FilePath2 { get; set; } = "..\\Persistances";
+        	public string FilePath { get; set; } = "C:\\Users\\louve\\depot\\Banquale\\src\\Banquale\\Persistances";
 
 		public (List<Client>, List<Transactions>) ChargeDonnee()
 		{
@@ -38,11 +51,15 @@ namespace Banquale.DataContractPersistance
 				Directory.CreateDirectory(FilePath);
 			}
 
-			using (Stream s = File.Create(Path.Combine(FilePath, FileName)))
+            XmlWriterSettings settings = new XmlWriterSettings() { Indent = true };
+            using (TextWriter tw = File.CreateText(Path.Combine(FilePath, FileName))) 
 			{
-				serializer.WriteObject(s, t);
+				using (XmlWriter writer = XmlWriter.Create(tw, settings))
+				{
+					serializer.WriteObject(writer, t);
+				}
 			}
-		}
+        }
     }
 }
 

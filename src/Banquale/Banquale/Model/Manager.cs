@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace Banquale.Model
 {
+	[DataContract]
 	public class Manager
 	{
+		[DataMember]
 		public List<Client> ListeClients { get; private set; }
 
-
+		[DataMember]
         public List<Transactions> ListeTransactions { get; private set; }
 
         public IPersistanceManager Persistance { get; set; }
