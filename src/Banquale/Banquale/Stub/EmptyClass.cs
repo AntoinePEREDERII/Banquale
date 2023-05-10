@@ -1,11 +1,22 @@
 ﻿using System;
+using Banquale.Model;
+
 namespace Banquale.Stub
 {
-	public class EmptyClass
+	public class Stub : IPersistanceManager
 	{
-		public EmptyClass()
-		{
-		}
-	}
+
+        (List<Client>, List<Transactions>) IPersistanceManager.ChargeDonnee()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IPersistanceManager.SauvegardeDonnee(List<Client> c, List<Transactions> t)
+        {
+            throw new NotImplementedException();
+        }
+
+    }
+
 }
 
