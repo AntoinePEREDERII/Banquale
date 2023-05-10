@@ -1,30 +1,27 @@
-<<<<<<< HEAD
-﻿using System;
-using System.Diagnostics;
-using System.Runtime.Serialization;
 using Banquale.Model;
-=======
-﻿using Banquale.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.Serialization;
 using System.Xml;
->>>>>>> 771dfebd455ecbc2d933450b081c14049561ab24
+
 
 namespace Banquale.DataContractPersistance
 {
 	public class DataContractPers : IPersistanceManager
 	{
+		//Partie Antoine
 
 		public string FileName { get; set; } = "ClientAndTransactionsList.xml";
 
 		public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "..//XML1_folder")/*"/Users/Perederii/SAE/Banquale/src/Banquale/Banquale/XML_folder"*/;
-		
-		public string FileName { get; set; } = "nomFichier.xml";
 
-        	public string FilePath2 { get; set; } = "..\\Persistances";
-        	public string FilePath { get; set; } = "C:\\Users\\louve\\depot\\Banquale\\src\\Banquale\\Persistances";
+		//Partie Titouan
+
+		//public string FileName { get; set; } = "nomFichier.xml";
+		
+  //      public string FilePath2 { get; set; } = "..\\Persistances";
+  //      public string FilePath { get; set; } = "C:\\Users\\louve\\depot\\Banquale\\src\\Banquale\\Persistances";
 
 		public (List<Client>, List<Transactions>) ChargeDonnee()
 		{
