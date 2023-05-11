@@ -10,11 +10,11 @@ namespace Banquale.DataContractPersistance
 {
 	public class DataContractPers : IPersistanceManager
 	{
-		//Partie Antoine
-
+        //Partie Antoine
+        public string FilePath { get; set; } = "/Users//Perederii//SAE//Banquale//src//Banquale//Banquale//Persistances";
 		public string FileName { get; set; } = "ClientAndTransactionsList.xml";
 
-		public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "..//XML1_folder")/*"/Users/Perederii/SAE/Banquale/src/Banquale/Banquale/XML_folder"*/;
+		//public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "..//XML1_folder")/*"/Users/Perederii/SAE/Banquale/src/Banquale/Banquale/XML_folder"*/;
 
 		//Partie Titouan
 
@@ -43,17 +43,15 @@ namespace Banquale.DataContractPersistance
 			if(!Directory.Exists(FilePath))
 			{
 				Debug.WriteLine("Directory crée à l'instant");
-				Debug.WriteLine(Directory.GetDirectoryRoot);
-				Debug.WriteLine(FilePath);
 				Directory.CreateDirectory(FilePath);
 			}
 
-            XmlWriterSettings settings = new XmlWriterSettings() { Indent = true };
+			var settings = new XmlWriterSettings() { Indent = true };
             using (TextWriter tw = File.CreateText(Path.Combine(FilePath, FileName))) 
 			{
 				using (XmlWriter writer = XmlWriter.Create(tw, settings))
 				{
-					serializer.WriteObject(writer, t);
+					serializer.WriteObject(writer, c);
 				}
 			}
         }
