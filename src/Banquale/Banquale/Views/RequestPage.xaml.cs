@@ -6,4 +6,10 @@ public partial class RequestPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    //public async void Send_Clicked(Object sender, EventArgs e)
+    //{
+    //    await Shell.Current.GoToAsync("//balance");
+    //}
+
 }

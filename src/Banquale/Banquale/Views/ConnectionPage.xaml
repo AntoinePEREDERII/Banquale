@@ -37,7 +37,8 @@
             TextColor="Black"
             MinimumHeightRequest="75"
             Margin="10,75,10,0"
-            FontSize="Large"/>
+            FontSize="Large"
+            Clicked="Connection_Clicked"/>
 
     </StackLayout>
 

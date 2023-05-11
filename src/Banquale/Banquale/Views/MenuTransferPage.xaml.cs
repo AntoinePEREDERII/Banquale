@@ -7,19 +7,19 @@ public partial class MenuTransferPage : ContentPage
         InitializeComponent();
 	}
 
-    public async void RIB_Clicked(Object sender, EventArgs e)
+    public async void RIB_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new RibPage());
+        await Shell.Current.Navigation.PushAsync(new RibPage());
     }
 
-    public async void Request_Clicked(System.Object sender, System.EventArgs e)
+    public async void Request_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new RequestPage());
+        await Shell.Current.Navigation.PushAsync(new RequestPage());
     }
 
-    public async void Transfer_Clicked(System.Object sender, System.EventArgs e)
+    public async void Transfer_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new TransferPage());
+        await Shell.Current.Navigation.PushAsync(new TransferPage());
     }
 
 }
