@@ -3,44 +3,45 @@
     x:Class="Banquale.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Banquale.Views"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:local="clr-namespace:Banquale"
+    xmlns:views="clr-namespace:Banquale.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+
+    <!--<ShellContent
+            	Title="Connection"
+            	ContentTemplate="{DataTemplate views:ConnectionPage}"
+            	Route="connection" />-->
+
+
+        <ShellContent ContentTemplate="{DataTemplate views:ConnectionPage}"
+                      Route="connection"/>
 
     <TabBar>
 
-        <Tab Icon="home.png"
-             Title="Compte">
+        <ShellContent
+            Title="Solde"
+            ContentTemplate="{DataTemplate views:BalancePage}"
+            Route="balance"
+            Icon="home.png"/>
 
-            <ShellContent
-                Title="Solde"
-                ContentTemplate="{DataTemplate local:BalancePage}"
-                Route="Views" />
+        <ShellContent
+            Title="Transactions"
+            ContentTemplate="{DataTemplate views:MenuTransferPage}"
+            Route="menu"
+            Icon="transactions.png"/>
 
-        </Tab>
+        <ShellContent
+            Title="Aide"
+            ContentTemplate="{DataTemplate views:HelpPage}"
+            Route="help"
+            Icon="help.png"/>
 
-        <Tab Icon="transactions.png"
-             Title="Transactions">
-
-            
-
-        </Tab>
-
-        <Tab Icon="help.png"
-             Title="Aide">
-
-            <ShellContent
-                Title="Help"
-                ContentTemplate="{DataTemplate local:HelpPage}"
-                Route="Views" />
-
-        </Tab>
-
-        <Tab Icon="accounts.png"
-             Title="Compte">
-
-            
-
-        </Tab>
+	    <ShellContent
+            Title="Compte"
+            ContentTemplate="{DataTemplate views:SwitchAccountPage}"
+            Route="account"
+            Icon="accounts.png"/>
 
     </TabBar>
 

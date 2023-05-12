@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Banquale.Views"
+             x:Class="Banquale.Views.SwitchAccountPage"
+             Title="SwitchAccountPage"
+             BackgroundColor="White">
+
+                    
+                <!-- Version StackLayout, moins efficace pour la responsivity -->
+    
+	<!--<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+        <local:SwitchAccountView/>
+
+        <local:SwitchAccountView/>
+
+
+        <Button Text="Déconnexion"
+                BorderWidth="2"
+                BorderColor="Black"
+                HorizontalOptions="Fill"
+                BackgroundColor="Gray"
+                TextColor="Black"
+                MinimumHeightRequest="75"
+                MinimumWidthRequest="375"
+                Margin="10,65,0,0"
+                FontSize="Large"/>
+
+    </StackLayout>-->
+    
+    <Grid RowDefinitions="3*, 2*, *, 2*, *, 2*, 3*">
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <local:SwitchAccountView Grid.Column="1"/>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <local:SwitchAccountView Grid.Column="1"/>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Text="Déconnexion"
+                BorderWidth="2"
+                BorderColor="Black"
+                HorizontalOptions="Fill"
+                BackgroundColor="Gray"
+                TextColor="Black"
+                MinimumHeightRequest="75"
+                MinimumWidthRequest="375"
+                FontSize="Large"/>
+        </Grid>
+
+    </Grid>
+</ContentPage>

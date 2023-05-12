@@ -1,8 +1,8 @@
 ﻿namespace Banquale.Views;
 
-public partial class HelpPage : ContentPage
+public partial class TransferPage : ContentPage
 {
-	public HelpPage()
+	public TransferPage()
 	{
 		InitializeComponent();
 	}
