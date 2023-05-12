@@ -9,6 +9,6 @@ public partial class HelpPage : ContentPage
 
     public async void Send_Clicked(Object sender, EventArgs e)
     {
-        await Shell.Current.Navigation.PushAsync(new BalancePage());
+        await Shell.Current.GoToAsync("//balance");
     }
 }

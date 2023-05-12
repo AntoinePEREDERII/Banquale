@@ -10,18 +10,8 @@ namespace Banquale.DataContractPersistance
 {
 	public class DataContractPers : IPersistanceManager
 	{
-        //Partie Antoine
-        public string FilePath { get; set; } = "/Users//Perederii//SAE//Banquale//src//Banquale//Banquale//Persistances";
+        public string FilePath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/datbase.xml";
 		public string FileName { get; set; } = "ClientAndTransactionsList.xml";
-
-		//public string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "..//XML1_folder")/*"/Users/Perederii/SAE/Banquale/src/Banquale/Banquale/XML_folder"*/;
-
-		//Partie Titouan
-
-		//public string FileName { get; set; } = "nomFichier.xml";
-		
-  //      public string FilePath2 { get; set; } = "..\\Persistances";
-  //      public string FilePath { get; set; } = "C:\\Users\\louve\\depot\\Banquale\\src\\Banquale\\Persistances";
 
 		public (List<Client>, List<Transactions>) ChargeDonnee()
 		{
@@ -43,6 +33,7 @@ namespace Banquale.DataContractPersistance
 			if(!Directory.Exists(FilePath))
 			{
 				Debug.WriteLine("Directory crée à l'instant");
+				Debug.WriteLine(FilePath);
 				Directory.CreateDirectory(FilePath);
 			}
 

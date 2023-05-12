@@ -8,47 +8,40 @@
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False">
 
+    <!--<ShellContent
+            	Title="Connection"
+            	ContentTemplate="{DataTemplate views:ConnectionPage}"
+            	Route="connection" />-->
+
+
+        <ShellContent ContentTemplate="{DataTemplate views:ConnectionPage}"
+                      Route="connection"/>
 
     <TabBar>
 
-        <Tab Icon="home.png"
-             Title="Compte">
+        <ShellContent
+            Title="Solde"
+            ContentTemplate="{DataTemplate views:BalancePage}"
+            Route="balance"
+            Icon="home.png"/>
 
-            <ShellContent
-                Title="Solde"
-                ContentTemplate="{DataTemplate views:BalancePage}"
-                Route="Views" />
+        <ShellContent
+            Title="Transactions"
+            ContentTemplate="{DataTemplate views:MenuTransferPage}"
+            Route="menu"
+            Icon="transactions.png"/>
 
-        </Tab>
-
-        <Tab Icon="transactions.png"
-             Title="Transactions">
-
-            <ShellContent
-                Title="Solde"
-                ContentTemplate="{DataTemplate views:MenuTransferPage}"
-                Route="Views" />
-
-        </Tab>
-
-        <Tab Icon="help.png"
-             Title="Aide">
-
-            <ShellContent
-                Title="Help"
-                ContentTemplate="{DataTemplate views:HelpPage}"
-                Route="Views" />
-
-        </Tab>
-
-        <Tab Icon="accounts.png"
-             Title="Compte">
+        <ShellContent
+            Title="Aide"
+            ContentTemplate="{DataTemplate views:HelpPage}"
+            Route="help"
+            Icon="help.png"/>
 
 	    <ShellContent
-            	Title="Categorie"
-            	ContentTemplate="{DataTemplate views:CategoryPage}"
-            	Route="Views" />
-        </Tab>
+            Title="Compte"
+            ContentTemplate="{DataTemplate views:SwitchAccountPage}"
+            Route="account"
+            Icon="accounts.png"/>
 
     </TabBar>
 

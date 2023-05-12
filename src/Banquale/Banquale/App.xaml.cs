@@ -6,7 +6,7 @@ namespace Banquale;
 public partial class App : Application
 {
 
-	public Manager MyManager { get; private set; } = new Manager(new Stub.Stub());
+	public Manager MyManager { get; private set; } = new Manager(new DataContractPersistance.DataContractPers());
 
 	
 

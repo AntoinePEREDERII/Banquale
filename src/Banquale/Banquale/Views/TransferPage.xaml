@@ -46,7 +46,8 @@
             Margin="0, 75, 0, 0"
             MinimumHeightRequest="80"
             WidthRequest="300"
-            MaximumWidthRequest="400"/>
+            MaximumWidthRequest="400"
+            Clicked="Send_Clicked"/>
 
     </VerticalStackLayout>
 

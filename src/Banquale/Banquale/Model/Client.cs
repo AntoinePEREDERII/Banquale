@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 
 namespace Banquale.Model
 {
-    //[DataFrameworks]
+    [DataContract]
     public class Client: Personne
     {
-        //[DataMember]
+        [DataMember]
         public List<Compte> ListeComptes { get; private set; }
 
 

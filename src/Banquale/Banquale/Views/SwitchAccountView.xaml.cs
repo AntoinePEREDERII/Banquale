@@ -6,4 +6,10 @@ public partial class SwitchAccountView : ContentView
 	{
 		InitializeComponent();
 	}
+
+    public async void Transfer_Clicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("///connection");
+    }
+
 }
