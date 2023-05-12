@@ -12,20 +12,20 @@
             Margin="20, 5, 20, 5"
             HorizontalOptions="Fill">
             
-            <Image Source="dotnet_bot.png"
-                   Grid.Column="0"
-                   MaximumHeightRequest="30"/>
-            <Label
-                Text="Depense"
-                Grid.Column="1"
-                VerticalOptions="Center"
-                Margin="10, 0, 0, 0"/>
-            <Label
-                Text="Prix"
-                Grid.Column="2"
-                VerticalOptions="Center"
-                HorizontalOptions="End"
-                Margin="0, 0, 20, 0"/>
+                <Image Source="dotnet_bot.png"
+                       Grid.Column="0"
+                       MaximumHeightRequest="30"/>
+                <Label
+                    Text="Depense"
+                    Grid.Column="1"
+                    VerticalOptions="Center"
+                    Margin="10, 0, 0, 0"/>
+                <Label
+                    Text="Prix"
+                    Grid.Column="2"
+                    VerticalOptions="Center"
+                    HorizontalOptions="End"
+                    Margin="0, 0, 20, 0"/>
         </Grid>
 
 
