@@ -4,8 +4,7 @@
              xmlns:local="clr-namespace:Banquale.Views"
              x:Class="Banquale.Views.BalancePage"
              Title="BalancePage"
-             NavigationPage.HasBackButton="True"
-             >
+             Shell.NavBarIsVisible="False">
     
     <Grid RowDefinitions="auto, *">
         <Grid BackgroundColor="Beige"
