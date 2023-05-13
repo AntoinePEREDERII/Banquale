@@ -15,8 +15,7 @@
 Banquale is a mobile banking application built using .NET MAUI technology for the Android platform. This application provides users with a simple and intuitive way to manage their finances, including viewing account balances, transferring money and more.
 
 ## Documentation 
-Documentation and information about `Banquale` are available [hereT](https://codefirst.iut.uca.fr/documentation/antoine.perederii/Banquale/doxygen/index.html)
-<a src="https://codefirst.iut.uca.fr/documentation/antoine.perederii/Banquale/doxygen/index.html">here</a>
+Documentation and information about `Banquale` are available [here](https://codefirst.iut.uca.fr/documentation/antoine.perederii/Banquale/doxygen/index.html)
 
 ### Prerequisites
 * [Visual Studio 2022](https://visualstudio.microsoft.com/fr/vs/) - IDE
