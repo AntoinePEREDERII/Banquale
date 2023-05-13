@@ -39,14 +39,14 @@ Documentation and information about `Banquale` are available [here](https://code
 The application is functional but the color is not good and the design is not finished. All the C# code is not commented and the documentation is not finished.
 
 ## Screen Capture
-<img src="./Documentation/images/splash.jpg" height="290">
-<img src="./Documentation/images/connection.jpg" height="290">
-<img src="./Documentation/images/balance.jpg" height="290">
-<img src="./Documentation/images/menu.jpg" height="290">
-<img src="./Documentation/images/help.jpg" height="290">
-<img src="./Documentation/images/accounts.jpg" height="290">
-<img src="./Documentation/images/rib.jpg" height="290">
-<img src="./Documentation/images/payement.jpg" height="290">
+<img src="./Documentation/images/splash.jpg" height="280">
+<img src="./Documentation/images/connection.jpg" height="280">
+<img src="./Documentation/images/balance.jpg" height="280">
+<img src="./Documentation/images/menu.jpg" height="280">
+<img src="./Documentation/images/help.jpg" height="280">
+<img src="./Documentation/images/accounts.jpg" height="280">
+<img src="./Documentation/images/rib.jpg" height="280">
+<img src="./Documentation/images/payement.jpg" height="280">
 
 ## Usage
 * The application is used to manage your bank account
