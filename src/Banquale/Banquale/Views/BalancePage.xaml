@@ -54,6 +54,7 @@
                     AlignContent="Start"
                     Direction="Row"
                     Wrap="Wrap">
+
             <local:BalanceView/>
             <local:BalanceView/>
             <local:BalanceView/>
