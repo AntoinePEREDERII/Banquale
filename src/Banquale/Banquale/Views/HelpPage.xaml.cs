@@ -11,4 +11,5 @@ public partial class HelpPage : ContentPage
     {
         await Shell.Current.GoToAsync("//balance");
     }
+
 }
