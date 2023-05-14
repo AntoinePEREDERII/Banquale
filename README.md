@@ -55,13 +55,12 @@ The application is functional but the color is not good and the design is not fi
 
 ## Built With
 * [Visual Studio 2022](https://visualstudio.microsoft.com/fr/vs/) - IDE
-* [CodeFirst](https://codefirst.iut.uca.fr/) - GitLab
+* [CodeFirst](https://codefirst.iut.uca.fr/) - Gitea
   * [Drone](https://codefirst.iut.uca.fr/) - CI
   * [SonarQube](https://codefirst.iut.uca.fr/sonar/) - Quality
 * [.NET MAUI 7.0](https://docs.microsoft.com/fr-fr/dotnet/maui/get-started/installation) - Framework
   * [C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/) - Language
   * [XAML](https://docs.microsoft.com/fr-fr/dotnet/desktop-wpf/fundamentals/xaml) - Language
-  * [Xamarin.Essentials](https://docs.microsoft.com/fr-fr/xamarin/essentials/) - Library  
 * [Doxygen](https://codefirst.iut.uca.fr/sonar/) - Documentation
 
 <!-- ## Known issues and limitations -->
@@ -71,7 +70,7 @@ The application is functional but the color is not good and the design is not fi
 * [Titouan LOUVET](https://codefirst.iut.uca.fr/u/titouan.louvet)
 
 ## How to contribute
-1. Clone it (<https://codefirst.iut.uca.fr/antoine.perederii/Banquale/fork>)
+1. Fork it (<https://codefirst.iut.uca.fr/antoine.perederii/Banquale/fork>)
 2. Create your feature branch (`git checkout -b feature/featureName`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin feature/featureName`)
