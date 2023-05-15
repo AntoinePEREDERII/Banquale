@@ -3,24 +3,24 @@ using Banquale.Model;
 
 namespace Banquale.Stub
 {
-	public class Stub : IPersistanceManager
+	public class Stub : IPersistenceManager
 	{
 
-        public (List<Client>, List<Transactions>) ChargeDonnee()
+        public (List<Customer>, List<Transactions>) DataLoad()
         {
-            Client Client1 = new Client("Jacques", "Morice", "J'aimeLesFrites");
-            Client Client2 = new Client("Francis", "Begore", "J'aimeLes");
-            Client Client3 = new Client("Michel", "Boudout", "MonMdP");
-            Console.WriteLine(Client1);
-            List<Client> ListeClients = new List<Client>();
-            List<Transactions> ListeTransactions = new List<Transactions>();
-            ListeClients.Add(Client1);
-            ListeClients.Add(Client2);
-            ListeClients.Add(Client3);
-            return (ListeClients, ListeTransactions);
+            Customer Customer1 = new Customer("Jacques", "Morice", "J'aimeLesFrites");
+            Customer Customer2 = new Customer("Francis", "Begore", "J'aimeLes");
+            Customer Customer3 = new Customer("Michel", "Boudout", "MonMdP");
+            Console.WriteLine(Customer1);
+            List<Customer> CustomersList = new List<Customer>();
+            List<Transactions> TransactionsList = new List<Transactions>();
+            CustomersList.Add(Customer1);
+            CustomersList.Add(Customer2);
+            CustomersList.Add(Customer3);
+            return (CustomersList, TransactionsList);
         }
 
-        public void SauvegardeDonnee(List<Client> c, List<Transactions> t)
+        public void DataSave(List<Customer> c, List<Transactions> t)
         {
             throw new NotImplementedException();
         }

@@ -10,17 +10,17 @@ namespace Banquale.Model
     {
         public int Type { get; private set; }
 
-        public int Somme { get; private set; }
+        public int Sum { get; private set; }
 
-        public Compte CompteImplique { get; private set; }
+        public Account InvolvedAccounts { get; private set; }
 
-        public string Categorie { get; private set; }
+        public string Category { get; private set; }
 
-        public Transactions(int type, int somme, Compte compteImplique, string categorie) { 
+        public Transactions(int type, int sum, Account involvedAccounts, string category) { 
             Type = type;
-            Somme = somme;
-            CompteImplique = compteImplique;
-            Categorie = categorie;
+            Sum = sum;
+            InvolvedAccounts = involvedAccounts;
+            Category = category;
         }
     }
 }
