@@ -7,56 +7,56 @@ namespace Banquale.Model
 	public class Manager
 	{
 		[DataMember]
-		public List<Client> ListeClients { get; private set; }
+		public List<Customer> CustomersList { get; private set; }
 
 		[DataMember]
-        public List<Transactions> ListeTransactions { get; private set; }
+        public List<Transactions> TransactionsList { get; private set; }
 
-        public IPersistanceManager Persistance { get; set; }
+        public IPersistenceManager Persistence { get; set; }
 
-		public Manager(IPersistanceManager persistance) {
+		public Manager(IPersistenceManager persistance) {
 
-            ListeTransactions = new List<Transactions>();
-            ListeClients = new List<Client>();
-			Persistance = persistance;
+            TransactionsList = new List<Transactions>();
+            CustomersList = new List<Customer>();
+			Persistence = persistance;
 
 		}
 
         public Manager()
         {
-            ListeClients = new List<Client>();
-			ListeTransactions = new List<Transactions>();
+            CustomersList = new List<Customer>();
+			TransactionsList = new List<Transactions>();
         }
 
-        public bool AjouterClient(Client MonClient)
+        public bool AddCustomer(Customer MyCustomer)
 		{
-			ListeClients.Add(MonClient);
+			CustomersList.Add(MyCustomer);
 			return true;
 		}
 
-		public Client GetClient(int place) {
-				return ListeClients[place];
+		public Customer GetCustomer(int place) {
+				return CustomersList[place];
 		}
 
-        public void SauvegardeDonnee()
+        public void DataSave()
         {
-            Persistance.SauvegardeDonnee(ListeClients, ListeTransactions);
+            Persistence.DataSave(CustomersList, TransactionsList);
         }
 
-        public void ChargeDonnee()
+        public void DataLoad()
 		{
-			var donnees = Persistance.ChargeDonnee();
+			var data = Persistence.DataLoad();
 
-			ListeClients.AddRange(donnees.Item1);
-			ListeTransactions.AddRange(donnees.Item2);
+			CustomersList.AddRange(data.Item1);
+			TransactionsList.AddRange(data.Item2);
 
-			foreach (var j in donnees.Item1)
+			foreach (var j in data.Item1)
 			{
-				ListeClients.Add(j);
+				CustomersList.Add(j);
 			}
-			foreach (var i in donnees.Item2)
+			foreach (var i in data.Item2)
 			{
-				ListeTransactions.Add(i);
+				TransactionsList.Add(i);
 			}
 		}
 

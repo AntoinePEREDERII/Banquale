@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Banquale.Model
 {
-    public class Compte
+    public class Account
     {
-        public int Solde { get; set; }
+        public int Balance { get; set; }
 
-        public string Nom { get; set;}
+        public string Name { get; set;}
 
         public string IBAN { get; set; }
 
-        public List<Transactions> CompteList { get; set; }
+        public List<Transactions> TransactionsList { get; set; }
     }
 }

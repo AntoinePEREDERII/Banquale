@@ -7,8 +7,6 @@ public partial class BalancePage : ContentPage
 	public BalancePage()
 	{
 		InitializeComponent();
-
-		
 	}
 
 	public async void OnButtonClicked(object sender, EventArgs e)
