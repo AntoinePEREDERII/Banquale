@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Banquale.Views.CategoryPage"
@@ -6,27 +6,18 @@
              Title="CategoryPage"
              BackgroundColor="White">
     
-    
-    <Grid RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*,2*">
-        
-        
-        <ImageButton Source="back_arrow_icon.svg" Grid.Row="0" HorizontalOptions="Start"/>
-
-        <local:CategoryView Grid.Row="2"/>
-        <local:CategoryView Grid.Row="3"/>
-        <local:CategoryView Grid.Row="4"/>
-        <local:CategoryView Grid.Row="5"/>
-        <local:CategoryView Grid.Row="6"/>
-        <local:CategoryView Grid.Row="7"/>
-        <local:CategoryView Grid.Row="8"/>
-        <local:CategoryView Grid.Row="9"/>
-        <local:CategoryView Grid.Row="10"/>
-        <local:CategoryView Grid.Row="11"/>
-
-        <VerticalStackLayout Grid.Row="12">
-            <BoxView HorizontalOptions="FillAndExpand"
-                 HeightRequest="1.3"/>
+        <VerticalStackLayout
+            VerticalOptions="Center" >
+            <local:CategoryView />
+            <local:CategoryView />
+            <local:CategoryView />
+            <local:CategoryView />
+            <local:CategoryView />
+            <local:CategoryView />
+            <local:CategoryView />
+            <local:CategoryView />
+            <local:CategoryView />
+            <local:CategoryView />
         </VerticalStackLayout>
-        
-    </Grid>
+
 </ContentPage>

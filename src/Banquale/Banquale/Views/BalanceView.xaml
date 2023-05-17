@@ -11,6 +11,12 @@
             ColumnDefinitions="40, 3*, *"
             Margin="20, 5, 20, 5"
             HorizontalOptions="Fill">
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer
+                                  Tapped="OnButtonClicked"
+                                  NumberOfTapsRequired="1" />
+            </Grid.GestureRecognizers>
             
                 <Image Source="dotnet_bot.png"
                        Grid.Column="0"
