@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Banquale.Views"
+             xmlns:model="clr-namespace:Model"
              x:Class="Banquale.Views.BalancePage"
              Title="BalancePage"
              Shell.NavBarIsVisible="False">
