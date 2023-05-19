@@ -1,4 +1,5 @@
-﻿namespace Banquale.Views;
+﻿using Banquale.Model;
+namespace Banquale.Views;
 
 public partial class RequestPage : ContentPage
 {
@@ -11,5 +12,7 @@ public partial class RequestPage : ContentPage
     //{
     //    await Shell.Current.GoToAsync("//balance");
     //}
+
+    //Client.DoRequest(this.name, this.IBAN, )
 
 }

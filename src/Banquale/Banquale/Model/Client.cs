@@ -18,6 +18,20 @@ namespace Banquale.Model
         public Client(string nom, string prenom, string mdp) : base(nom, prenom, mdp)
         {}
 
+        //public bool DoTransactions(string name, string IBAN, float montant)
+        //{
+        //    List<Transactions> transactions.add(montant);
+        //    if ()
+        //        return true;
+        //}
+
+        //public bool DoRequest(string name, string IBAN, float montant)
+        //{
+        //    List<Transactions> transactions.add(montant);
+        //    if ()
+        //        return true;
+        //}
+
 
     }
 
