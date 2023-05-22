@@ -22,17 +22,17 @@ namespace Banquale.Stub
             Transactions Transactions3 = new Transactions(0, 1000, Account3, "Test", new DateTime(2020, 9, 1));
 
             Console.WriteLine(Customer1);
-            List<Customer> ListeCustomers = new List<Customer>();
-            List<Transactions> ListeTransactions = new List<Transactions>();
-            //List<Account> ListeAccount = new List<Account>();
-            //ListeAccount.Add( Account1 );
-            //ListeAccount.Add(Account2);
-            //ListeAccount.Add(Account3);
+            List<Customer> CustomersList = new List<Customer>();
+            List<Transactions> TransactionsList= new List<Transactions>();
+            List<Account> AcountsList = new List<Account>();
+            AcountsList.Add(Account1);
+            AcountsList.Add(Account2);
+            AcountsList.Add(Account3);
 
-            ListeCustomers.Add(Customer1);
-            ListeCustomers.Add(Customer2);
-            ListeCustomers.Add(Customer3);
-            return (ListeCustomers, ListeTransactions /*, ListeAccount*/);
+            CustomersList.Add(Customer1);
+            CustomersList.Add(Customer2);
+            CustomersList.Add(Customer3);
+            return (CustomersList, TransactionsList /*, AccountsList*/);
         }
 
         public void DataSave(List<Customer> c, List<Transactions> t)

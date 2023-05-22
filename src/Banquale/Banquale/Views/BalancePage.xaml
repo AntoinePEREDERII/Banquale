@@ -28,7 +28,7 @@
                 BackgroundColor="AliceBlue"
                 Margin="0, 15, 0, 0"/>
             <Label
-                Text="{Binding Name}"
+                Text="{Binding AccountList[0].Name}"
                 Grid.Row="1"
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
@@ -42,7 +42,7 @@
                     TextColor="Black"
                     HorizontalOptions="Center"/>
                 <Label
-                    Text="{Binding Balance}"
+                    Text="{Binding AccountList[0].Balance}"
                     Grid.Column="1"
                     MinimumWidthRequest="70"
                     TextColor="Black"
