@@ -873,7 +873,7 @@
 											"top": 267,
 											"width": 479.64794921875,
 											"height": 13,
-											"text": "+Account(Balance: int, Name: string, IBAN: string, AccountList: List<Transactions>)",
+											"text": "+Account(balance: int, name: string, iban: string)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1686,7 +1686,7 @@
 										"$ref": "AAAAAAGIHswqEsBn9oI="
 									},
 									"edgePosition": 1,
-									"text": "-AccountsList *"
+									"text": "+AccountsList *"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -1957,7 +1957,7 @@
 										"$ref": "AAAAAAGIHsw52cD7NVc="
 									},
 									"edgePosition": 1,
-									"text": "-TransactionsList *"
+									"text": "+TransactionsList *"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -3142,8 +3142,7 @@
 									"$ref": "AAAAAAGIHpOZJ76ocws="
 								},
 								"navigable": "navigable"
-							},
-							"visibility": "private"
+							}
 						}
 					],
 					"attributes": [
@@ -3233,8 +3232,7 @@
 									"$ref": "AAAAAAGIHpWTGr74dEI="
 								},
 								"navigable": "navigable"
-							},
-							"visibility": "private"
+							}
 						}
 					],
 					"attributes": [
@@ -3284,7 +3282,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGIHpUDir7q9Xk="
 									},
-									"name": "Balance",
+									"name": "balance",
 									"type": "int"
 								},
 								{
@@ -3293,7 +3291,7 @@
 									"_parent": {
 										"$ref": "AAAAAAGIHpUDir7q9Xk="
 									},
-									"name": "Name",
+									"name": "name",
 									"type": "string"
 								},
 								{
@@ -3302,17 +3300,8 @@
 									"_parent": {
 										"$ref": "AAAAAAGIHpUDir7q9Xk="
 									},
-									"name": "IBAN",
+									"name": "iban",
 									"type": "string"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAGIHsqjOcAfwqc=",
-									"_parent": {
-										"$ref": "AAAAAAGIHpUDir7q9Xk="
-									},
-									"name": "AccountList",
-									"type": "List<Transactions>"
 								}
 							]
 						},
