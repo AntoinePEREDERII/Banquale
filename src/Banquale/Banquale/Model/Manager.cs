@@ -14,11 +14,11 @@ namespace Banquale.Model
 
         public IPersistenceManager Persistence { get; set; }
 
-		public Manager(IPersistenceManager persistance) {
+		public Manager(IPersistenceManager persistence) {
 
             TransactionsList = new List<Transactions>();
             CustomersList = new List<Customer>();
-			Persistence = persistance;
+			Persistence = persistence;
 
 		}
 

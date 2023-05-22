@@ -6,11 +6,6 @@
     xmlns:views="clr-namespace:Banquale.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    <!--<ShellContent
-            	Title="Connection"
-            	ContentTemplate="{DataTemplate views:ConnectionPage}"
-            	Route="connection" />-->
-
 
         <ShellContent ContentTemplate="{DataTemplate views:ConnectionPage}"
                       Route="connection"/>
