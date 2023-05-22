@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel;
+using System.Runtime.Serialization;
 
 namespace Banquale.Model
 {
+    [DataContract]
     public class Transactions : INotifyPropertyChanged
     {
 
@@ -9,7 +11,9 @@ namespace Banquale.Model
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public int Type 
+
+        [DataMember]
+        public int Type
         { 
             get => type;
             set
@@ -20,9 +24,11 @@ namespace Banquale.Model
                 OnPropertyChanged(nameof(Type));
             }
         }
+        [DataMember]
 
         private int type;
 
+        [DataMember]
         public Double Sum 
         {
             get => sum;
@@ -34,8 +40,10 @@ namespace Banquale.Model
                 OnPropertyChanged(nameof(Sum));
             }
         }
+        [DataMember]
         private Double sum;
 
+        [DataMember]
         public Account InvolvedAccounts
         {
             get => involvedAccounts;
@@ -47,8 +55,10 @@ namespace Banquale.Model
                 OnPropertyChanged(nameof(InvolvedAccounts));
             }
         }
+        [DataMember]
         private Account involvedAccounts;
 
+        [DataMember]
         public string Category
         {
             get => category;
@@ -60,8 +70,10 @@ namespace Banquale.Model
                 OnPropertyChanged(nameof(Category));
             }
         }
+        [DataMember]
         private string category;
 
+        [DataMember]
         public DateTime Date 
         {
             get => date;
@@ -73,6 +85,7 @@ namespace Banquale.Model
                 OnPropertyChanged(nameof(Date));
             }
         }
+        [DataMember]
         private DateTime date;
 
         public Transactions(int type, Double sum, Account involvedAccounts, string category, DateTime date)

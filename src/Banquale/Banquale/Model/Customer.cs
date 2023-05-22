@@ -12,7 +12,7 @@ namespace Banquale.Model
     public class Customer : Person
     {
         [DataMember]
-        public List<Account> AccountsList { get; private set; }
+        public List<Account> AccountsList { get; private set; } = new List<Account>();
 
         //private uint NbAccounts { get; set; } = AccountsList.Count;
 

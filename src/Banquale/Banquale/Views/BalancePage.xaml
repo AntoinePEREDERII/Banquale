@@ -42,7 +42,7 @@
                     TextColor="Black"
                     HorizontalOptions="Center"/>
                 <Label
-                    Text="{Binding AccountList[0].Balance}"
+                    Text="{Binding CustomersList[0].AccountList[0].Balance}"
                     Grid.Column="1"
                     MinimumWidthRequest="70"
                     TextColor="Black"
