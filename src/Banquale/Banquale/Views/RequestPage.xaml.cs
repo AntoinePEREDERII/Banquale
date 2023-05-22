@@ -8,11 +8,10 @@ public partial class RequestPage : ContentPage
 		InitializeComponent();
 	}
 
-    //public async void Send_Clicked(Object sender, EventArgs e)
-    //{
-    //    await Shell.Current.GoToAsync("//balance");
-    //}
-
-    //Client.DoRequest(this.name, this.IBAN, )
+    public async void Send_Clicked(Object sender, EventArgs e)
+    {
+        Account.DoRequest(Name, IBAN, Sum);
+        await Shell.Current.GoToAsync("//balance");
+    }
 
 }

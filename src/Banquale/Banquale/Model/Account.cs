@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,6 +75,14 @@ namespace Banquale.Model
         //        return true;
         //}
 
+        internal static void DoTransactions(Entry name, Entry iban, Entry sum)
+        {
+            Debug.WriteLine(name);
+            Debug.WriteLine(iban);
+            Debug.WriteLine(sum);
+            Debug.WriteLine("Transaction successed !");
+        }
+
         //public bool DoRequest(string name, string IBAN, float sum)
         //{
         //    List<Transactions> transactions.add(sum);
@@ -88,11 +97,16 @@ namespace Banquale.Model
 
         internal static void AskForHelp(Entry request, Entry subject, Editor message)
         {
-            Console.WriteLine(request);
-            Console.WriteLine(subject);
-            Console.WriteLine(message);
-            Console.WriteLine("Help button pressed !");
+            Debug.WriteLine(request);
+            Debug.WriteLine(subject);
+            Debug.WriteLine(message);
+            Debug.WriteLine("Help button pressed !");
             //throw new NotImplementedException();
+        }
+
+        internal static void DoRequest(Entry name, Entry iBAN, Entry sum)
+        {
+            throw new NotImplementedException();
         }
     }
 }
