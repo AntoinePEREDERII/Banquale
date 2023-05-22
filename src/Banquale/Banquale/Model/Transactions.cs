@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.Apache.Http.Cookies;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -28,44 +29,44 @@ namespace Banquale.Model
 
         private int type;
 
-        public Double Somme 
+        public Double Sum 
         {
-            get => somme;
+            get => sum;
             set
             {
-                if (somme == value)
+                if (sum == value)
                     return;
-                somme = value;
-                OnPropertyChanged(nameof(Somme));
+                sum = value;
+                OnPropertyChanged(nameof(Sum));
             }
         }
-        private Double somme;
+        private Double sum;
 
-        public Compte CompteImplique 
+        public Account InvolvedAccounts
         {
-            get => compteImplique;
+            get => involvedAccounts;
             set
             {
-                if (compteImplique == value)
+                if (involvedAccounts == value)
                     return;
-                compteImplique = value;
-                OnPropertyChanged(nameof(CompteImplique));
+                involvedAccounts = value;
+                OnPropertyChanged(nameof(InvolvedAccounts));
             }
         }
-        private Compte compteImplique;
+        private Account involvedAccounts;
 
-        public string Categorie 
+        public string Category
         {
-            get => categorie;
+            get => category;
             set
             {
-                if (categorie == value)
+                if (category == value)
                     return;
-                categorie = value;
-                OnPropertyChanged(nameof(Categorie));
+                category = value;
+                OnPropertyChanged(nameof(Category));
             }
         }
-        private string categorie;
+        private string category;
 
         public DateTime Date 
         {
@@ -80,23 +81,13 @@ namespace Banquale.Model
         }
         private DateTime date;
 
-        public Transactions(int type, Double somme, Compte compteImplique, string categorie, DateTime date) { 
-            Type = type;
-            Somme = somme;
-            CompteImplique = compteImplique;
-            Categorie = categorie;
-            Date = date;
-        public int Sum { get; private set; }
-
-        public Account InvolvedAccounts { get; private set; }
-
-        public string Category { get; private set; }
-
-        public Transactions(int type, int sum, Account involvedAccounts, string category) { 
+        public Transactions(int type, Double sum, Account involvedAccounts, string category, DateTime date)
+        {
             Type = type;
             Sum = sum;
             InvolvedAccounts = involvedAccounts;
             Category = category;
+            Date = date;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
