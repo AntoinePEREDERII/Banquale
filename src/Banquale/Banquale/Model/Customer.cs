@@ -14,7 +14,7 @@ namespace Banquale.Model
         [DataMember]
         public List<Account> AccountsList { get; private set; }
 
-        //private unsigned int NbAccounts { get; private set; }
+        //private uint NbAccounts { get; set; } = AccountsList.Count;
 
 
         public Customer(string name, string firstName, string password) : base(name, firstName, password)

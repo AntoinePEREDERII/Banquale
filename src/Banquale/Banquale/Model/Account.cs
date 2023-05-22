@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Banquale.Model
 {
     public class Account : INotifyPropertyChanged
@@ -71,7 +70,7 @@ namespace Banquale.Model
         //public bool DoTransactions(string name, string IBAN, float sum)
         //{
         //    List<Transactions> transactions.add(sum);
-        //    if ()
+        //    if()
         //        return true;
         //}
 
@@ -84,8 +83,16 @@ namespace Banquale.Model
 
         //public void AskForHelp(string type, string type2, string message)
         //{
-
+        //    Console.WriteLine("Help button pressed !");
         //}
 
+        internal static void AskForHelp(Entry request, Entry subject, Editor message)
+        {
+            Console.WriteLine(request);
+            Console.WriteLine(subject);
+            Console.WriteLine(message);
+            Console.WriteLine("Help button pressed !");
+            //throw new NotImplementedException();
+        }
     }
 }
