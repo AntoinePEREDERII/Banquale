@@ -14,23 +14,13 @@ namespace Banquale.Model
         [DataMember]
         public List<Account> AccountsList { get; private set; }
 
+        //private unsigned int NbAccounts { get; private set; }
+
 
         public Customer(string name, string firstName, string password) : base(name, firstName, password)
         {}
 
-        //public bool DoTransactions(string name, string IBAN, float montant)
-        //{
-        //    List<Transactions> transactions.add(montant);
-        //    if ()
-        //        return true;
-        //}
-
-        //public bool DoRequest(string name, string IBAN, float montant)
-        //{
-        //    List<Transactions> transactions.add(montant);
-        //    if ()
-        //        return true;
-        //}
+        
 
 
     }
