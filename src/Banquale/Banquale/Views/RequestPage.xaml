@@ -13,7 +13,8 @@
 
             <Entry Placeholder="Destinataire"
                    HorizontalOptions="Center"
-                   WidthRequest="280"/>
+                   WidthRequest="280"
+                   x:Name="Name"/>
 
         </Frame>
 

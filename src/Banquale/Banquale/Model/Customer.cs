@@ -14,9 +14,13 @@ namespace Banquale.Model
         [DataMember]
         public List<Account> AccountsList { get; private set; }
 
+        //private unsigned int NbAccounts { get; private set; }
+
 
         public Customer(string name, string firstName, string password) : base(name, firstName, password)
         {}
+
+        
 
 
     }

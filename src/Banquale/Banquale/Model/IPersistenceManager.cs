@@ -10,6 +10,6 @@ namespace Banquale.Model
     {
         public (List<Customer>, List<Transactions>) DataLoad();
 
-        void DataSave(List<Customer> c, List<Transactions> t);
+        void DataSave(List<Customer> c, List<Transactions> t /*, List<Account> c2*/);
     }
 }
