@@ -1,10 +1,4 @@
-﻿using Org.Apache.Http.Cookies;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace Banquale.Model
 {
