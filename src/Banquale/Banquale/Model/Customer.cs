@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 namespace Banquale.Model
 {
     [DataContract]
-    public class Client: Personne
+    public class Customer : Person
     {
         [DataMember]
-        public List<Compte> ListeComptes { get; private set; }
+        public List<Account> AccountsList { get; private set; }
 
 
-        public Client(string nom, string prenom, string mdp) : base(nom, prenom, mdp)
+        public Customer(string name, string firstName, string password) : base(name, firstName, password)
         {}
 
         //public bool DoTransactions(string name, string IBAN, float montant)

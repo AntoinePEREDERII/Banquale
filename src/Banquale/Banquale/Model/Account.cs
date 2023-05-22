@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 
 namespace Banquale.Model
 {
-    public class Compte : INotifyPropertyChanged
+    public class Account : INotifyPropertyChanged
     {
+	public event PropertyChangedEventHandler PropertyChanged;
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public int Balance { get; set; }
+
+        public string Name { get; set;}
 
         void OnPropertyChanged(string propertyName)
         {
@@ -59,7 +62,6 @@ namespace Banquale.Model
         }
         private string iBAN;
 
-        public List<Transactions> CompteList { get; set; }
 
         public Compte(int solde, string nom, string iBAN)
         {
@@ -67,5 +69,6 @@ namespace Banquale.Model
             Nom = nom;
             IBAN = iBAN;
         }
+        public List<Transactions> TransactionsList { get; set; }
     }
 }

@@ -8,31 +8,31 @@ using System.Xml;
 
 namespace Banquale.DataContractPersistance
 {
-	public class DataContractPers : IPersistanceManager
+	public class DataContractPers : IPersistenceManager
 	{
         public string FilePath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/datbase.xml";
 		public string FileName { get; set; } = "ClientAndTransactionsList.xml";
 
-		public (List<Client>, List<Transactions>) ChargeDonnee()
+		public (List<Customer>, List<Transactions>) DataLoad()
 		{
-			var serializer = new DataContractSerializer(typeof(List<Client>));
+			var serializer = new DataContractSerializer(typeof(List<Customer>));
 
-			List<Client> ListClients;
+			List<Customer> CustomersList;
 
 			using (Stream s = File.OpenRead(Path.Combine(FilePath, FileName)))
 			{
-				ListClients = serializer.ReadObject(s) as List<Client>;
+				CustomersList = serializer.ReadObject(s) as List<Customer>;
 			}
-			return (ListClients, new List<Transactions>());
+			return (CustomersList, new List<Transactions>());
 		}
 
-		public void SauvegardeDonnee(List<Client> c, List<Transactions> t)
+		public void DataSave(List<Customer> c, List<Transactions> t)
 		{
-			var serializer = new DataContractSerializer(typeof(List<Client>));
+			var serializer = new DataContractSerializer(typeof(List<Customer>));
 
 			if(!Directory.Exists(FilePath))
 			{
-				Debug.WriteLine("Directory crée à l'instant");
+				Debug.WriteLine("Directory created");
 				Debug.WriteLine(FilePath);
 				Directory.CreateDirectory(FilePath);
 			}

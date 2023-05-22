@@ -86,6 +86,17 @@ namespace Banquale.Model
             CompteImplique = compteImplique;
             Categorie = categorie;
             Date = date;
+        public int Sum { get; private set; }
+
+        public Account InvolvedAccounts { get; private set; }
+
+        public string Category { get; private set; }
+
+        public Transactions(int type, int sum, Account involvedAccounts, string category) { 
+            Type = type;
+            Sum = sum;
+            InvolvedAccounts = involvedAccounts;
+            Category = category;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
