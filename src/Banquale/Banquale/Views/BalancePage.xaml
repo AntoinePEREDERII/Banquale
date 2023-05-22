@@ -2,9 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Banquale.Views"
+             xmlns:model="clr-namespace:Banquale.Model"
              x:Class="Banquale.Views.BalancePage"
              Title="BalancePage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+>
     
     <Grid RowDefinitions="auto, *">
         <Grid BackgroundColor="Beige"
@@ -26,21 +28,24 @@
                 BackgroundColor="AliceBlue"
                 Margin="0, 15, 0, 0"/>
             <Label
-                Text="Mme Perotte"
+                Text="{Binding Nom}"
                 Grid.Row="1"
                 Grid.ColumnSpan="2"
                 HorizontalOptions="Center"
+                TextColor="Black"
                 BackgroundColor="SaddleBrown"/> <!-- colspan permet de redefinir la taille de la colonne -->
             
             <Grid ColumnDefinitions="*, *" Grid.Row="2" >
                 <Label
                     Text="Solde"
                     WidthRequest="75"
+                    TextColor="Black"
                     HorizontalOptions="Center"/>
                 <Label
-                    Text="1999,00 €"
+                    Text="{Binding Solde}"
                     Grid.Column="1"
                     MinimumWidthRequest="70"
+                    TextColor="Black"
                     HorizontalOptions="Center"/>
 
             </Grid>

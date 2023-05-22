@@ -10,6 +10,6 @@ namespace Banquale.Model
     {
         public (List<Client>, List<Transactions>) ChargeDonnee();
 
-        void SauvegardeDonnee(List<Client> c, List<Transactions> t);
+        void SauvegardeDonnee(List<Client> c, List<Transactions> t /*, List<Compte> c2*/);
     }
 }
