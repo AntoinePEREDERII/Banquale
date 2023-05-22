@@ -12,63 +12,80 @@ namespace Banquale.Model
     {
 	public event PropertyChangedEventHandler PropertyChanged;
 
-        public int Balance { get; set; }
-
-        public string Name { get; set;}
-
         void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public double Solde 
+        public double Balance 
         {
-            get => solde;
+            get => Balance;
             set
             {
-                if (solde == value)
+                if (balance == value)
                     return;
-                solde = value;
-                OnPropertyChanged(nameof(Solde));
+                balance = value;
+                OnPropertyChanged(nameof(Balance));
             }
         }
-        private double solde;
+        private double balance;
 
         
 
-        public string Nom 
+        public string Name 
         {
-            get => nom;
+            get => name;
             set
             {
-                if (nom == value)
+                if (name == value)
                     return;
-                nom = value;
-                OnPropertyChanged(nameof(Nom));
+                name = value;
+                OnPropertyChanged(nameof(Name));
             }
         }
-        private string nom;
+        private string name;
 
         public string IBAN 
         {
-            get => iBAN;
+            get => iban;
             set
             {
-                if (iBAN == value)
+                if (iban == value)
                     return;
-                iBAN = value;
+                iban = value;
                 OnPropertyChanged(nameof(IBAN));
             }
         }
-        private string iBAN;
+        private string iban;
 
 
-        public Compte(int solde, string nom, string iBAN)
+        public Account(int balance, string name, string iban)
         {
-            Solde = solde;
-            Nom = nom;
-            IBAN = iBAN;
+            Balance = balance;
+            Name = name;
+            IBAN = iban;
         }
+
         public List<Transactions> TransactionsList { get; set; }
+
+        //public bool DoTransactions(string name, string IBAN, float sum)
+        //{
+        //    List<Transactions> transactions.add(sum);
+        //    if ()
+        //        return true;
+        //}
+
+        //public bool DoRequest(string name, string IBAN, float sum)
+        //{
+        //    List<Transactions> transactions.add(sum);
+        //    if ()
+        //        return true;
+        //}
+
+        //public void AskForHelp(string type, string type2, string message)
+        //{
+
+        //}
+
     }
 }
