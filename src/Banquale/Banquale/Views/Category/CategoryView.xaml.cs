@@ -1,4 +1,4 @@
-namespace Banquale.Views;
+namespace Banquale.Views.Category;
 
 public partial class CategoryView : ContentView
 {

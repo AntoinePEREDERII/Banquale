@@ -1,5 +1,5 @@
 ﻿using Banquale.Model;
-namespace Banquale.Views;
+namespace Banquale.Views.Balance;
 
 
 public partial class BalancePage : ContentPage

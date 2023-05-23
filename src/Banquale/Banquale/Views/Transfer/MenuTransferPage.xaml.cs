@@ -1,4 +1,4 @@
-﻿namespace Banquale.Views;
+﻿namespace Banquale.Views.Transfer;
 
 public partial class MenuTransferPage : ContentPage
 {

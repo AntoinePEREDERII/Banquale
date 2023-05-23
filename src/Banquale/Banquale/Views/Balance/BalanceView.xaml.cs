@@ -1,4 +1,4 @@
-﻿namespace Banquale.Views;
+﻿namespace Banquale.Views.Balance;
 
 public partial class BalanceView : ContentView
 {
