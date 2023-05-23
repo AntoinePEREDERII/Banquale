@@ -9,7 +9,7 @@ public partial class SwitchAccountView : ContentView
 
     public async void Transfer_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("///connection");
+        await Shell.Current.GoToAsync("//balance");
     }
 
 }

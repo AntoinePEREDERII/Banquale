@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:Banquale.Views"
              x:Class="Banquale.Views.SwitchAccountPage"
              Title="SwitchAccountPage"
-             BackgroundColor="White"
              Shell.NavBarIsVisible="False">
 
                     
@@ -30,43 +29,19 @@
 
     </StackLayout>-->
     
-    <Grid RowDefinitions="3*, 2*, *, 2*, *, 2*, 3*">
+    <Grid RowDefinitions="2*, 2*, *">
 
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="15*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <local:SwitchAccountView Grid.Row="0"/>
 
-            <local:SwitchAccountView Grid.Column="1"/>
-        </Grid>
-
-        <Grid Grid.Row="3">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="15*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <local:SwitchAccountView Grid.Column="1"/>
-        </Grid>
-
-        <Grid Grid.Row="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="15*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="1" Text="Déconnexion"
-                BorderWidth="2"
-                BorderColor="Black"
+            <local:SwitchAccountView Grid.Row="1"/>
+        
+            <Button
+                Text="Déconnexion"
+                Grid.Row="2"
                 HorizontalOptions="Fill"
-                BackgroundColor="Gray"
-                TextColor="Black"
                 MinimumHeightRequest="75"
                 MinimumWidthRequest="375"
-                FontSize="Large"/>
-        </Grid>
+                Clicked="DisconnectionClicked"/>
 
     </Grid>
 </ContentPage>

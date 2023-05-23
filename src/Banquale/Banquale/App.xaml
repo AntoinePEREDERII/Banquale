@@ -8,9 +8,9 @@
 
             <ResourceDictionary.MergedDictionaries>
 
+                <!--    Only light theme    -->
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-                <ResourceDictionary Source="Resources/Themes/LightTheme.xaml" />
                 
             </ResourceDictionary.MergedDictionaries>
 

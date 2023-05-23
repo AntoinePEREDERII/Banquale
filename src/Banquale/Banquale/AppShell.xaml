@@ -9,8 +9,8 @@
     Shell.FlyoutBehavior="Disabled">
 
 
-        <!--<ShellContent ContentTemplate="{DataTemplate views:ConnectionPage}"
-                      Route="connection"/>-->
+        <ShellContent ContentTemplate="{DataTemplate views:ConnectionPage}"
+                      Route="connection"/>
 
     <TabBar>
 
