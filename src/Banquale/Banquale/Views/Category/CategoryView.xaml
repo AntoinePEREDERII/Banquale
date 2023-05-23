@@ -4,15 +4,16 @@
              x:Class="Banquale.Views.Category.CategoryView">
     
     <VerticalStackLayout>
-        <BoxView HorizontalOptions="FillAndExpand"
-                 HeightRequest="1.3"/>
+
+        <BoxView BackgroundColor="Black"
+                 HorizontalOptions="FillAndExpand"
+                 HeightRequest="1.3"
+                 Margin="20, 0, 20, 0"/>
 
         <Grid Margin="20, 5, 20, 5"
             HorizontalOptions="Fill">
-
             <Label
                 Text="Catégorie"
-                TextColor="Black"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"/>
         </Grid>

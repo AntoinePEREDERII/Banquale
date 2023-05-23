@@ -6,4 +6,9 @@ public partial class BalanceView : ContentView
 	{
 		InitializeComponent();
 	}
+
+	public async void OnButtonClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.Navigation.PushAsync(new CategoryPage());
+    }
 }
