@@ -14,6 +14,4 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("menu/ribdetails", typeof(RibPage));
         Routing.RegisterRoute("menu/transferdetails", typeof(TransferPage));
     }
-
 }
-

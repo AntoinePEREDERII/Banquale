@@ -6,4 +6,10 @@ public partial class SwitchAccountPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    async void DisconnectionClicked(System.Object sender, System.EventArgs e)
+    {
+        await Shell.Current.GoToAsync("///connection");
+    }
+
 }

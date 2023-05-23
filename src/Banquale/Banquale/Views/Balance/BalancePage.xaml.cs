@@ -1,4 +1,5 @@
 ﻿using Banquale.Model;
+
 namespace Banquale.Views.Balance;
 
 
