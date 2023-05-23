@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Banquale.Model;
 
 namespace Banquale.Stub
@@ -21,18 +22,29 @@ namespace Banquale.Stub
             Transactions Transactions2 = new Transactions(1, 54.99, Account2, "Test", new DateTime(2022, 8, 15));
             Transactions Transactions3 = new Transactions(0, 1000, Account3, "Test", new DateTime(2020, 9, 1));
 
-            Console.WriteLine(Customer1);
-            List<Customer> ListeCustomers = new List<Customer>();
-            List<Transactions> ListeTransactions = new List<Transactions>();
-            //List<Account> ListeAccount = new List<Account>();
-            //ListeAccount.Add( Account1 );
-            //ListeAccount.Add(Account2);
-            //ListeAccount.Add(Account3);
+            Debug.WriteLine(Customer1.Name, Customer1.Password);
+            List<Customer> CustomersList = new List<Customer>();
+            List<Transactions> TransactionsList= new List<Transactions>();
+            List<Account> AccountsList = new List<Account>();
+            
 
-            ListeCustomers.Add(Customer1);
-            ListeCustomers.Add(Customer2);
-            ListeCustomers.Add(Customer3);
-            return (ListeCustomers, ListeTransactions /*, ListeAccount*/);
+
+            Account1.TransactionsList.Add(Transactions1);
+            Account2.TransactionsList.Add(Transactions2);
+
+            //AccountsList.Add(Account1);
+            //AccountsList.Add(Account2);
+            //AccountsList.Add(Account3);
+
+            Customer1.AccountsList.Add(Account1);
+            Customer1.AccountsList.Add(Account2);
+
+
+
+            CustomersList.Add(Customer1);
+            CustomersList.Add(Customer2);
+            CustomersList.Add(Customer3);
+            return (CustomersList, TransactionsList /*, AccountsList*/);
         }
 
         public void DataSave(List<Customer> c, List<Transactions> t)

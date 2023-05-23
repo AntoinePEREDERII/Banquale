@@ -12,6 +12,8 @@ namespace Banquale.Model
 		[DataMember]
         public List<Transactions> TransactionsList { get; private set; }
 
+		public List<Account> AccountList { get; private set; }
+
         public IPersistenceManager Persistence { get; set; }
 
 		public Manager(IPersistenceManager persistence) {

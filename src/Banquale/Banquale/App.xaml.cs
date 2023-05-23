@@ -15,12 +15,13 @@ public partial class App : Application
 
 		MyManager.DataLoad();
 		MyManager.Persistence = new DataContractPersistance.DataContractPers();
-		MyManager.DataSave();
 
 		InitializeComponent();
 
 		MainPage = new AppShell();
+        //MyManager.DataSave();
 
-	}
+
+    }
 }
 

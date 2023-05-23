@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace Banquale.Model
 {
+    [DataContract]
     public class Account : INotifyPropertyChanged
     {
 	public event PropertyChangedEventHandler PropertyChanged;
@@ -17,9 +19,10 @@ namespace Banquale.Model
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        [DataMember]
         public double Balance 
         {
-            get => Balance;
+            get => balance;
             set
             {
                 if (balance == value)
@@ -30,8 +33,8 @@ namespace Banquale.Model
         }
         private double balance;
 
-        
 
+        [DataMember]
         public string Name 
         {
             get => name;
@@ -45,6 +48,8 @@ namespace Banquale.Model
         }
         private string name;
 
+
+        [DataMember]
         public string IBAN 
         {
             get => iban;
@@ -66,14 +71,23 @@ namespace Banquale.Model
             IBAN = iban;
         }
 
-        public List<Transactions> TransactionsList { get; set; }
+        [DataMember]
+        public List<Transactions> TransactionsList { get; set; } = new List<Transactions>();
 
         //public bool DoTransactions(string name, string IBAN, float sum)
         //{
         //    List<Transactions> transactions.add(sum);
-        //    if ()
+        //    if()
         //        return true;
         //}
+
+        internal static void DoTransactions(Entry name, Entry iban, Entry sum)
+        {
+            Debug.WriteLine(name);
+            Debug.WriteLine(iban);
+            Debug.WriteLine(sum);
+            Debug.WriteLine("Transaction successed !");
+        }
 
         //public bool DoRequest(string name, string IBAN, float sum)
         //{
@@ -84,8 +98,21 @@ namespace Banquale.Model
 
         //public void AskForHelp(string type, string type2, string message)
         //{
-
+        //    Console.WriteLine("Help button pressed !");
         //}
 
+        internal static void AskForHelp(Entry request, Entry subject, Editor message)
+        {
+            Debug.WriteLine(request.Text);
+            Debug.WriteLine(subject);
+            Debug.WriteLine(message);
+            Debug.WriteLine("Help button pressed !");
+            //throw new NotImplementedException();
+        }
+
+        internal static void DoRequest(Entry name, Entry iBAN, Entry sum)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

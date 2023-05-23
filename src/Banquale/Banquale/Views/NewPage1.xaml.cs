@@ -26,7 +26,7 @@ public partial class NewPage1 : ContentPage
 
     public async void ArrowBack(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Shell.Current.GoToAsync("//balance");
     }
 
 }
