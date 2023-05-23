@@ -13,7 +13,8 @@
 
             <Entry Placeholder="Quel est votre demande ?"
                    HorizontalOptions="Center"
-                   WidthRequest="280"/>
+                   WidthRequest="280"
+                   x:Name="Request"/>
 
         </Frame>
 
@@ -25,7 +26,8 @@
 
             <Entry Placeholder="Quel est le sujet de votre demande ?"
                    HorizontalOptions="Center"
-                   WidthRequest="280"/>
+                   WidthRequest="280"
+                   x:Name="Subject"/>
 
         </Frame>
 
@@ -35,7 +37,8 @@
                Margin="0, 0, 0, 10"
                Padding="15, 5, 15, 5">
 
-            <Editor Placeholder="Decrivez votre demande ici." />
+            <Editor Placeholder="Decrivez votre demande ici."
+                    x:Name="Message"/>
 
         </Frame>
 

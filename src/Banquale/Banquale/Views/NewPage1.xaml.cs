@@ -17,16 +17,16 @@ public partial class NewPage1 : ContentPage
 
     void Button_Clicked(System.Object sender, System.EventArgs e)
     {
-        Client client1 = new Client("Monsieur", "Bonjour", "HelloThisIsMyPassword");
-        myManager.AjouterClient(client1);
+        Customer customer1 = new Customer("Mister", "Hello", "HelloThisIsMyPassword");
+        myManager.AddCustomer(customer1);
         cpt++;
         Console.WriteLine(cpt);
-        Console.WriteLine(client1.Nom);
+        Console.WriteLine(customer1.Name);
     }
 
     public async void ArrowBack(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Shell.Current.GoToAsync("//balance");
     }
 
 }

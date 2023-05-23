@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 namespace Banquale.Model
 {
     [DataContract]
-    public class Personne
+    public class Person
     {
         [DataMember]
-        public string Nom { get; private set; }
+        public string Name { get; private set; }
         [DataMember]
-        public string Prenom { get; private set; }
+        public string FirstName { get; private set; }
         [DataMember]
         public int Id { get; private set; }
         [DataMember]
-        public string Mdp { get; private set; }
+        public string Password { get; private set; }
 
-        public Personne(string nom, string prenom, string mdp)
+        public Person(string name, string firstName, string password)
         {
-            Nom = nom;
-            Prenom = prenom;
+            Name = name;
+            FirstName = firstName;
             Id = 0;
-            Mdp = mdp;
+            Password = password;
         }
 
     }

@@ -1,16 +1,16 @@
 ﻿using Banquale.Model;
-namespace Banquale.Views;
+namespace Banquale.Views.Transfer;
 
-public partial class HelpPage : ContentPage
+public partial class RequestPage : ContentPage
 {
-	public HelpPage()
+	public RequestPage()
 	{
 		InitializeComponent();
 	}
 
     public async void Send_Clicked(Object sender, EventArgs e)
     {
-        Account.AskForHelp(Request, Subject, Message);
+        Account.DoRequest(Name, IBAN, Sum);
         await Shell.Current.GoToAsync("//balance");
     }
 

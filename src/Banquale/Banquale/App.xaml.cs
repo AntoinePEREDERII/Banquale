@@ -13,14 +13,15 @@ public partial class App : Application
 	public App()
 	{
 
-		MyManager.ChargeDonnee();
-		MyManager.Persistance = new DataContractPersistance.DataContractPers();
-		MyManager.SauvegardeDonnee();
+		MyManager.DataLoad();
+		MyManager.Persistence = new DataContractPersistance.DataContractPers();
 
 		InitializeComponent();
 
 		MainPage = new AppShell();
+        //MyManager.DataSave();
 
-	}
+
+    }
 }
 
