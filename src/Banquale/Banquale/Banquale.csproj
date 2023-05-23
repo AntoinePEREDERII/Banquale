@@ -67,6 +67,8 @@
 	  <None Remove="Stub\" />
 	  <None Remove="DataContractPersistance\" />
 	  <None Remove="Resources\Theme\" />
+	  <None Remove="Views\Balance\" />
+	  <None Remove="Views\Category\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Remove="Resources\Images\Images.xaml" />
@@ -80,5 +82,7 @@
 	  <Folder Include="Stub\" />
 	  <Folder Include="DataContractPersistance\" />
 	  <Folder Include="Resources\Theme\" />
+	  <Folder Include="Views\Balance\" />
+	  <Folder Include="Views\Category\" />
 	</ItemGroup>
 </Project>

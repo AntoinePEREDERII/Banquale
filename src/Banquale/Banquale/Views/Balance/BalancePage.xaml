@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Banquale.Views"
-             x:Class="Banquale.Views.BalancePage"
+             xmlns:local="clr-namespace:Banquale.Views.Balance"
+             xmlns:model="clr-namespace:Banquale.Model"
+             x:Class="Banquale.Views.Balance.BalancePage"
              Title="BalancePage"
              Shell.NavBarIsVisible="False">
     
@@ -15,38 +16,49 @@
               RowDefinitions="auto, 35, *"
               ColumnDefinitions="250, auto"
               Grid.Row="0"
-              Margin="30"
-              >
-
-            <Button Clicked="OnButtonClicked" />
+              Margin="30">
 
             <Label
                 Text="Compte Professionnel"
                 HorizontalOptions="Center"
-                BackgroundColor="AliceBlue"
                 Margin="0, 15, 0, 0"/>
-            <Label
-                Text="Mme Perotte"
+
+            <HorizontalStackLayout
                 Grid.Row="1"
-                Grid.ColumnSpan="2"
-                HorizontalOptions="Center"
-                BackgroundColor="SaddleBrown"/> <!-- colspan permet de redefinir la taille de la colonne -->
-            
-            <Grid ColumnDefinitions="*, *" Grid.Row="2" >
+                HorizontalOptions="Center">
+
+                <Label
+                    Text="{Binding CustomersList[0].Name}"
+                    Margin="0, 0, 5, 0"/>
+
+                <Label
+                    Text="{Binding CustomersList[0].FirstName}"
+                    Margin="5, 0, 0, 0"/>
+
+            </HorizontalStackLayout>
+
+            <Grid ColumnDefinitions="auto, auto, auto"
+                  Grid.Row="2"
+                  HorizontalOptions="Center">
+
                 <Label
                     Text="Solde"
                     WidthRequest="75"
+                    TextColor="Black"
                     HorizontalOptions="Center"/>
                 <Label
-                    Text="1999,00 €"
+                    Text="{Binding CustomersList[0].AccountsList[0].Balance} "
                     Grid.Column="1"
-                    MinimumWidthRequest="70"
-                    HorizontalOptions="Center"/>
+                    Margin="0, 0, 5, 0"/>
+
+                <Label Text="€"
+                       Grid.Column="2"/>
 
             </Grid>
                 
 
         </Grid>
+        
         <ScrollView
             Grid.Row="1">
         <FlexLayout JustifyContent="Center"
@@ -54,6 +66,10 @@
                     AlignContent="Start"
                     Direction="Row"
                     Wrap="Wrap">
+
+            <Button Text="NewPage1"
+                    Clicked="OnButtonClicked"
+                    MinimumWidthRequest="250"/>
 
             <local:BalanceView/>
             <local:BalanceView/>
