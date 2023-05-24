@@ -1,6 +1,7 @@
 ﻿using Banquale.Model;
 using Banquale.Stub;
 using Banquale.DataContractPersistance;
+
 namespace Banquale;
 
 public partial class App : Application
@@ -22,4 +23,5 @@ public partial class App : Application
         //MyManager.DataSave();
 
 	}
+
 }
