@@ -6,7 +6,11 @@
     <VerticalStackLayout>
 
         <Button Text=" Compte Personnel &#x0a; Mme Tatouille "
-                Clicked="Transfer_Clicked"/>
+                Clicked="Transfer_Clicked"
+                MinimumHeightRequest="65"
+                FontSize="Large"
+                Margin="0, 10, 0, 10"/>
+
         <!-- &#x0a; sert à faire un retour à la ligne-->
 
     </VerticalStackLayout>
