@@ -1,4 +1,4 @@
-<img src="./Documentation/images/banqualeLogo.jpg" height="130">
+<img src="./Documentation/images/banqualeSlogan.jpg" height="130">
 
 # Banquale - Android Bank App
 
