@@ -4,7 +4,7 @@
              x:Class="Banquale.Views.TransactionsPage"
              Title="TransactionsPage">
     
-    <Grid RowDefinitions="2*, *, 0*, *, 0*, *, *, *, *, *, *">
+    <!--<Grid RowDefinitions="2*, *, 0*, *, 0*, *, *, *, *, *, *">
         
         <Grid Grid.Row="1"  ColumnDefinitions="2*, *, 2*">
             <Label Grid.Column="1"
@@ -34,5 +34,59 @@
             <Button Grid.Column="1" Text="Faire opposition"/>
         </Grid>
         
-    </Grid>
+    </Grid>-->
+
+    <VerticalStackLayout VerticalOptions="Center">
+        <Label
+            Grid.Column="1"
+            Text="Prix"
+            HorizontalOptions="Center"
+            FontSize="Large"
+            Margin="0, 0, 0, 50"/>
+
+        <Label
+            Grid.Column="1"
+            Text="poiuytreza"
+            HorizontalOptions="Center"
+            Margin="0, 50, 0, 50"/>
+
+        <Button
+            Grid.Column="1"
+            Text="Categorie"
+            FontSize="Medium"
+            Margin="0, 50, 0, 50"
+            Clicked="Categ_Clicked"/>
+
+        <Grid RowDefinitions="auto, *, auto"
+              ColumnDefinitions="*, auto, *"
+              Margin="0, 50, 0, 50">
+
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                Text="  Paiment par carte &#x0a;4859 **** **** 9985"
+                VerticalOptions="Center"/>
+
+            <BoxView
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="1.3"
+                Margin="0, 5, 0, 5"/>
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Text="En date du 15/06/2023"/>
+
+        </Grid>
+
+        <Button
+            Grid.Column="1"
+            Text="Faire opposition"
+            Margin="0, 50, 0, 0"
+            Clicked="Objection_Clicked"/>
+
+    </VerticalStackLayout>
+
 </ContentPage>

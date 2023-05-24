@@ -116,9 +116,11 @@
 
         <Label Text="M BOURAUD DESCHAMPS" />
 
-        <Button Text="Télécharger le RIB"
+        <!--<Button Text="Télécharger le RIB"
                 HeightRequest="150"
                 WidthRequest="300" />
+
+        It's not functionnal today  -->
 
     </VerticalStackLayout>
 

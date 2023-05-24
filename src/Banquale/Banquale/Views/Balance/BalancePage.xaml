@@ -18,6 +18,12 @@
               Grid.Row="0"
               Margin="30">
 
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer
+                                  Tapped="Balance_Clicked"
+                                  NumberOfTapsRequired="1" />
+            </Grid.GestureRecognizers>
+
             <Label
                 Text="Compte Professionnel"
                 HorizontalOptions="Center"
@@ -52,8 +58,7 @@
                 <Label Text="€"
                        Grid.Column="2"/>
 
-            </Grid>
-                
+            </Grid>    
 
         </Grid>
         
@@ -64,10 +69,6 @@
                     AlignContent="Start"
                     Direction="Row"
                     Wrap="Wrap">
-
-            <Button Text="NewPage1"
-                    Clicked="OnButtonClicked"
-                    MinimumWidthRequest="250"/>
 
             <local:BalanceView/>
             <local:BalanceView/>

@@ -10,6 +10,6 @@ public partial class BalanceView : ContentView
 
 	public async void OnButtonClicked(object sender, EventArgs e)
     {
-        await Shell.Current.Navigation.PushAsync(new CategoryPage());
+        await Shell.Current.Navigation.PushAsync(new TransactionsPage());
     }
 }
