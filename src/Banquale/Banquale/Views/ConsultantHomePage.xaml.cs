@@ -12,14 +12,14 @@ public partial class ConsultantHomePage : ContentPage
         await Shell.Current.GoToAsync("///connection");
     }
 
-    async void Create_Customer_Clicked(System.Object sender, System.EventArgs e)
-    {
-        await Shell.Current.GoToAsync("//createcustomer");
-    }
-
     async void Id_Clicked(System.Object sender, System.EventArgs e)
     {
-        await Shell.Current.GoToAsync("//idpage");
+        await Shell.Current.GoToAsync("..");
+    }
+
+    async void Create_Customer_Clicked(System.Object sender, System.EventArgs e)
+    {
+        await Shell.Current.GoToAsync("///createcustomer");
     }
 
 }

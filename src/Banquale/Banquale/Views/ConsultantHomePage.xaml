@@ -15,13 +15,13 @@
                 MinimumHeightRequest="65"
                 FontSize="Large"
                 Margin="0, 10, 0, 10"
-                Clicked="Create_Customer_Clicked"/>
+                Clicked="Id_Clicked"/>
 
         <Button Text="Creer un client"
                 MinimumHeightRequest="65"
                 FontSize="Large"
                 Margin="0, 10, 0, 10"
-                Clicked="Id_Clicked"/>
+                Clicked="Create_Customer_Clicked"/>
 
 
         <Button Text="Déconnexion"

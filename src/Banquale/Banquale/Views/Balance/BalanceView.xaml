@@ -22,12 +22,12 @@
                        Grid.Column="0"
                        MaximumHeightRequest="30"/>
                 <Label
-                    Text="Depense"
+                    Text="{Binding CustomersList[0].AccountsList[0].TransactionsList[0].Date}"
                     Grid.Column="1"
                     VerticalOptions="Center"
                     Margin="10, 0, 0, 0"/>
                 <Label
-                    Text="Prix"
+                    Text="{Binding CustomersList[0].AccountsList[0].TransactionsList[0].Sum}"
                     Grid.Column="2"
                     VerticalOptions="Center"
                     HorizontalOptions="End"
