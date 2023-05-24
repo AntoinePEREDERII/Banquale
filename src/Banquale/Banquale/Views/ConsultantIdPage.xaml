@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Banquale.Views.ConsultantIdPage"
+             Title="ConsultantIdPage"
+             Shell.NavBarIsVisible="False">
+
+    <VerticalStackLayout VerticalOptions="Center">
+
+        <Frame CornerRadius="20" Margin="20, 150, 20, 0">
+
+            <Entry
+                Placeholder="Identifiant"
+                MaxLength="20"
+                MinimumWidthRequest="275"
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                FontSize="Large"
+                x:Name="ident"/>
+
+        </Frame>
+
+        <Button
+            Text="Se connecter"
+            BorderWidth="2"
+            HorizontalOptions="Fill"
+            MinimumHeightRequest="100"
+            Margin="10, 100, 10, 0"
+            FontSize="Large"
+            Clicked="Connection_Clicked"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>

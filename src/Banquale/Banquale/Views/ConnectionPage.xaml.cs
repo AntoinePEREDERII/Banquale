@@ -18,6 +18,12 @@ public partial class ConnectionPage : ContentPage
             return;
         }
 
+        if(id == "a")
+        {
+            await Navigation.PushModalAsync(new ConsultantHomePage());
+            return;
+        }
+
         await Navigation.PushModalAsync(new SwitchAccountPage());
     }
 
