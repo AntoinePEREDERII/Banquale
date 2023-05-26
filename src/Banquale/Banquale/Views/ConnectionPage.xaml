@@ -16,6 +16,7 @@
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
                 FontSize="Large"
+                Keyboard="Numeric"
                 x:Name="ident"/>
 
         </Frame>

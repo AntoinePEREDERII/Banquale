@@ -8,6 +8,7 @@
              Shell.NavBarIsVisible="False">
     
     <Grid RowDefinitions="auto, *">
+
         <Grid BackgroundColor="Beige"
               HorizontalOptions="Center"
               HeightRequest="100"
@@ -34,11 +35,11 @@
                 HorizontalOptions="Center">
 
                 <Label
-                    Text="{Binding CustomersList[0].Name}"
+                    Text="{Binding CustomersList[currentId].Name}"
                     Margin="0, 0, 5, 0"/>
 
                 <Label
-                    Text="{Binding CustomersList[0].FirstName}"
+                    Text="{Binding CustomersList[currentId].FirstName}"
                     Margin="5, 0, 0, 0"/>
 
             </HorizontalStackLayout>
@@ -58,119 +59,7 @@
             </Grid>
         </Grid>
 
-            <!--<ScrollView
-            Grid.Row="1">
-        <FlexLayout JustifyContent="Center"
-                    AlignItems="Start"
-                    AlignContent="Start"
-                    Direction="Row"
-                    Wrap="Wrap">
+        <local:BalanceView Grid.Row="1"/>
 
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView />
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView />
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView />
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView />
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-            <local:BalanceView/>
-        </FlexLayout>
-        </ScrollView>-->
-
-        <ListView ItemsSource="{Binding CustomersList[0].AccountsList[0].TransactionsList}" Grid.Row="1">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid
-                        ColumnDefinitions="40, 3*, *"
-                        Margin="20, 5, 20, 5"
-                        HorizontalOptions="Fill">
-
-                            <Image Source="dotnet_bot.png"
-                                   Grid.Column="0"
-                                   MaximumHeightRequest="30"/>
-                            <Label
-                                    Text="{Binding Date, StringFormat='{0:f}'}"
-                                    Grid.Column="1"
-                                    VerticalOptions="Center"
-                                    Margin="10, 0, 0, 0"/>
-                            <Label
-                                    Text="{Binding Sum, StringFormat='{0} €'}"
-                                    Grid.Column="2"
-                                    VerticalOptions="Center"
-                                    HorizontalOptions="End"
-                                    Margin="0, 0, 20, 0"/>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
     </Grid>
 </ContentPage>

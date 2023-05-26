@@ -7,6 +7,12 @@ public partial class AppShell : Shell
 {
 	public AppShell()
 	{
+        InitializeComponent();
+        RegisterRoutes();
+    }
+
+    private void RegisterRoutes()
+    {
         Routing.RegisterRoute("balance/categorydetails", typeof(CategoryPage));
         Routing.RegisterRoute("balance/newpagedetails", typeof(NewPage1));
         Routing.RegisterRoute("menu/requestdetails", typeof(RequestPage));
@@ -15,7 +21,6 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("connection/consultant", typeof(ConsultantHomePage));
         Routing.RegisterRoute("consultant/idpage", typeof(ConsultantIdPage));
         Routing.RegisterRoute("consultant/createcustomer", typeof(CreateCustomerPage));
-        InitializeComponent();
-        
     }
+
 }
