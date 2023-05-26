@@ -14,6 +14,28 @@ namespace Banquale.Model
 
 		public List<Account> AccountList { get; private set; }
 
+        public Customer SelectedCustomer
+		{
+			get => selectedCustomer;
+			set
+			{
+				selectedCustomer = value;
+			}
+		}
+
+		private Customer selectedCustomer;
+
+		public Account SelectedAccount
+		{
+			get => selectedAccount;
+			set
+			{
+				selectedAccount = value;
+			}
+		}
+
+		private Account selectedAccount;
+
         public IPersistenceManager Persistence { get; set; }
 
 		public Manager(IPersistenceManager persistence) {

@@ -35,11 +35,11 @@
                 HorizontalOptions="Center">
 
                 <Label
-                    Text="{Binding CustomersList[currentId].Name}"
+                    Text="{Binding Name}"
                     Margin="0, 0, 5, 0"/>
 
                 <Label
-                    Text="{Binding CustomersList[currentId].FirstName}"
+                    Text="{Binding FirstName}"
                     Margin="5, 0, 0, 0"/>
 
             </HorizontalStackLayout>
@@ -52,14 +52,58 @@
                     Text="Solde"
                     Margin="0, 0, 50, 0"/>
                 <Label
-                    Text="{Binding CustomersList[0].AccountsList[0].Balance, StringFormat='{0} €'}"
+                    Text="{Binding Balance, StringFormat='{0} €'}"
                     Grid.Column="1"
                     Margin="50, 0, 5, 0"/>
 
             </Grid>
         </Grid>
 
-        <local:BalanceView Grid.Row="1"/>
+        <ListView ItemsSource="{Binding TransactionsList}" Grid.Row="1"
+                  SelectionMode="None">
+
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <ViewCell>
+
+                        <Grid
+                        ColumnDefinitions="40, 3*, *"
+                        Margin="20, 5, 20, 5"
+                        HorizontalOptions="Fill">
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Tapped="Transaction_Clicked"
+                                NumberOfTapsRequired="1" />
+
+                        </Grid.GestureRecognizers>
+
+                            <Image Source="dotnet_bot.png"
+                                   Grid.Column="0"
+                                   MaximumHeightRequest="30"/>
+                            <Label
+                                    Text="{Binding Date, StringFormat='{0:f}'}"
+                                    Grid.Column="1"
+                                    VerticalOptions="Center"
+                                    Margin="10, 0, 0, 0"/>
+                            <Label
+                                    Text="{Binding Sum, StringFormat='{0} €'}"
+                                    Grid.Column="2"
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="End"
+                                    Margin="0, 0, 20, 0"/>
+
+                        </Grid>
+
+                    </ViewCell>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>
 
     </Grid>
 </ContentPage>

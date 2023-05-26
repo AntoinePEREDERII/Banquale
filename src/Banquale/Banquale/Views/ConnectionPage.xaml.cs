@@ -28,6 +28,14 @@ public partial class ConnectionPage : ContentPage
             return;
         }
 
+        //if(int.Parse(currentId) in Mgr.CustomersList) // FONCTIONNE PAS
+        //{
+        //    Mgr.SelectedCustomer = Mgr.CustomersList[int.Parse(currentId)];             
+        //}
+
+        Mgr.SelectedCustomer = Mgr.CustomersList[0]; // 0 à changer 
+
+
         await Navigation.PushModalAsync(new SwitchAccountPage());
     }
 
