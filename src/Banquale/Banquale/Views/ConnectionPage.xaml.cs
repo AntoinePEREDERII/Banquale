@@ -5,7 +5,6 @@ namespace Banquale.Views;
 public partial class ConnectionPage : ContentPage
 {
     public Manager Mgr => (App.Current as App).MyManager;
-
     public ConnectionPage()
 	{
 		InitializeComponent();
