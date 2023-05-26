@@ -11,9 +11,9 @@ namespace Banquale.DataContractPersistance
 	public class DataContractPers : IPersistenceManager
 	{
         public string FilePath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/datbase.xml";
-		public string FileName { get; set; } = "ClientAndTransactionsList.xml";
+		public string FileName { get; set; } = "CustomerList.xml";
 
-		public (List<Customer>, List<Transactions>) DataLoad()
+		public List<Customer> DataLoad()
 		{
 			var serializer = new DataContractSerializer(typeof(List<Customer>));
 
@@ -23,10 +23,10 @@ namespace Banquale.DataContractPersistance
 			{
 				CustomersList = serializer.ReadObject(s) as List<Customer>;
 			}
-			return (CustomersList, new List<Transactions>());
+			return CustomersList;
 		}
 
-		public void DataSave(List<Customer> c, List<Transactions> t)
+		public void DataSave(List<Customer> c)
 		{
 			var serializer = new DataContractSerializer(typeof(List<Customer>));
 

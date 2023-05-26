@@ -42,24 +42,24 @@ namespace Banquale.Model
 
         public void DataSave()
         {
-            Persistence.DataSave(CustomersList, TransactionsList);
+            Persistence.DataSave(CustomersList);
         }
 
         public void DataLoad()
 		{
 			var data = Persistence.DataLoad();
 
-			CustomersList.AddRange(data.Item1);
-			TransactionsList.AddRange(data.Item2);
+			CustomersList.AddRange(data);
 
-			foreach (var j in data.Item1)
+			foreach (var j in data)
 			{
 				CustomersList.Add(j);
 			}
+			/*
 			foreach (var i in data.Item2)
 			{
 				TransactionsList.Add(i);
-			}
+			}*/
 		}
 
     }
