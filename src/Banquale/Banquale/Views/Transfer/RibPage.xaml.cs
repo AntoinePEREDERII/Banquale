@@ -1,9 +1,14 @@
-﻿namespace Banquale.Views.Transfer;
+﻿using Banquale.Model;
+
+namespace Banquale.Views.Transfer;
 
 public partial class RibPage : ContentPage
 {
-	public RibPage()
+    public Manager Mgr => (App.Current as App).MyManager;
+
+    public RibPage()
 	{
-		InitializeComponent();
-	}
+        InitializeComponent();
+        BindingContext = Mgr;
+    }
 }
