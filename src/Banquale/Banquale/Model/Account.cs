@@ -12,7 +12,7 @@ namespace Banquale.Model
     [DataContract]
     public class Account : INotifyPropertyChanged, IEquatable<Account>
     {
-	public event PropertyChangedEventHandler PropertyChanged;
+	    public event PropertyChangedEventHandler PropertyChanged;
 
         void OnPropertyChanged(string propertyName)
         {

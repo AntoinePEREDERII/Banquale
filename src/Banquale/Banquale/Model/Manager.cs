@@ -9,7 +9,8 @@ namespace Banquale.Model
 		[DataMember]
 		public List<Customer> CustomersList { get; private set; } // devient un set
 
-		public Consultant Consultant { get; private set; } // 1 SEUL consultant
+        [DataMember]
+        public Consultant Consultant { get; private set; } // 1 SEUL consultant
 
         public Customer SelectedCustomer
 		{
@@ -38,6 +39,7 @@ namespace Banquale.Model
 		public Manager(IPersistenceManager persistence)
 		{
             CustomersList = new List<Customer>();
+			Consultant = null;
 			Persistence = persistence;
 		}
 

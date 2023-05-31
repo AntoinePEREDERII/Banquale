@@ -11,6 +11,11 @@ namespace Banquale.Stub
         {
             Consultant Consultant = new Consultant("Consultant", "Consultant", 0, "Consultant");
 
+            Consultant.MessagesList.Add(new Message("ZUvuzveu", "ZBUBUE"));
+            Consultant.MessagesList.Add(new Message("zcdz", "rvri"));
+            Consultant.MessagesList.Add(new Message("vjkebor", "rbv"));
+            Consultant.MessagesList.Add(new Message("alce", "ubec"));
+
             Customer Customer1 = new Customer("Jacques", "Morice", "J'aimeLesFrites");
             Customer Customer2 = new Customer("Francis", "Begore", "J'aimeLes");
             Customer Customer3 = new Customer("Michel", "Boudout", "MonMdP");
