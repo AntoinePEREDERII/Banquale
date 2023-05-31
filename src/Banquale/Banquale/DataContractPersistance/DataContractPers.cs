@@ -10,7 +10,9 @@ namespace Banquale.DataContractPersistance
 {
 	public class DataContractPers : IPersistenceManager
 	{
-        public string FilePath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/datbase.xml";
+        //public string FilePath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/datbase.xml";
+
+        public string FilePath { get; set; } = FileSystem.Current.AppDataDirectory;
 		public string FileName { get; set; } = "CustomerList.xml";
 
 		public List<Customer> DataLoad()

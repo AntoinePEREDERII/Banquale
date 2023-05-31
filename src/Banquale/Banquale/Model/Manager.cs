@@ -9,7 +9,6 @@ namespace Banquale.Model
 		[DataMember]
 		public List<Customer> CustomersList { get; private set; }
 
-		[DataMember]
         public List<Transactions> TransactionsList { get; private set; }
 
 		public List<Account> AccountList { get; private set; }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Banquale.Model
 {
     [DataContract]
-    public class Account : INotifyPropertyChanged
+    public class Account : INotifyPropertyChanged, IEquatable<Account>
     {
 	public event PropertyChangedEventHandler PropertyChanged;
 
@@ -87,6 +87,8 @@ namespace Banquale.Model
             Debug.WriteLine(iban);
             Debug.WriteLine(sum);
             Debug.WriteLine("Transaction successed !");
+
+
         }
 
         //public bool DoRequest(string name, string IBAN, float sum)
@@ -113,6 +115,17 @@ namespace Banquale.Model
         internal static void DoRequest(Entry name, Entry iBAN, Entry sum)
         {
             throw new NotImplementedException();
+        }
+
+        public bool Equals(Account other)
+        {
+            if(other == null) return false;
+            else return other.IBAN.Equals(IBAN);
+        }
+
+        public override int GetHashCode()
+        {
+            return IBAN.GetHashCode();
         }
     }
 }
