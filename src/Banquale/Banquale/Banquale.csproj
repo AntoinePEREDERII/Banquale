@@ -51,6 +51,7 @@
 	  <None Remove="DataContractPersistance\" />
 	  <None Remove="Views\Balance\" />
 	  <None Remove="Views\Category\" />
+	  <None Remove="Test\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Remove="Resources\Images\Images.xaml" />
@@ -65,6 +66,7 @@
 	  <Folder Include="DataContractPersistance\" />
 	  <Folder Include="Views\Balance\" />
 	  <Folder Include="Views\Category\" />
+	  <Folder Include="Test\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="Syncfusion.Pdf.Net.Core" Version="21.2.6" />
