@@ -5,8 +5,8 @@ namespace Banquale.DataContractPersistance
 {
 	public class DataToPersist
 	{
-			public List<Customer> customer { get; set; } = new List<Customer>();
-            public List<Transactions> transactions { get; set; } = new List<Transactions>();
+		public List<Customer> customer { get; set; } = new List<Customer>();
+		public Consultant consultant { get; set; } = null;
 	}
 }
 

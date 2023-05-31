@@ -3,6 +3,7 @@ namespace Banquale.Views;
 
 public partial class HelpPage : ContentPage
 {
+    public Manager Mgr => (App.Current as App).MyManager;
 	public HelpPage()
 	{
 		InitializeComponent();
@@ -10,7 +11,8 @@ public partial class HelpPage : ContentPage
 
     public async void Send_Clicked(Object sender, EventArgs e)
     {
-        Account.AskForHelp(Request, Subject, Message);
+        Message message = Account.AskForHelp(Subject, Message);
+        Mgr.Consultant.MessagesList.Add(message);
         await Shell.Current.GoToAsync("//balance");
     }
 

@@ -103,13 +103,14 @@ namespace Banquale.Model
         //    Console.WriteLine("Help button pressed !");
         //}
 
-        internal static void AskForHelp(Entry request, Entry subject, Editor message)
+        internal static Message AskForHelp(Entry subject, Editor description)
         {
-            Debug.WriteLine(request.Text);
-            Debug.WriteLine(subject);
-            Debug.WriteLine(message);
+            Debug.WriteLine(subject.Text);
+            Debug.WriteLine(description.Text);
             Debug.WriteLine("Help button pressed !");
             //throw new NotImplementedException();
+            Message message = new Message(subject.Text, description.Text);
+            return message;
         }
 
         internal static void DoRequest(Entry name, Entry iBAN, Entry sum)

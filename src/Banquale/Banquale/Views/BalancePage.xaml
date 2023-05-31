@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Banquale.Views.Balance"
+             xmlns:local="clr-namespace:Banquale.Views"
              xmlns:model="clr-namespace:Banquale.Model"
-             x:Class="Banquale.Views.Balance.BalancePage"
+             x:Class="Banquale.Views.BalancePage"
              Title="BalancePage"
              Shell.NavBarIsVisible="False">
     
@@ -84,7 +84,7 @@
                                    Grid.Column="0"
                                    MaximumHeightRequest="30"/>
                             <Label
-                                    Text="{Binding Date, StringFormat='{0:f}'}"
+                                    Text="{Binding Date, StringFormat='{0:ddd dd MMM yyyy}'}"
                                     Grid.Column="1"
                                     VerticalOptions="Center"
                                     Margin="10, 0, 0, 0"/>

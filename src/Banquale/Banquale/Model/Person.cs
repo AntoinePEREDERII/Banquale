@@ -24,7 +24,15 @@ namespace Banquale.Model
         {
             Name = name;
             FirstName = firstName;
-            Id = 0;
+            Id = 1;
+            Password = password;
+        }
+
+        public Person(string name, string firstName, uint id, string password)
+        {
+            Name = name;
+            FirstName = firstName;
+            Id = id;
             Password = password;
         }
 

@@ -49,7 +49,6 @@
 	  <None Remove="Resources\Images\helpIcon.svg" />
 	  <None Remove="Stub\" />
 	  <None Remove="DataContractPersistance\" />
-	  <None Remove="Views\Balance\" />
 	  <None Remove="Views\Category\" />
 	  <None Remove="Test\" />
 	</ItemGroup>
@@ -64,7 +63,6 @@
 	  <Folder Include="Persistances\" />
 	  <Folder Include="Stub\" />
 	  <Folder Include="DataContractPersistance\" />
-	  <Folder Include="Views\Balance\" />
 	  <Folder Include="Views\Category\" />
 	  <Folder Include="Test\" />
 	</ItemGroup>

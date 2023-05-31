@@ -1,6 +1,6 @@
 ﻿using Banquale.Model;
 
-namespace Banquale.Views.Balance;
+namespace Banquale.Views;
 
 
 public partial class BalancePage : ContentPage

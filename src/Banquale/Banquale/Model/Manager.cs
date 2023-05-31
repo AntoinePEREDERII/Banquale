@@ -7,11 +7,9 @@ namespace Banquale.Model
 	public class Manager
 	{
 		[DataMember]
-		public List<Customer> CustomersList { get; private set; }
+		public List<Customer> CustomersList { get; private set; } // devient un set
 
-        public List<Transactions> TransactionsList { get; private set; }
-
-		public List<Account> AccountList { get; private set; }
+		public Consultant Consultant { get; private set; } // 1 SEUL consultant
 
         public Customer SelectedCustomer
 		{
@@ -37,18 +35,15 @@ namespace Banquale.Model
 
         public IPersistenceManager Persistence { get; set; }
 
-		public Manager(IPersistenceManager persistence) {
-
-            TransactionsList = new List<Transactions>();
+		public Manager(IPersistenceManager persistence)
+		{
             CustomersList = new List<Customer>();
 			Persistence = persistence;
-
 		}
 
         public Manager()
         {
             CustomersList = new List<Customer>();
-			TransactionsList = new List<Transactions>();
         }
 
         public bool AddCustomer(Customer MyCustomer)
@@ -63,24 +58,21 @@ namespace Banquale.Model
 
         public void DataSave()
         {
-            Persistence.DataSave(CustomersList);
+            Persistence.DataSave(CustomersList, Consultant);
         }
 
         public void DataLoad()
 		{
 			var data = Persistence.DataLoad();
 
-			CustomersList.AddRange(data);
+			CustomersList.AddRange(data.Item1);
 
-			foreach (var j in data)
+			foreach (var j in data.Item1)
 			{
 				CustomersList.Add(j);
 			}
-			/*
-			foreach (var i in data.Item2)
-			{
-				TransactionsList.Add(i);
-			}*/
+
+			Consultant = data.Item2;
 		}
 
     }
