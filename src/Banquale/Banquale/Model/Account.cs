@@ -63,12 +63,25 @@ namespace Banquale.Model
         }
         private string iban;
 
+        public string IBANHide
+        {
+            get => ibanHide;
+            set
+            {
+                if (ibanHide == value)
+                    return;
+                ibanHide = value;
+                OnPropertyChanged(nameof(IBANHide));
+            }
+        }
+        private string ibanHide;
 
         public Account(int balance, string name, string iban)
         {
             Balance = balance;
             Name = name;
             IBAN = iban;
+            IBANHide = IBANToString();
         }
 
         [DataMember]
@@ -116,6 +129,18 @@ namespace Banquale.Model
         internal static void DoRequest(Entry name, Entry iBAN, Entry sum)
         {
             throw new NotImplementedException();
+        }
+
+        public string IBANToString()
+        {
+            char[] res = IBAN.ToCharArray();
+            for (int i = 5; i< IBAN.Length - 4; i++ )
+            {
+                if (res[i] == ' ')
+                    continue;
+                res[i] = '*';
+            }
+            return new string(res);
         }
 
         public bool Equals(Account other)
