@@ -97,6 +97,7 @@ namespace Banquale.Model
             Date = date;
         }
 
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

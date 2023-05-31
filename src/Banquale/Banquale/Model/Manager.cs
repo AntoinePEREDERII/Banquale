@@ -35,6 +35,17 @@ namespace Banquale.Model
 
 		private Account selectedAccount;
 
+        public Transactions SelectedTransaction
+        {
+            get => selectedTransaction;
+            set
+            {
+                selectedTransaction = value;
+            }
+        }
+
+        private Transactions selectedTransaction;
+
         public IPersistenceManager Persistence { get; set; }
 
 		public Manager(IPersistenceManager persistence) {

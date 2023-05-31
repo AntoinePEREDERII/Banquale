@@ -17,6 +17,7 @@ public partial class BalancePage : ContentPage
 
     public async void Transaction_Clicked(System.Object sender, Microsoft.Maui.Controls.TappedEventArgs e)
     {
+        Mgr.SelectedTransaction = Mgr.SelectedAccount.TransactionsList[0];
         await Shell.Current.Navigation.PushAsync(new TransactionsPage());
     }
     public async void Balance_Clicked(object sender, EventArgs e)
