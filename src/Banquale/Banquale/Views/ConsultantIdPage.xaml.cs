@@ -1,4 +1,4 @@
-using Banquale.Views.Balance;
+using Banquale.Views;
 namespace Banquale.Views;
 
 public partial class ConsultantIdPage : ContentPage

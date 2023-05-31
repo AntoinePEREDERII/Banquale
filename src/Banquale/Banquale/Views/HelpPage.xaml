@@ -9,18 +9,6 @@
         <Frame CornerRadius="10"
                HeightRequest="40"
                WidthRequest="300"
-               Padding="3">
-
-            <Entry Placeholder="Quel est votre demande ?"
-                   HorizontalOptions="Center"
-                   WidthRequest="280"
-                   x:Name="Request"/>
-
-        </Frame>
-
-        <Frame CornerRadius="10"
-               HeightRequest="40"
-               WidthRequest="300"
                Margin="0, 5, 0, 5"
                Padding="3">
 

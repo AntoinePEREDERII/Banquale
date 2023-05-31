@@ -8,8 +8,8 @@ namespace Banquale.Model
 {
     public interface IPersistenceManager
     {
-        public List<Customer> DataLoad();
+        public (List<Customer>, Consultant) DataLoad();
 
-        void DataSave(List<Customer> c /* , List<Transactions> t, List<Account> c2*/);
+        void DataSave(List<Customer> cu, Consultant co);
     }
 }
