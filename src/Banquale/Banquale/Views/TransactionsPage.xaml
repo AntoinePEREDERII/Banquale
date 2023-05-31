@@ -4,7 +4,7 @@
              x:Class="Banquale.Views.TransactionsPage"
              Title="TransactionsPage">
     
-    <Grid RowDefinitions="2*, *, 0*, *, 0*, *, *, *, *, *, *">
+    <!--<Grid RowDefinitions="2*, *, 0*, *, 0*, *, *, *, *, *, *">
         
         <Grid Grid.Row="1"  ColumnDefinitions="2*, *, 2*">
             <Label Grid.Column="1"
@@ -34,5 +34,60 @@
             <Button Grid.Column="1" Text="Faire opposition"/>
         </Grid>
         
-    </Grid>
+    </Grid>-->
+
+    <VerticalStackLayout VerticalOptions="Center">
+        <Label
+            Text="{Binding Sum, StringFormat='{0} €'}"
+            HorizontalOptions="Center"
+            FontSize="Large"
+            Margin="0, 0, 0, 20"/>
+
+        <Button
+            Grid.Column="1"
+            Text="{Binding Category}"
+            FontSize="Medium"
+            Margin="0, 50, 0, 50"
+            Clicked="Categ_Clicked"/>
+
+        <Grid RowDefinitions="auto, *, auto, auto"
+              ColumnDefinitions="*, auto, *"
+              Margin="0, 50, 0, 50">
+
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                Text="{Binding InvolvedAccounts.Name, StringFormat='Paiment expédié par&#10;  Compte {0}'}"
+                VerticalOptions="Center"/>
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalOptions="Center"
+                Text="{Binding InvolvedAccounts.IBANHide, StringFormat='{0}'}"
+                VerticalOptions="Center"/>
+
+            <BoxView
+                Grid.Row="2"
+                Grid.Column="1"
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="1.3"
+                Margin="0, 5, 0, 5"/>
+
+            <Label
+                Grid.Row="3"
+                Grid.Column="1"
+                Text="{Binding Date, StringFormat='En date du {0:MM/dd/yy}'}"
+                HorizontalOptions="Center"/>
+
+        </Grid>
+
+        <Button
+            Text="Faire opposition"
+            Margin="0, 50, 0, 0"
+            Clicked="Objection_Clicked"/>
+
+    </VerticalStackLayout>
+
 </ContentPage>

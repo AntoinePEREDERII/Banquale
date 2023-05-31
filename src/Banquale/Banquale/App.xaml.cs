@@ -1,6 +1,7 @@
 ﻿using Banquale.Model;
 using Banquale.Stub;
 using Banquale.DataContractPersistance;
+
 namespace Banquale;
 
 public partial class App : Application
@@ -15,11 +16,12 @@ public partial class App : Application
 
 		MyManager.DataLoad();
 		MyManager.Persistence = new DataContractPersistance.DataContractPers();
-
-		InitializeComponent();
-
-		MainPage = new AppShell();
         //MyManager.DataSave();
 
+        InitializeComponent();
+
+		MainPage = new AppShell();
+
 	}
+
 }

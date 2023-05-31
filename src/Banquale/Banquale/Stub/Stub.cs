@@ -7,8 +7,15 @@ namespace Banquale.Stub
     public class Stub : IPersistenceManager
     {
 
-        public (List<Customer>, List<Transactions> /*, List<Account>*/) DataLoad()
+        public (List<Customer>, Consultant) DataLoad()
         {
+            Consultant Consultant = new Consultant("Consultant", "Consultant", 0, "Consultant");
+
+            Consultant.MessagesList.Add(new Message("ZUvuzveu", "ZBUBUE"));
+            Consultant.MessagesList.Add(new Message("zcdz", "rvri"));
+            Consultant.MessagesList.Add(new Message("vjkebor", "rbv"));
+            Consultant.MessagesList.Add(new Message("alce", "ubec"));
+
             Customer Customer1 = new Customer("Jacques", "Morice", "J'aimeLesFrites");
             Customer Customer2 = new Customer("Francis", "Begore", "J'aimeLes");
             Customer Customer3 = new Customer("Michel", "Boudout", "MonMdP");
@@ -18,9 +25,11 @@ namespace Banquale.Stub
             Account Account3 = new Account(3519, "Perotte", "FR76 6352 2541 4169 6958 5847 002");
 
 
-            Transactions Transactions1 = new Transactions(0, 55, Account1, "Test", new DateTime(2023, 6, 21));
+            Transactions Transactions1 = new Transactions(0, 55, Account1, "Test", new DateTime(2023, 6, 21, 15, 29, 20));
+            Transactions Transactions12 = new Transactions(0, 105, Account1, "Test", new DateTime(2023, 8, 17, 18, 54, 35));
+            Transactions Transactions13 = new Transactions(0, 187, Account1, "Test", new DateTime(2023, 5, 3, 8, 39, 49));
             Transactions Transactions2 = new Transactions(1, 54.99, Account2, "Test", new DateTime(2022, 8, 15));
-            Transactions Transactions3 = new Transactions(0, 1000, Account3, "Test", new DateTime(2020, 9, 1));
+            Transactions Transactions3 = new Transactions(0, 1000, Account3, "Test", new DateTime(2020, 9, 1, 20, 00, 00));
 
             Debug.WriteLine(Customer1.Name, Customer1.Password);
             List<Customer> CustomersList = new List<Customer>();
@@ -30,11 +39,12 @@ namespace Banquale.Stub
 
 
             Account1.TransactionsList.Add(Transactions1);
-            Account2.TransactionsList.Add(Transactions2);
+            Account1.TransactionsList.Add(Transactions12);
+            Account1.TransactionsList.Add(Transactions13);
+            Account1.TransactionsList.Add(Transactions2);
+            Account1.TransactionsList.Add(Transactions3);
 
-            //AccountsList.Add(Account1);
-            //AccountsList.Add(Account2);
-            //AccountsList.Add(Account3);
+            Account2.TransactionsList.Add(Transactions2);
 
             Customer1.AccountsList.Add(Account1);
             Customer1.AccountsList.Add(Account2);
@@ -44,10 +54,10 @@ namespace Banquale.Stub
             CustomersList.Add(Customer1);
             CustomersList.Add(Customer2);
             CustomersList.Add(Customer3);
-            return (CustomersList, TransactionsList /*, AccountsList*/);
+            return (CustomersList, Consultant);
         }
 
-        public void DataSave(List<Customer> c, List<Transactions> t)
+        public void DataSave(List<Customer> c, Consultant consultant)
         {
             throw new NotImplementedException();
         }

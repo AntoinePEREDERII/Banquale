@@ -7,27 +7,56 @@ namespace Banquale.Model
 	public class Manager
 	{
 		[DataMember]
-		public List<Customer> CustomersList { get; private set; }
+		public List<Customer> CustomersList { get; private set; } // devient un set
 
-		[DataMember]
-        public List<Transactions> TransactionsList { get; private set; }
+        [DataMember]
+        public Consultant Consultant { get; private set; } // 1 SEUL consultant
 
-		public List<Account> AccountList { get; private set; }
+        public Customer SelectedCustomer
+		{
+			get => selectedCustomer;
+			set
+			{
+				selectedCustomer = value;
+			}
+		}
+
+		private Customer selectedCustomer;
+
+		public Account SelectedAccount
+		{
+			get => selectedAccount;
+			set
+			{
+				selectedAccount = value;
+			}
+		}
+
+		private Account selectedAccount;
+
+        public Transactions SelectedTransaction
+        {
+            get => selectedTransaction;
+            set
+            {
+                selectedTransaction = value;
+            }
+        }
+
+        private Transactions selectedTransaction;
 
         public IPersistenceManager Persistence { get; set; }
 
-		public Manager(IPersistenceManager persistence) {
-
-            TransactionsList = new List<Transactions>();
+		public Manager(IPersistenceManager persistence)
+		{
             CustomersList = new List<Customer>();
+			Consultant = null;
 			Persistence = persistence;
-
 		}
 
         public Manager()
         {
             CustomersList = new List<Customer>();
-			TransactionsList = new List<Transactions>();
         }
 
         public bool AddCustomer(Customer MyCustomer)
@@ -42,7 +71,7 @@ namespace Banquale.Model
 
         public void DataSave()
         {
-            Persistence.DataSave(CustomersList, TransactionsList);
+            Persistence.DataSave(CustomersList, Consultant);
         }
 
         public void DataLoad()
@@ -50,16 +79,13 @@ namespace Banquale.Model
 			var data = Persistence.DataLoad();
 
 			CustomersList.AddRange(data.Item1);
-			TransactionsList.AddRange(data.Item2);
 
 			foreach (var j in data.Item1)
 			{
 				CustomersList.Add(j);
 			}
-			foreach (var i in data.Item2)
-			{
-				TransactionsList.Add(i);
-			}
+
+			Consultant = data.Item2;
 		}
 
     }

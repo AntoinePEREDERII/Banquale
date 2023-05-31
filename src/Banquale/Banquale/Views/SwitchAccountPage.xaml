@@ -6,42 +6,48 @@
              Title="SwitchAccountPage"
              Shell.NavBarIsVisible="False">
 
-                    
-                <!-- Version StackLayout, moins efficace pour la responsivity -->
     
-	<!--<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+	<VerticalStackLayout
+        VerticalOptions="Center">
 
-        <local:SwitchAccountView/>
+        <ListView
+            ItemsSource="{Binding AccountsList}"
+            SelectionMode="None">
 
-        <local:SwitchAccountView/>
+            <ListView.ItemTemplate>
 
+                <DataTemplate>
+
+                    <ViewCell>
+
+                        <VerticalStackLayout
+                            HeightRequest="84">
+
+                            <Button
+                                Text="{Binding Name, StringFormat=' Compte Personnel &#10; {0}'}"
+                                Clicked="Transfer_Clicked"
+                                FontSize="Large"
+                                Margin="20"/>
+
+                        </VerticalStackLayout>
+
+                    </ViewCell>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>
 
         <Button Text="Déconnexion"
                 BorderWidth="2"
-                BorderColor="Black"
                 HorizontalOptions="Fill"
-                BackgroundColor="Gray"
-                TextColor="Black"
-                MinimumHeightRequest="75"
+                MinimumHeightRequest="100"
                 MinimumWidthRequest="375"
-                Margin="10,65,0,0"
-                FontSize="Large"/>
-
-    </StackLayout>-->
-    
-    <Grid RowDefinitions="2*, 2*, *">
-
-            <local:SwitchAccountView Grid.Row="0"/>
-
-            <local:SwitchAccountView Grid.Row="1"/>
-        
-            <Button
-                Text="Déconnexion"
-                Grid.Row="2"
-                HorizontalOptions="Fill"
-                MinimumHeightRequest="75"
-                MinimumWidthRequest="375"
+                Margin="10"
+                FontSize="Large"
                 Clicked="DisconnectionClicked"/>
 
-    </Grid>
+    </VerticalStackLayout>
+    
 </ContentPage>

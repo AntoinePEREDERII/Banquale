@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 namespace Banquale.Model
 {
     [DataContract]
-    public class Account : INotifyPropertyChanged
+    public class Account : INotifyPropertyChanged, IEquatable<Account>
     {
-	public event PropertyChangedEventHandler PropertyChanged;
+	    public event PropertyChangedEventHandler PropertyChanged;
 
         void OnPropertyChanged(string propertyName)
         {
@@ -63,12 +63,25 @@ namespace Banquale.Model
         }
         private string iban;
 
+        public string IBANHide
+        {
+            get => ibanHide;
+            set
+            {
+                if (ibanHide == value)
+                    return;
+                ibanHide = value;
+                OnPropertyChanged(nameof(IBANHide));
+            }
+        }
+        private string ibanHide;
 
         public Account(int balance, string name, string iban)
         {
             Balance = balance;
             Name = name;
             IBAN = iban;
+            IBANHide = IBANToString();
         }
 
         [DataMember]
@@ -87,6 +100,8 @@ namespace Banquale.Model
             Debug.WriteLine(iban);
             Debug.WriteLine(sum);
             Debug.WriteLine("Transaction successed !");
+
+
         }
 
         //public bool DoRequest(string name, string IBAN, float sum)
@@ -101,18 +116,42 @@ namespace Banquale.Model
         //    Console.WriteLine("Help button pressed !");
         //}
 
-        internal static void AskForHelp(Entry request, Entry subject, Editor message)
+        internal static Message AskForHelp(Entry subject, Editor description)
         {
-            Debug.WriteLine(request.Text);
-            Debug.WriteLine(subject);
-            Debug.WriteLine(message);
+            Debug.WriteLine(subject.Text);
+            Debug.WriteLine(description.Text);
             Debug.WriteLine("Help button pressed !");
             //throw new NotImplementedException();
+            Message message = new Message(subject.Text, description.Text);
+            return message;
         }
 
         internal static void DoRequest(Entry name, Entry iBAN, Entry sum)
         {
             throw new NotImplementedException();
+        }
+
+        public string IBANToString()
+        {
+            char[] res = IBAN.ToCharArray();
+            for (int i = 5; i< IBAN.Length - 4; i++ )
+            {
+                if (res[i] == ' ')
+                    continue;
+                res[i] = '*';
+            }
+            return new string(res);
+        }
+
+        public bool Equals(Account other)
+        {
+            if(other == null) return false;
+            else return other.IBAN.Equals(IBAN);
+        }
+
+        public override int GetHashCode()
+        {
+            return IBAN.GetHashCode();
         }
     }
 }

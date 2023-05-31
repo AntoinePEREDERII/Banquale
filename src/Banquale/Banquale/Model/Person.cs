@@ -16,7 +16,7 @@ namespace Banquale.Model
         [DataMember]
         public string FirstName { get; private set; }
         [DataMember]
-        public int Id { get; private set; }
+        public uint Id { get; private set; }
         [DataMember]
         public string Password { get; private set; }
 
@@ -24,7 +24,15 @@ namespace Banquale.Model
         {
             Name = name;
             FirstName = firstName;
-            Id = 0;
+            Id = 1;
+            Password = password;
+        }
+
+        public Person(string name, string firstName, uint id, string password)
+        {
+            Name = name;
+            FirstName = firstName;
+            Id = id;
             Password = password;
         }
 
