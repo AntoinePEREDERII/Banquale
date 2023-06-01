@@ -60,13 +60,9 @@
 	  <MauiXaml Remove="Resources\Images\Images.xaml" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Persistances\" />
 	  <Folder Include="Stub\" />
 	  <Folder Include="DataContractPersistance\" />
 	  <Folder Include="Views\Category\" />
 	  <Folder Include="Test\" />
-	</ItemGroup>
-	<ItemGroup>
-	  <PackageReference Include="Syncfusion.Pdf.Net.Core" Version="21.2.6" />
 	</ItemGroup>
 </Project>
