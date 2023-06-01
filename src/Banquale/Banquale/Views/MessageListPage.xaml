@@ -3,11 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Banquale.Views.MessageListPage"
              Title="MessageListPage"
-             Shell.NavBarIsVisible="True">
+             Shell.NavBarIsVisible="False">
 
     <VerticalStackLayout>
 
-        <ListView ItemsSource="{Binding MessagesList}"
+        <Label
+                                    Text="{Binding MessagesList[0].Subject}"
+                                    Grid.Column="1"
+                                    VerticalOptions="Center"
+                                    Margin="10, 0, 0, 0"
+                                BackgroundColor="Red"/>
+
+        <!--<Label Text="{Binding }" />-->
+
+        <!--<ListView ItemsSource="{Binding Consultant}"
                   SelectionMode="None">
 
             <ListView.ItemTemplate>
@@ -16,29 +25,17 @@
 
                     <ViewCell>
 
-                        <VerticalStackLayout>
 
-                        <!--<Grid.GestureRecognizers>
-                            <TapGestureRecognizer
-                                Tapped="Transaction_Clicked"
-                                NumberOfTapsRequired="1" />
-
-                        </Grid.GestureRecognizers>-->
-
-                            <Image Source="dotnet_bot.png"
-                                   Grid.Column="0"
-                                   MaximumHeightRequest="30"/>
+                       
+                            
+                            
                             <Label
-                                    Text="{Binding Subject}"
+                                    Text="Hello"
                                     VerticalOptions="Center"
                                     Margin="10, 0, 0, 0"/>
-                            <Label
-                                    Text="{Binding Description}"
-                                    VerticalOptions="Center"
-                                    HorizontalOptions="End"
-                                    Margin="0, 0, 20, 0"/>
+                            
 
-                        </VerticalStackLayout>
+                        
 
                     </ViewCell>
 
@@ -46,7 +43,7 @@
 
             </ListView.ItemTemplate>
 
-        </ListView>
+        </ListView>-->
 
     </VerticalStackLayout>
 </ContentPage>
