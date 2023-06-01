@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Runtime.Serialization;
+
 namespace Banquale.Model
 {
-	public class Message
+    [DataContract]
+    public class Message
 	{
-
+        [DataMember]
         public string Subject { get; private set; }
 
+        [DataMember]
         public string Description { get; private set; }
 
         public Message(string subject, string description)

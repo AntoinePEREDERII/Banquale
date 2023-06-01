@@ -24,7 +24,7 @@
                                 NumberOfTapsRequired="1" />
 
                         </Grid.GestureRecognizers>-->
-
+                            
                             <Image Source="dotnet_bot.png"
                                    Grid.Column="0"
                                    MaximumHeightRequest="30"/>
