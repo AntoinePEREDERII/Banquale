@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Banquale.Views.MessageListPage"
+             Title="MessageListPage"
+             Shell.NavBarIsVisible="False">
+
+    <VerticalStackLayout>
+
+        <Label
+                                    Text="{Binding MessagesList[0].Subject}"
+                                    Grid.Column="1"
+                                    VerticalOptions="Center"
+                                    Margin="10, 0, 0, 0"
+                                BackgroundColor="Red"/>
+
+        <!--<Label Text="{Binding }" />-->
+
+        <!--<ListView ItemsSource="{Binding Consultant}"
+                  SelectionMode="None">
+
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <ViewCell>
+
+
+                       
+                            
+                            
+                            <Label
+                                    Text="Hello"
+                                    VerticalOptions="Center"
+                                    Margin="10, 0, 0, 0"/>
+                            
+
+                        
+
+                    </ViewCell>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>-->
+
+    </VerticalStackLayout>
+</ContentPage>

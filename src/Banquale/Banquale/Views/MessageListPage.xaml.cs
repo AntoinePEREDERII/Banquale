@@ -1,0 +1,17 @@
+﻿using System.Diagnostics;
+using System.Runtime.Serialization.DataContracts;
+using Banquale.Model;
+
+namespace Banquale.Views;
+
+public partial class MessageListPage : ContentPage
+{
+    public Manager Mgr => (App.Current as App).MyManager;
+
+    public MessageListPage()
+	{
+        Debug.WriteLine(Mgr.Consultant.MessagesList[0].Subject);
+		InitializeComponent();
+        BindingContext = Mgr.Consultant;
+    }
+}

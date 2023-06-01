@@ -23,6 +23,12 @@
                 Margin="0, 10, 0, 10"
                 Clicked="Create_Customer_Clicked"/>
 
+        <Button Text="Messages"
+                MinimumHeightRequest="65"
+                FontSize="Large"
+                Margin="0, 10, 0, 10"
+                Clicked="Message_Clicked"/>
+
 
         <Button Text="Déconnexion"
                 BorderWidth="2"
