@@ -3,7 +3,7 @@ namespace Banquale.Views.Transfer;
 
 public partial class TransferPage : ContentPage
 {
-	public TransferPage()
+    public TransferPage()
 	{
 		InitializeComponent();
 	}

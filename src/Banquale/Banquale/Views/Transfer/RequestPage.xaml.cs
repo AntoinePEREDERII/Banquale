@@ -3,7 +3,9 @@ namespace Banquale.Views.Transfer;
 
 public partial class RequestPage : ContentPage
 {
-	public RequestPage()
+    public Manager Mgr => (App.Current as App).MyManager;
+
+    public RequestPage()
 	{
 		InitializeComponent();
 	}
