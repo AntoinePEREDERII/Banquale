@@ -50,7 +50,6 @@ namespace Banquale.Model
 		public Manager(IPersistenceManager persistence)
 		{
             CustomersList = new List<Customer>();
-			Consultant = null;
 			Persistence = persistence;
 		}
 
@@ -80,10 +79,10 @@ namespace Banquale.Model
 
 			CustomersList.AddRange(data.Item1);
 
-			foreach (var j in data.Item1)
+			/*foreach (var j in data.Item1)
 			{
 				CustomersList.Add(j);
-			}
+			}*/
 
 			Consultant = data.Item2;
 		}

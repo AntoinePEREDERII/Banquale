@@ -31,6 +31,7 @@ namespace Banquale.Model
                 OnPropertyChanged(nameof(Balance));
             }
         }
+        [DataMember]
         private double balance;
 
 
@@ -46,6 +47,7 @@ namespace Banquale.Model
                 OnPropertyChanged(nameof(Name));
             }
         }
+        [DataMember]
         private string name;
 
 
@@ -61,8 +63,10 @@ namespace Banquale.Model
                 OnPropertyChanged(nameof(IBAN));
             }
         }
+        [DataMember]
         private string iban;
 
+        [DataMember]
         public string IBANHide
         {
             get => ibanHide;
@@ -74,15 +78,8 @@ namespace Banquale.Model
                 OnPropertyChanged(nameof(IBANHide));
             }
         }
+        [DataMember]
         private string ibanHide;
-
-        public Account(int balance, string name, string iban)
-        {
-            Balance = balance;
-            Name = name;
-            IBAN = iban;
-            IBANHide = IBANToString();
-        }
 
         [DataMember]
         public List<Transactions> TransactionsList { get; set; } = new List<Transactions>();
@@ -93,6 +90,14 @@ namespace Banquale.Model
         //    if()
         //        return true;
         //}
+
+        public Account(int balance, string name, string iban)
+        {
+            Balance = balance;
+            Name = name;
+            IBAN = iban;
+            IBANHide = IBANToString();
+        }
 
         internal static void DoTransactions(Entry name, Entry iban, Entry sum)
         {
