@@ -3,6 +3,7 @@ namespace Banquale.Views.Transfer;
 
 public partial class TransferPage : ContentPage
 {
+    public Manager Mgr => (App.Current as App).MyManager;
     public TransferPage()
 	{
 		InitializeComponent();
