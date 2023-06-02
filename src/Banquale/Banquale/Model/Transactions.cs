@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 
 namespace Banquale.Model
 {
-    [DataContract]
+    [DataContract(IsReference = true)]
     public class Transactions : INotifyPropertyChanged
     {
 

@@ -16,7 +16,7 @@ public partial class App : Application
 
 		MyManager.DataLoad();
 		MyManager.Persistence = new DataContractPersistance.DataContractPers();
-        //MyManager.DataSave();
+        MyManager.DataSave();
 
 		InitializeComponent();
 
