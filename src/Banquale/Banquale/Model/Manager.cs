@@ -1,12 +1,19 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
 namespace Banquale.Model
 {
 	[DataContract]
-	public class Manager
+    public class Manager : INotifyPropertyChanged
 	{
-		[DataMember]
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        void OnPropertyChanged([CallerMemberName] string propertyName = null)
+				=> PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        [DataMember]
 		public List<Customer> CustomersList { get; private set; } // devient un set
 
         [DataMember]
@@ -17,7 +24,10 @@ namespace Banquale.Model
 			get => selectedCustomer;
 			set
 			{
+				if (selectedCustomer == value)
+					return;
 				selectedCustomer = value;
+				OnPropertyChanged();
 			}
 		}
 
@@ -28,8 +38,11 @@ namespace Banquale.Model
 			get => selectedAccount;
 			set
 			{
-				selectedAccount = value;
-			}
+                if (selectedAccount == value)
+                    return;
+                selectedAccount = value;
+                OnPropertyChanged();
+            }
 		}
 
 		private Account selectedAccount;
@@ -39,11 +52,16 @@ namespace Banquale.Model
             get => selectedTransaction;
             set
             {
+                if (selectedTransaction == value)
+                    return;
                 selectedTransaction = value;
+                OnPropertyChanged();
             }
         }
 
         private Transactions selectedTransaction;
+
+        
 
         public IPersistenceManager Persistence { get; set; }
 
