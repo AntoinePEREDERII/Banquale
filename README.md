@@ -42,10 +42,8 @@ The application is functional but the color is not good and the design is not fi
 <img src="./Documentation/images/splash.jpg" height="280">
 <img src="./Documentation/images/connection.jpg" height="280">
 <img src="./Documentation/images/balance.jpg" height="280">
-<img src="./Documentation/images/menu.jpg" height="280">
 <img src="./Documentation/images/help.jpg" height="280">
-<img src="./Documentation/images/accounts.jpg" height="280">
-<img src="./Documentation/images/rib.jpg" height="280">
+<img src="./Documentation/images/customer.jpg" height="280">
 <img src="./Documentation/images/payement.jpg" height="280">
 
 ## Usage
