@@ -9,7 +9,7 @@
 [![Vulnerabilities](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=Banquale&metric=vulnerabilities&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=Banquale)
 
 # Table of Content
-[Overview](#overview--big-picture) | [Documentation](#documentation) | [Prerequisites](#prerequisites) | [Getting Started](#getting-started) | [Features](#features) | [What we have now ?](#what-we-have-now) | [Screen Capture](#screen-capture) |[Usage](#usage)| [Built With](#built-with) | [Known issues and limitations](known_issues_and_limitations) | [Contributors](#contributors) | [How to contribute ?](#how-to-contribute) | [License](#license) | [Acknowledgments](#acknowledgments)
+[Overview](#overview--big-picture) | [Documentation](#documentation) | [Prerequisites](#prerequisites) | [Getting Started](#getting-started) | [Features](#features) | [What we have now ?](#what-we-have-now) | [Screen Capture](#screen-capture) |[Usage](#usage)| [Built With](#built-with) |   [Known issues and limitations](known_issues_and_limitations) | [Contributors](#contributors) | [How to contribute ?](#how-to-contribute) | [License](#license) | [Acknowledgments](#acknowledgments)
 
 ## Overview / Big picture
 Banquale is a mobile banking application built using .NET MAUI technology for the Android platform. This application provides users with a simple and intuitive way to manage their finances, including viewing account balances, transferring money and more.
@@ -68,7 +68,7 @@ The application is functional but the color is not good and the design is not fi
 * [Titouan LOUVET](https://codefirst.iut.uca.fr/u/titouan.louvet)
 
 ## How to contribute
-1. Fork it (<https://codefirst.iut.uca.fr/antoine.perederii/Banquale/fork>)
+1. Fork it (<https://codefirst.iut.uca.fr/antoine.perederii/Banquale>)
 2. Create your feature branch (`git checkout -b feature/featureName`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin feature/featureName`)
