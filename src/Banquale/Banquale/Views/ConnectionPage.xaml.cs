@@ -5,6 +5,7 @@ namespace Banquale.Views;
 public partial class ConnectionPage : ContentPage
 {
     public Manager Mgr => (App.Current as App).MyManager;
+
     public ConnectionPage()
 	{
 		InitializeComponent();
@@ -23,8 +24,13 @@ public partial class ConnectionPage : ContentPage
 
         if(currentId == "1")
         {
+            Mgr.IsConsultant = true;
             await Navigation.PushModalAsync(new ConsultantHomePage());
             return;
+        }
+        else
+        {
+            Mgr.IsConsultant = false;
         }
 
         //if(int.Parse(currentId) in Mgr.CustomersList) // FONCTIONNE PAS

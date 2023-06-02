@@ -58,7 +58,7 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 HorizontalOptions="Center"
-                Text="{Binding InvolvedAccounts.Name, StringFormat='Paiment expédié par&#10;  Compte {0}'}"
+                Text="{Binding InvolvedAccounts.Name, StringFormat='Paiment expédié   Compte {0}'}"
                 VerticalOptions="Center"/>
 
             <Label
@@ -86,7 +86,7 @@
         <Button
             Text="Faire opposition"
             Margin="0, 50, 0, 0"
-            Clicked="Objection_Clicked"/>
+            Clicked="Objection_Clicked" x:Name="oppose"/>
 
     </VerticalStackLayout>
 

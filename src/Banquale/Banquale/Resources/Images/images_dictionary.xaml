@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <FileImageSource x:Key="AccountIcon">Images/sources/accounts.png</FileImageSource>
+    <FileImageSource x:Key="DotnetIcon">Images/sources/dotnet_bot.png</FileImageSource>
+    <FileImageSource x:Key="HelpIcon">Images/sources/help.png</FileImageSource>
+    <FileImageSource x:Key="BackArrowIcon">Images/sources/back_arrow.png</FileImageSource>
+    <FileImageSource x:Key="HomeIcon">Images/sources/home.png</FileImageSource>
+    <FileImageSource x:Key="TransactionsIcon">Images/sources/transactions.png</FileImageSource>
+    <FileImageSource x:Key="BanqualeIcon">Images/sources/banquale</FileImageSource>
+
+</ResourceDictionary>

@@ -9,6 +9,10 @@ public partial class TransactionsPage : ContentPage
 	{
 		InitializeComponent();
         BindingContext = Mgr.SelectedTransaction;
+        if(Mgr.IsConsultant == true)
+        {
+            oppose.Text = "Accepter l'oposition";
+        }
 	}
 
     async void Categ_Clicked(System.Object sender, System.EventArgs e)
@@ -21,4 +25,5 @@ public partial class TransactionsPage : ContentPage
         await Shell.Current.Navigation.PopAsync();
     }
 
+    
 }

@@ -24,7 +24,7 @@
                             HeightRequest="84">
 
                             <Button
-                                Text="{Binding Name, StringFormat=' Compte Personnel &#10; {0}'}"
+                                Text="{Binding Name, StringFormat=' Compte Personnel  {0}'}"
                                 Clicked="Transfer_Clicked"
                                 FontSize="Large"
                                 Margin="20"/>

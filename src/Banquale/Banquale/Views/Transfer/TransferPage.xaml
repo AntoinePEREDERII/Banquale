@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Banquale.Views.Transfer.TransferPage">
+             x:Class="Banquale.Views.Transfer.TransferPage"
+             Title="Envoyer de l'argent">
 
     <VerticalStackLayout VerticalOptions="Center">
 
@@ -24,10 +25,13 @@
                Margin="0, 5, 0, 5"
                Padding="3">
 
-            <Entry Placeholder="IBAN"
-                   HorizontalOptions="Center"
-                   WidthRequest="280"
-                   x:Name="IBAN"/>
+            <Entry
+                Text="FR "
+                Placeholder="IBAN"
+                HorizontalOptions="Center"
+                WidthRequest="280"
+                x:Name="IBAN"
+                Keyboard="Numeric"/>
 
         </Frame>
 
@@ -40,7 +44,8 @@
             <Entry Placeholder="Montant"
                    HorizontalOptions="Center"
                    WidthRequest="280"
-                   x:Name="Sum"/>
+                   x:Name="Sum"
+                   Keyboard="Numeric"/>
 
         </Frame>
 

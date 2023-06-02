@@ -11,6 +11,7 @@
                 <!--    Only light theme    -->
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                <ResourceDictionary Source="Resources/Images/images_dictionary.xaml" />
                 
             </ResourceDictionary.MergedDictionaries>
 

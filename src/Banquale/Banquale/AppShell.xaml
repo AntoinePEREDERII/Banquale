@@ -17,25 +17,25 @@
             Title="Solde"
             ContentTemplate="{DataTemplate views:BalancePage}"
             Route="balance"
-            Icon="home.png"/>
+            Icon="{StaticResource HomeIcon}"/>
 
         <ShellContent
             Title="Transactions"
             ContentTemplate="{DataTemplate transfer:MenuTransferPage}"
             Route="menu"
-            Icon="transactions.png"/>
+            Icon="{StaticResource TransactionsIcon}"/>
 
         <ShellContent
             Title="Aide"
             ContentTemplate="{DataTemplate views:HelpPage}"
             Route="help"
-            Icon="help.png"/>
+            Icon="{StaticResource HelpIcon}"/>
 
 	    <ShellContent
             Title="Compte"
             ContentTemplate="{DataTemplate views:SwitchAccountPage}"
             Route="account"
-            Icon="accounts.png"/>
+            Icon="{StaticResource AccountIcon}"/>
 
     </TabBar>
 

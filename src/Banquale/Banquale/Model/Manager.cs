@@ -12,6 +12,8 @@ namespace Banquale.Model
         [DataMember]
         public Consultant Consultant { get; private set; } // 1 SEUL consultant
 
+		public bool IsConsultant { get; set; } = false;
+
         public Customer SelectedCustomer
 		{
 			get => selectedCustomer;

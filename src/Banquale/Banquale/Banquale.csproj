@@ -30,13 +30,16 @@
 		<MauiSplashScreen Include="Resources\Splash\splash.png" Color="#a8daab" BaseSize="128,128" />
 
 		<!-- Images -->
-		<MauiImage Include="Resources\Images\*" />
-
-		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+		<MauiImage Include="Resources\Images\sources\accounts.svg" />
+		<MauiImage Include="Resources\Images\sources\dotnet_bot.svg" />
+		<MauiImage Include="Resources\Images\sources\help.svg" />
+		<MauiImage Include="Resources\Images\sources\home.svg" />
+		<MauiImage Include="Resources\Images\sources\transactions.svg" />
+		<MauiImage Include="Resources\Images\sources\banquale.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -51,12 +54,19 @@
 	  <None Remove="DataContractPersistance\" />
 	  <None Remove="Views\Category\" />
 	  <None Remove="Test\" />
+	  <None Remove="Resources\Images\Sources\accounts.svg" />
+	  <None Remove="Resources\Images\Sources\back_arrow_icon.svg" />
+	  <None Remove="Resources\Images\Sources\dotnet_bot.svg" />
+	  <None Remove="Resources\Images\Sources\help.svg" />
+	  <None Remove="Resources\Images\Sources\home.svg" />
+	  <None Remove="Resources\Images\Sources\transactions.svg" />
+	  <None Remove="Resources\Images\sources\banquale.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Remove="Resources\Images\Images.xaml" />
+	  <MauiXaml Remove="Resources\Images\Dictionary1.xaml" />
 	</ItemGroup>
 	<ItemGroup>
-	  <BundleResource Include="Resources\Images\back_arrow_icon.svg" />
 	  <MauiXaml Remove="Resources\Images\Images.xaml" />
 	</ItemGroup>
 	<ItemGroup>
@@ -64,5 +74,9 @@
 	  <Folder Include="DataContractPersistance\" />
 	  <Folder Include="Views\Category\" />
 	  <Folder Include="Test\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="Resources\Images\ImagesDictionary.xaml" />
+	  <None Include="Resources\Images\images_dictionary.xaml" />
 	</ItemGroup>
 </Project>

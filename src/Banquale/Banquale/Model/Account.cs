@@ -101,9 +101,9 @@ namespace Banquale.Model
 
         internal static void DoTransactions(Entry name, Entry iban, Entry sum)
         {
-            Debug.WriteLine(name);
-            Debug.WriteLine(iban);
-            Debug.WriteLine(sum);
+            Debug.WriteLine(name.Text);
+            Debug.WriteLine(iban.Text);
+            Debug.WriteLine(sum.Text);
             Debug.WriteLine("Transaction successed !");
 
 
