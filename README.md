@@ -70,7 +70,7 @@ The application is functional but the color is not good and the design is not fi
 * [Titouan LOUVET](https://codefirst.iut.uca.fr/u/titouan.louvet)
 
 ## How to contribute
-1. Fork it (<https://codefirst.iut.uca.fr/antoine.perederii/Banquale/fork>)
+1. Fork it (<https://codefirst.iut.uca.fr/antoine.perederii/Banquale>)
 2. Create your feature branch (`git checkout -b feature/featureName`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin feature/featureName`)
