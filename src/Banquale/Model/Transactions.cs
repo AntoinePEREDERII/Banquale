@@ -11,9 +11,11 @@ namespace Model
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+        [DataMember]
+        public int Id { get; private set; }
 
         [DataMember]
-        public int Type
+        public bool Type
         { 
             get => type;
             set
@@ -26,7 +28,7 @@ namespace Model
         }
         [DataMember]
 
-        private int type;
+        private bool type;
 
         [DataMember]
         public Double Sum 
@@ -88,12 +90,13 @@ namespace Model
         [DataMember]
         private DateTime date;
 
-        public Transactions(int type, Double sum, Account involvedAccounts, string category, DateTime date)
+        public Transactions(bool type, Double sum, Account involvedAccounts/*, string category*/, int id, DateTime date)
         {
             Type = type;
             Sum = sum;
+            Id = id;
             InvolvedAccounts = involvedAccounts;
-            Category = category;
+            //Category = category;
             Date = date;
         }
 

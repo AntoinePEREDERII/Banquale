@@ -13,16 +13,16 @@ public partial class ConnectionPage : ContentPage
 
     public async void Connection_Clicked(Object sender, EventArgs e)
     {
-        string currentId = ident.Text;
+        uint currentId = Convert.ToUInt32(ident.Text);
         string password = pass.Text;
 
-        if (string.IsNullOrWhiteSpace(currentId) || string.IsNullOrWhiteSpace(password))
+        if (string.IsNullOrWhiteSpace(ident.Text) || string.IsNullOrWhiteSpace(password))
         {
             await DisplayAlert("Erreur", "Tout les champs doivent être complétés", "OK");
             return;
         }
 
-        if(currentId == "1")
+        if(currentId == 0)
         {
             Mgr.IsConsultant = true;
             await Navigation.PushModalAsync(new ConsultantHomePage());
@@ -33,21 +33,14 @@ public partial class ConnectionPage : ContentPage
             Mgr.IsConsultant = false;
         }
 
-
-        /*foreach(var Cu in Mgr.CustomersList)
+        Customer customer = Mgr.CustomersList.FirstOrDefault(u => u.Id == currentId && u.Password == password);
+        if (customer == null)
         {
-            if (Cu.Id == currentId)
-            {
-                Mgr.SelectedCustomer = Mgr.CustomersList[currentId+1];
-            }
-        }*/
+            await DisplayAlert("Erreur", "Le mot de passe ou l'id entré est incorrect.", "OK");
+            return;
+        }
 
-        //if(int.Parse(currentId) in Mgr.CustomersList) // FONCTIONNE PAS
-        //{
-        //    Mgr.SelectedCustomer = Mgr.CustomersList[int.Parse(currentId)];             
-        //}
-
-        Mgr.SelectedCustomer = Mgr.CustomersList[0];// 0 à changer 
+        Mgr.SelectedCustomer = customer;
 
 
         await Navigation.PushModalAsync(new SwitchAccountPage());
