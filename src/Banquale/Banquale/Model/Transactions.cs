@@ -13,7 +13,7 @@ namespace Banquale.Model
         }
 
         [DataMember]
-        public int Type
+        public bool Type
         { 
             get => type;
             set
@@ -26,7 +26,7 @@ namespace Banquale.Model
         }
         [DataMember]
 
-        private int type;
+        private bool type;
 
         [DataMember]
         public Double Sum 
@@ -88,12 +88,12 @@ namespace Banquale.Model
         [DataMember]
         private DateTime date;
 
-        public Transactions(int type, Double sum, Account involvedAccounts, string category, DateTime date)
+        public Transactions(bool type, Double sum, Account involvedAccounts/*, string category*/, DateTime date)
         {
             Type = type;
             Sum = sum;
             InvolvedAccounts = involvedAccounts;
-            Category = category;
+            //Category = category;
             Date = date;
         }
 

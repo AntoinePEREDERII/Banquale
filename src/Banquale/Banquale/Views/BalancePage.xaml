@@ -6,6 +6,10 @@
              x:Class="Banquale.Views.BalancePage"
              Title="BalancePage"
              Shell.NavBarIsVisible="False">
+
+    <!--<ContentPage.BindingContext>
+        <model:Manager.SelectedAccount/>
+    </ContentPage.BindingContext>-->
     
     <Grid RowDefinitions="auto, auto, *">
 

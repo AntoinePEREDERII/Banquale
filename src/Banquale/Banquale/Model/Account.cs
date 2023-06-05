@@ -20,7 +20,7 @@ namespace Banquale.Model
         }
 
         [DataMember]
-        public double Balance 
+        public Double Balance 
         {
             get => balance;
             set
@@ -32,7 +32,7 @@ namespace Banquale.Model
             }
         }
         [DataMember]
-        private double balance;
+        private Double balance;
 
 
         [DataMember]
@@ -84,14 +84,23 @@ namespace Banquale.Model
         [DataMember]
         public List<Transactions> TransactionsList { get; set; } = new List<Transactions>();
 
-        //public bool DoTransactions(string name, string IBAN, float sum)
-        //{
-        //    List<Transactions> transactions.add(sum);
-        //    if()
-        //        return true;
-        //}
+        public void DoTransactions(Account involvedAccount, Double sum, bool type)
+        {
+            if (type) // si le type est True => c'est un débit, on doit donc ajouter la transaction pour l'autre compte
+            {
+                TransactionsList.Add(new Transactions(type, sum, involvedAccount, DateTime.Now));
+                Balance = Balance-sum;
+                involvedAccount.DoTransactions(this, sum, !type);
+            }
+            else // Sinon, c'est un crédit, on a juste à l'ajouter ànotre liste de transactions
+            {
+                TransactionsList.Add(new Transactions(type, sum, involvedAccount, DateTime.Now));
+                Balance = Balance+sum;
+            }
+            
+        }
 
-        public Account(int balance, string name, string iban)
+        public Account(Double balance, string name, string iban)
         {
             Balance = balance;
             Name = name;
@@ -99,15 +108,13 @@ namespace Banquale.Model
             IBANHide = IBANToString();
         }
 
-        internal static void DoTransactions(Entry name, Entry iban, Entry sum)
-        {
-            Debug.WriteLine(name.Text);
-            Debug.WriteLine(iban.Text);
-            Debug.WriteLine(sum.Text);
-            Debug.WriteLine("Transaction successed !");
-
-
-        }
+        //internal static void DoTransactions(Entry name, Entry iban, Entry sum)
+        //{
+        //    Debug.WriteLine(name.Text);
+        //    Debug.WriteLine(iban.Text);
+        //    Debug.WriteLine(sum.Text);
+        //    Debug.WriteLine("Transaction successed !");
+        //}
 
         //public bool DoRequest(string name, string IBAN, float sum)
         //{
