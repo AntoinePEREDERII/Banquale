@@ -21,15 +21,15 @@ namespace Banquale.Stub
             Customer Customer3 = new Customer("Michel", "Boudout", "MonMdP");
 
             Account Account1 = new Account(999, "Tatouille", "FR76 9161 9581 6296 8415 2361 004");
-            Account Account2 = new Account(9510, "Despoints", "FR76 4785 8569 6914 4152 5263 003");
+            Account Account2 = new Account(9510, "Despoints", "FR7647858569691441525263003");
             Account Account3 = new Account(3519, "Perotte", "FR76 6352 2541 4169 6958 5847 002");
 
 
-            Transactions Transactions1 = new Transactions(0, 55, Account1, "Test", new DateTime(2023, 6, 21, 15, 29, 20));
-            Transactions Transactions12 = new Transactions(0, 105, Account1, "Test", new DateTime(2023, 8, 17, 18, 54, 35));
-            Transactions Transactions13 = new Transactions(0, 187, Account1, "Test", new DateTime(2023, 5, 3, 8, 39, 49));
-            Transactions Transactions2 = new Transactions(1, 54.99, Account2, "Test", new DateTime(2022, 8, 15));
-            Transactions Transactions3 = new Transactions(0, 1000, Account3, "Test", new DateTime(2020, 9, 1, 20, 00, 00));
+            Transactions Transactions1 = new Transactions(true, 55, Account1, new DateTime(2023, 6, 21, 15, 29, 20));
+            Transactions Transactions12 = new Transactions(true, 105, Account1, new DateTime(2023, 8, 17, 18, 54, 35));
+            Transactions Transactions13 = new Transactions(true, 187, Account1, new DateTime(2023, 5, 3, 8, 39, 49));
+            Transactions Transactions2 = new Transactions(false, 54.99, Account2, new DateTime(2022, 8, 15));
+            Transactions Transactions3 = new Transactions(true, 1000, Account3, new DateTime(2020, 9, 1, 20, 00, 00));
 
             Debug.WriteLine(Customer1.Name, Customer1.Password);
             List<Customer> CustomersList = new List<Customer>();
