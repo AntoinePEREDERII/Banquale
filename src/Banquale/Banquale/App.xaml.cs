@@ -1,4 +1,4 @@
-﻿using Banquale.Model;
+﻿using Model;
 using Banquale.Stub;
 using Banquale.DataContractPersistance;
 

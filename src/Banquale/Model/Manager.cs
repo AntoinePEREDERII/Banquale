@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
-namespace Banquale.Model
+namespace Model
 {
 	[DataContract]
     public class Manager : INotifyPropertyChanged

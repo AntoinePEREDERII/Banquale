@@ -8,7 +8,8 @@
 
     
 	<VerticalStackLayout
-        VerticalOptions="Center">
+        VerticalOptions="Center"
+        Spacing="10">
 
         <ListView
             ItemsSource="{Binding AccountsList}"
@@ -21,7 +22,8 @@
                     <ViewCell>
 
                         <VerticalStackLayout
-                            HeightRequest="84">
+                            HeightRequest="84"
+                            Margin="10">
 
                             <Button
                                 Text="{Binding Name, StringFormat=' Compte Personnel  {0}'}"

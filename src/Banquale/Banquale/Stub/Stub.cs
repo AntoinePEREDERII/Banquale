@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using Banquale.Model;
+using Model;
 
 namespace Banquale.Stub
 {

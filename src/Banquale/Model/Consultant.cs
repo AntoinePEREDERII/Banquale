@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Banquale.Model
+namespace Model
 {
     [DataContract]
     public class Consultant : Person

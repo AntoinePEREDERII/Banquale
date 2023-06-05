@@ -1,4 +1,4 @@
-using Banquale.Model;
+using Model;
 
 namespace Banquale.Views;
 
@@ -14,7 +14,7 @@ public partial class SwitchAccountPage : ContentPage
 
     public async void Transfer_Clicked(object sender, EventArgs e)
     {
-        Mgr.SelectedAccount = Mgr.SelectedCustomer.AccountsList[0]; // 0 à changer
+        Mgr.SelectedAccount = Mgr.SelectedCustomer.AccountsList[0]; // 0 ï¿½ changer
 
         await Shell.Current.GoToAsync("//balance");
     }

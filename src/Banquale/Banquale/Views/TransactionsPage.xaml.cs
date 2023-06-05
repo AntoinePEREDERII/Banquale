@@ -1,4 +1,4 @@
-using Banquale.Model;
+using Model;
 using Banquale.Views.Category;
 namespace Banquale.Views;
 

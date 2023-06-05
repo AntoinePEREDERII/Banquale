@@ -1,5 +1,5 @@
 ﻿using System;
-using Banquale.Model;
+using Model;
 
 namespace Banquale.Test
 {

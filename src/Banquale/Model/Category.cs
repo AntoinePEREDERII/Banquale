@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Banquale.Model
+namespace Model
 {
 	public class Category
 	{

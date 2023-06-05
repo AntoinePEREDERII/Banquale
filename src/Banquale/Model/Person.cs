@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
+using System;
 using System.Threading.Tasks;
 
 
-namespace Banquale.Model
+namespace Model
 {
     [DataContract]
     public class Person

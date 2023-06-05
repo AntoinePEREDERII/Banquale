@@ -79,4 +79,7 @@
 	  <None Include="Resources\Images\ImagesDictionary.xaml" />
 	  <None Include="Resources\Images\images_dictionary.xaml" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Model\Model.csproj" />
+	</ItemGroup>
 </Project>

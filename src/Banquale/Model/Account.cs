@@ -4,10 +4,10 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
+using System;
 using System.Threading.Tasks;
 
-namespace Banquale.Model
+namespace Model
 {
     [DataContract]
     public class Account : INotifyPropertyChanged, IEquatable<Account>
@@ -99,11 +99,11 @@ namespace Banquale.Model
             IBANHide = IBANToString();
         }
 
-        internal static void DoTransactions(Entry name, Entry iban, Entry sum)
+        public static void DoTransactions(string name, string iban, string sum)
         {
-            Debug.WriteLine(name.Text);
-            Debug.WriteLine(iban.Text);
-            Debug.WriteLine(sum.Text);
+            Debug.WriteLine(name);
+            Debug.WriteLine(iban);
+            Debug.WriteLine(sum);
             Debug.WriteLine("Transaction successed !");
 
 
@@ -121,17 +121,17 @@ namespace Banquale.Model
         //    Console.WriteLine("Help button pressed !");
         //}
 
-        internal static Message AskForHelp(Entry subject, Editor description)
+        public static Message AskForHelp(string subject, string description)
         {
-            Debug.WriteLine(subject.Text);
-            Debug.WriteLine(description.Text);
+            Debug.WriteLine(subject);
+            Debug.WriteLine(description);
             Debug.WriteLine("Help button pressed !");
             //throw new NotImplementedException();
-            Message message = new Message(subject.Text, description.Text);
+            Message message = new Message(subject, description);
             return message;
         }
 
-        internal static void DoRequest(Entry name, Entry iBAN, Entry sum)
+        public static void DoRequest(string name, string iBAN, string sum)
         {
             throw new NotImplementedException();
         }

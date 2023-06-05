@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.Serialization;
 
-namespace Banquale.Model
+namespace Model
 {
     [DataContract(IsReference = true)]
     public class Transactions : INotifyPropertyChanged
