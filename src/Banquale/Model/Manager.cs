@@ -14,7 +14,7 @@ namespace Model
 				=> PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         [DataMember]
-		public List<Customer> CustomersList { get; private set; } // devient un set
+		public HashSet<Customer> CustomersList { get; private set; }
 
         [DataMember]
         public Consultant Consultant { get; private set; } // 1 SEUL consultant
@@ -69,13 +69,13 @@ namespace Model
 
 		public Manager(IPersistenceManager persistence)
 		{
-            CustomersList = new List<Customer>();
+            CustomersList = new HashSet<Customer>();
 			Persistence = persistence;
 		}
 
         public Manager()
         {
-            CustomersList = new List<Customer>();
+            CustomersList = new HashSet<Customer>();
         }
 
         public bool AddCustomer(Customer MyCustomer)
@@ -84,9 +84,9 @@ namespace Model
 			return true;
 		}
 
-		public Customer GetCustomer(int place) {
-				return CustomersList[place];
-		}
+		//public Customer GetCustomer(int place) {
+		//		return CustomersList[place];
+		//}
 
         public void DataSave()
         {
@@ -97,7 +97,7 @@ namespace Model
 		{
 			var data = Persistence.DataLoad();
 
-			CustomersList.AddRange(data.Item1);
+            CustomersList =data.Item1;
 
 			/*foreach (var j in data.Item1)
 			{

@@ -82,7 +82,17 @@ namespace Model
         private string ibanHide;
 
         [DataMember(Order = 5)]
-        public List<Transactions> TransactionsList { get; set; } = new List<Transactions>();
+        public List<Transactions> TransactionsList 
+        { 
+            get => transactionsList;
+            set
+            {
+                transactionsList = value;
+                OnPropertyChanged(nameof(TransactionsList));
+            }
+        }
+
+        private List<Transactions> transactionsList;
 
         public void DoTransactions(Account involvedAccount, double sum, bool type, int nb)
         {
@@ -106,6 +116,7 @@ namespace Model
             Balance = balance;
             Name = name;
             IBAN = iban;
+            TransactionsList = new List<Transactions>();
             IBANHide = IBANToString();
         }
 

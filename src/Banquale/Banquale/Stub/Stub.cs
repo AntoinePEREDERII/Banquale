@@ -7,7 +7,7 @@ namespace Banquale.Stub
     public class Stub : IPersistenceManager
     {
 
-        public (List<Customer>, Consultant) DataLoad()
+        public (HashSet<Customer>, Consultant) DataLoad()
         {
             Consultant Consultant = new Consultant("Consultant", "Consultant", "Consultant"); // toujours creer en premier le consultant
 
@@ -32,7 +32,7 @@ namespace Banquale.Stub
             Transactions Transactions3 = new Transactions(true, 1000, Account3, 5, new DateTime(2020, 9, 1, 20, 00, 00));
 
             Debug.WriteLine(Customer1.Name, Customer1.Password);
-            List<Customer> CustomersList = new List<Customer>();
+            HashSet<Customer> CustomersList = new HashSet<Customer>();
             List<Transactions> TransactionsList= new List<Transactions>();
             List<Account> AccountsList = new List<Account>();
             
@@ -57,7 +57,7 @@ namespace Banquale.Stub
             return (CustomersList, Consultant);
         }
 
-        public void DataSave(List<Customer> c, Consultant consultant)
+        public void DataSave(HashSet<Customer> c, Consultant consultant)
         {
             throw new NotImplementedException();
         }

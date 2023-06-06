@@ -8,8 +8,8 @@ namespace Model
 {
     public interface IPersistenceManager
     {
-        public (List<Customer>, Consultant) DataLoad();
+        public (HashSet<Customer>, Consultant) DataLoad();
 
-        void DataSave(List<Customer> cu, Consultant co);
+        void DataSave(HashSet<Customer> cu, Consultant co);
     }
 }
