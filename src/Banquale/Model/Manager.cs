@@ -49,7 +49,7 @@ namespace Model
 
 		private Account selectedAccount;
 
-        public Transactions SelectedTransaction
+        public Transaction SelectedTransaction
         {
             get => selectedTransaction;
             set
@@ -61,7 +61,7 @@ namespace Model
             }
         }
 
-        private Transactions selectedTransaction;
+        private Transaction selectedTransaction;
 
         
 

@@ -25,15 +25,15 @@ namespace Banquale.Stub
             Account Account3 = new Account(3519, "Perotte", "FR7663522541416969585847002");
 
 
-            Transactions Transactions1 = new Transactions(true, 55, Account1, 1, new DateTime(2023, 6, 21, 15, 29, 20));
-            Transactions Transactions12 = new Transactions(true, 105, Account1, 2, new DateTime(2023, 8, 17, 18, 54, 35));
-            Transactions Transactions13 = new Transactions(true, 187, Account1, 3, new DateTime(2023, 5, 3, 8, 39, 49));
-            Transactions Transactions2 = new Transactions(false, 54.99, Account2, 4, new DateTime(2022, 8, 15));
-            Transactions Transactions3 = new Transactions(true, 1000, Account3, 5, new DateTime(2020, 9, 1, 20, 00, 00));
+            Transaction Transactions1 = new Transaction(true, 55, Account1, 1, new DateTime(2023, 6, 21, 15, 29, 20));
+            Transaction Transactions12 = new Transaction(true, 105, Account1, 2, new DateTime(2023, 8, 17, 18, 54, 35));
+            Transaction Transactions13 = new Transaction(true, 187, Account1, 3, new DateTime(2023, 5, 3, 8, 39, 49));
+            Transaction Transactions2 = new Transaction(false, 54.99, Account2, 4, new DateTime(2022, 8, 15));
+            Transaction Transactions3 = new Transaction(true, 1000, Account3, 5, new DateTime(2020, 9, 1, 20, 00, 00));
 
             Debug.WriteLine(Customer1.Name, Customer1.Password);
             HashSet<Customer> CustomersList = new HashSet<Customer>();
-            List<Transactions> TransactionsList= new List<Transactions>();
+            List<Transaction> TransactionsList= new List<Transaction>();
             List<Account> AccountsList = new List<Account>();
             
 

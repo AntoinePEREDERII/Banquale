@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Model
 {
     [DataContract(IsReference = true)]
-    public class Transactions : INotifyPropertyChanged
+    public class Transaction : INotifyPropertyChanged
     {
 
         void OnPropertyChanged(string propertyName)
@@ -90,7 +90,7 @@ namespace Model
         [DataMember]
         private DateTime date;
 
-        public Transactions(bool type, double sum, Account involvedAccounts/*, string category*/, int id, DateTime date)
+        public Transaction(bool type, double sum, Account involvedAccounts/*, string category*/, int id, DateTime date)
         {
             Type = type;
             Sum = sum;

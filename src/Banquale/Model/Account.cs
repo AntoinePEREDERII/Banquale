@@ -82,7 +82,7 @@ namespace Model
         private string ibanHide;
 
         [DataMember(Order = 5)]
-        public List<Transactions> TransactionsList 
+        public List<Transaction> TransactionsList 
         { 
             get => transactionsList;
             set
@@ -92,20 +92,20 @@ namespace Model
             }
         }
 
-        private List<Transactions> transactionsList;
+        private List<Transaction> transactionsList;
 
         public void DoTransactions(Account involvedAccount, double sum, bool type, int nb)
         {
             if (type) // si le type est True => c'est un débit, on doit donc ajouter la transaction pour l'autre compte
             {
-                Transactions transaction = new Transactions(type, sum, involvedAccount, nb, DateTime.Now);
+                Transaction transaction = new Transaction(type, sum, involvedAccount, nb, DateTime.Now);
                 TransactionsList.Add(transaction);
                 Balance = Balance-sum;
                 involvedAccount.DoTransactions(this, sum, !type, nb+1);
             }
             else // Sinon, c'est un crédit, on a juste à l'ajouter ànotre liste de transactions
             {
-                TransactionsList.Add(new Transactions(type, sum, involvedAccount, nb, DateTime.Now));
+                TransactionsList.Add(new Transaction(type, sum, involvedAccount, nb, DateTime.Now));
                 Balance = Balance+sum;
             }
             
@@ -116,7 +116,7 @@ namespace Model
             Balance = balance;
             Name = name;
             IBAN = iban;
-            TransactionsList = new List<Transactions>();
+            TransactionsList = new List<Transaction>();
             IBANHide = IBANToString();
         }
 
