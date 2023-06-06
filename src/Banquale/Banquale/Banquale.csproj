@@ -53,7 +53,6 @@
 	  <None Remove="Stub\" />
 	  <None Remove="DataContractPersistance\" />
 	  <None Remove="Views\Category\" />
-	  <None Remove="Test\" />
 	  <None Remove="Resources\Images\Sources\accounts.svg" />
 	  <None Remove="Resources\Images\Sources\back_arrow_icon.svg" />
 	  <None Remove="Resources\Images\Sources\dotnet_bot.svg" />
@@ -73,7 +72,6 @@
 	  <Folder Include="Stub\" />
 	  <Folder Include="DataContractPersistance\" />
 	  <Folder Include="Views\Category\" />
-	  <Folder Include="Test\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include="Resources\Images\ImagesDictionary.xaml" />

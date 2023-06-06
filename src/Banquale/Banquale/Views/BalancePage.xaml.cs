@@ -37,14 +37,14 @@ public partial class BalancePage : ContentPage
             return;
         }
 
-        Transactions transactions = Mgr.SelectedAccount.TransactionsList.FirstOrDefault(u => u.Id == TransactionId);
-        if (transactions == null)
+        Transaction transaction = Mgr.SelectedAccount.TransactionsList.FirstOrDefault(u => u.Id == TransactionId);
+        if (transaction == null)
         {
             await DisplayAlert("Erreur", "La transaction n'éxiste pas !", "OK");
             return;
         }
 
-        Mgr.SelectedTransaction = transactions;
+        Mgr.SelectedTransaction = transaction;
 
 
         await Navigation.PushModalAsync(new TransactionsPage());

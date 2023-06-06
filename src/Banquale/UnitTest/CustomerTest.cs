@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Banquale.Test
+namespace UnitTest
 {
 	public class CustomerTest
 	{
