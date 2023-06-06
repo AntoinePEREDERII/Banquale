@@ -69,12 +69,13 @@
             Grid.Row="1"
             HeightRequest="1"/>
 
-        <Label Text="{Binding TransactionsList.Id}"
+        <Label Text="{Binding TransactionsList[0].Id}"
                x:Name="idLabel" />
 
         <ListView ItemsSource="{Binding TransactionsList}"
                   Grid.Row="2"
                   SelectionMode="None">
+            <!--ItemSelected="Transactions_Clicked"-->
 
             <ListView.ItemTemplate>
 

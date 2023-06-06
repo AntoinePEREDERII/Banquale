@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 namespace Model
 {
     [DataContract]
-    public class Account : INotifyPropertyChanged, IEquatable<Account>
+    public class Account : INotifyPropertyChanged
     {
-	    public event PropertyChangedEventHandler PropertyChanged;
+	    public event PropertyChangedEventHandler? PropertyChanged;
 
         void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        [DataMember]
-        public Double Balance 
+        [DataMember(Order = 3)]
+        public double Balance 
         {
             get => balance;
             set
@@ -32,10 +32,10 @@ namespace Model
             }
         }
         [DataMember]
-        private Double balance;
+        private double balance;
 
 
-        [DataMember]
+        [DataMember(Order = 1)]
         public string Name 
         {
             get => name;
@@ -51,7 +51,7 @@ namespace Model
         private string name;
 
 
-        [DataMember]
+        [DataMember(Order = 2)]
         public string IBAN 
         {
             get => iban;
@@ -66,7 +66,7 @@ namespace Model
         [DataMember]
         private string iban;
 
-        [DataMember]
+        [DataMember(Order = 4)]
         public string IBANHide
         {
             get => ibanHide;
@@ -81,10 +81,10 @@ namespace Model
         [DataMember]
         private string ibanHide;
 
-        [DataMember]
+        [DataMember(Order = 5)]
         public List<Transactions> TransactionsList { get; set; } = new List<Transactions>();
 
-        public void DoTransactions(Account involvedAccount, Double sum, bool type, int nb)
+        public void DoTransactions(Account involvedAccount, double sum, bool type, int nb)
         {
             if (type) // si le type est True => c'est un débit, on doit donc ajouter la transaction pour l'autre compte
             {
@@ -101,7 +101,7 @@ namespace Model
             
         }
 
-        public Account(Double balance, string name, string iban)
+        public Account(double balance, string name, string iban)
         {
             Balance = balance;
             Name = name;
@@ -155,15 +155,6 @@ namespace Model
             return new string(res);
         }
 
-        public bool Equals(Account other)
-        {
-            if(other == null) return false;
-            else return other.IBAN.Equals(IBAN);
-        }
-
-        public override int GetHashCode()
-        {
-            return IBAN.GetHashCode();
-        }
+        
     }
 }

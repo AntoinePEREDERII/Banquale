@@ -11,10 +11,10 @@ namespace Model
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        [DataMember]
+        [DataMember(Order = 1)]
         public int Id { get; private set; }
 
-        [DataMember]
+        [DataMember(Order = 2)]
         public bool Type
         { 
             get => type;
@@ -30,8 +30,8 @@ namespace Model
 
         private bool type;
 
-        [DataMember]
-        public Double Sum 
+        [DataMember(Order = 3)]
+        public double Sum 
         {
             get => sum;
             set
@@ -43,9 +43,9 @@ namespace Model
             }
         }
         [DataMember]
-        private Double sum;
+        private double sum;
 
-        [DataMember]
+        [DataMember(Order = 4)]
         public Account InvolvedAccounts
         {
             get => involvedAccounts;
@@ -60,7 +60,7 @@ namespace Model
         [DataMember]
         private Account involvedAccounts;
 
-        [DataMember]
+        [DataMember(Order = 5)]
         public string Category
         {
             get => category;
@@ -73,9 +73,9 @@ namespace Model
             }
         }
         [DataMember]
-        private string category;
+        private string? category;
 
-        [DataMember]
+        [DataMember(Order = 6)]
         public DateTime Date 
         {
             get => date;
@@ -90,7 +90,7 @@ namespace Model
         [DataMember]
         private DateTime date;
 
-        public Transactions(bool type, Double sum, Account involvedAccounts/*, string category*/, int id, DateTime date)
+        public Transactions(bool type, double sum, Account involvedAccounts/*, string category*/, int id, DateTime date)
         {
             Type = type;
             Sum = sum;
@@ -100,7 +100,11 @@ namespace Model
             Date = date;
         }
 
+        public void ChangeCategory(string newCateg)
+        {
+            Category = newCateg;
+        }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

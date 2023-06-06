@@ -71,7 +71,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Stub\" />
-	  <Folder Include="DataContractPersistance\" />
 	  <Folder Include="Views\Category\" />
 	  <Folder Include="Test\" />
 	</ItemGroup>
