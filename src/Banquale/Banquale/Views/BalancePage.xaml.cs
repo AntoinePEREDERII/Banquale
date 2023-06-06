@@ -37,7 +37,7 @@ public partial class BalancePage : ContentPage
             return;
         }
 
-        Transactions transactions = Mgr.SelectedAccount.TransactionsList.FirstOrDefault(u => u.Id == TransactionId);
+        Transaction transactions = Mgr.SelectedAccount.TransactionsList.FirstOrDefault(u => u.Id == TransactionId);
         if (transactions == null)
         {
             await DisplayAlert("Erreur", "La transaction n'éxiste pas !", "OK");
