@@ -22,13 +22,13 @@ namespace Model
         /// <summary>
         /// Gets the unique identifier of the transaction.
         /// </summary>
-        [DataMember]
+        [DataMember(Order = 1)]
         public int Id { get; private set; }
 
         /// <summary>
         /// Gets or sets the type of the transaction (debit or credit).
         /// </summary>
-        [DataMember]
+        [DataMember(Order = 2)]
         public bool Type
         {
             get => type;
@@ -46,7 +46,7 @@ namespace Model
         /// <summary>
         /// Gets or sets the sum of the transaction.
         /// </summary>
-        [DataMember]
+        [DataMember(Order = 3)]
         public double Sum
         {
             get => sum;
@@ -64,7 +64,7 @@ namespace Model
         /// <summary>
         /// Gets or sets the account(s) involved in the transaction.
         /// </summary>
-        [DataMember]
+        [DataMember(Order = 4)]
         public Account InvolvedAccounts
         {
             get => involvedAccounts;
@@ -82,7 +82,7 @@ namespace Model
         /// <summary>
         /// Gets or sets the category of the transaction.
         /// </summary>
-        [DataMember]
+        [DataMember(Order = 5)]
         public string Category
         {
             get => category;
@@ -95,12 +95,12 @@ namespace Model
             }
         }
         [DataMember]
-        private string category;
+        private string? category;
 
         /// <summary>
         /// Gets or sets the date of the transaction.
         /// </summary>
-        [DataMember]
+        [DataMember(Order = 6)]
         public DateTime Date
         {
             get => date;
@@ -131,5 +131,11 @@ namespace Model
             InvolvedAccounts = involvedAccounts;
             Date = date;
         }
+
+        public void ChangeCategory(string newCateg)
+        {
+            Category = newCateg;
+        }
+
     }
 }

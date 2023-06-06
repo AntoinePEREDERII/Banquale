@@ -16,12 +16,12 @@ namespace Model
     /// Représente un compte bancaire.
     /// </summary>
     [DataContract]
-    public class Account : INotifyPropertyChanged, IEquatable<Account>
+    public class Account : INotifyPropertyChanged
     {
         /// <summary>
         /// Événement déclenché lorsqu'une propriété est modifiée.
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         /// <summary>
         /// Déclenche l'événement PropertyChanged pour une propriété donnée.
@@ -35,8 +35,8 @@ namespace Model
         /// <summary>
         /// Obtient ou définit le solde du compte.
         /// </summary>
-        [DataMember]
-        public Double Balance
+        [DataMember(Order = 3)]
+        public double Balance
         {
             get => balance;
             set
@@ -48,12 +48,12 @@ namespace Model
             }
         }
         [DataMember]
-        private Double balance;
+        private double balance;
 
         /// <summary>
         /// Obtient ou définit le nom du titulaire du compte.
         /// </summary>
-        [DataMember]
+        [DataMember(Order = 1)]
         public string Name
         {
             get => name;
@@ -71,7 +71,7 @@ namespace Model
         /// <summary>
         /// Obtient ou définit le numéro IBAN du compte.
         /// </summary>
-        [DataMember]
+        [DataMember(Order = 2)]
         public string IBAN
         {
             get => iban;
@@ -89,7 +89,7 @@ namespace Model
         /// <summary>
         /// Obtient une version masquée du numéro IBAN du compte.
         /// </summary>
-        [DataMember]
+        [DataMember(Order = 4)]
         public string IBANHide
         {
             get => ibanHide;
@@ -107,7 +107,7 @@ namespace Model
         /// <summary>
         /// Obtient ou définit la liste des transactions effectuées sur le compte.
         /// </summary>
-        [DataMember]
+        [DataMember(Order = 5)]
         public List<Transaction> TransactionsList { get; set; } = new List<Transaction>();
 
         /// <summary>
@@ -177,6 +177,7 @@ namespace Model
             }
             return new string(res);
         }
+
 
         /// <summary>
         /// Vérifie si deux comptes sont égaux en comparant leur numéro IBAN.

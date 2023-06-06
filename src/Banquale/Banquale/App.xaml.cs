@@ -7,7 +7,7 @@ namespace Banquale;
 public partial class App : Application
 {
 
-	public Manager MyManager { get; private set; } = new Manager(new Stub.Stub() /*DataContractPersistance.DataContractPers()*/);
+	public Manager MyManager { get; private set; } = new Manager(new Stub.Stub() /*DataContractPersistance.DataContractPersXML()*/);
 
 	
 
@@ -15,7 +15,7 @@ public partial class App : Application
 	{
 
 		MyManager.DataLoad();
-		MyManager.Persistence = new DataContractPersistance.DataContractPers();
+		MyManager.Persistence = new DataContractPersistance.DataContractPersXML();
         MyManager.DataSave();
 
 		InitializeComponent();

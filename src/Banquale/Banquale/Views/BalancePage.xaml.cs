@@ -33,7 +33,7 @@ public partial class BalancePage : ContentPage
 
         if (string.IsNullOrWhiteSpace(idLabel.Text))
         {
-            await DisplayAlert("Erreur", "aucune transaction présente", "OK");
+            await DisplayAlert("Erreur", "Aucune transaction présente", "OK");
             return;
         }
 
