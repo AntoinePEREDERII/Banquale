@@ -10,13 +10,13 @@ namespace UnitTest
     /// <summary>
     /// Classe de test pour la classe Transaction.
     /// </summary>
-    class TransactionTest
+    public class TransactionTest
     {
         /// <summary>
         /// Méthode principale du test.
         /// </summary>
-        /// <param name="args">Arguments de ligne de commande.</param>
-        static void Main(string[] args)
+        [Fact]
+        public void TestATransaction()
         {
             // Création d'un compte
             Account account = new Account(1000, "John Doe", "FR123456789");

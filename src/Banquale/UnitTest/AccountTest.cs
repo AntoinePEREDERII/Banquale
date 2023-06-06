@@ -13,13 +13,13 @@ namespace UnitTest
     /// <summary>
     /// Classe de test pour la classe Account.
     /// </summary>
-    class AccountTest
+    public class AccountTest
     {
         /// <summary>
         /// Méthode principale du test.
         /// </summary>
-        /// <param name="args">Arguments de ligne de commande.</param>
-        static void Main(string[] args)
+        [Fact]
+        public void TestAnAccount()
         {
             // Création de deux comptes
             Account account1 = new Account(1000, "John Doe", "FR123456789");
@@ -64,7 +64,7 @@ namespace UnitTest
             bool areEqual = account1.Equals(account2);
             Console.WriteLine($"Les comptes sont-ils égaux ? {areEqual}");
 
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 }
