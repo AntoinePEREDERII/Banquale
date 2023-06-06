@@ -14,7 +14,7 @@ steps:
   - name: build
     image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dotnet7-maui:latest
     commands:
-      - cd src/Banquale/Banquale/
+      - cd src/Banquale/
       - dotnet restore Banquale.sln
       - dotnet build Banquale.sln -c Release --no-restore /p:AndroidSdkDirectory=$ANDROID_SDK_ROOT -property:Aapt2ToolPath=$ANDROID_SDK_ROOT/build-tools/33.0.0
   
