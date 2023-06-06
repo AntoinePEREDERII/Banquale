@@ -1,4 +1,4 @@
-using Banquale.Model;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +8,7 @@ using System.Xml;
 
 namespace Banquale.DataContractPersistance
 {
-	public class DataContractPers : IPersistenceManager
+	public class DataContractPersXML : IPersistenceManager
 	{
         //public string FilePath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/datbase.xml";
 
@@ -51,7 +51,8 @@ namespace Banquale.DataContractPersistance
 
 		public void DataSave(List<Customer> cu, Consultant co)
 		{
-            var serializer = new DataContractSerializer(typeof(DataToPersist));
+            var serializer = new DataContractSerializer(typeof(DataToPersist), new DataContractSerializerSettings() { PreserveObjectReferences = true }); 
+            // La deuxième partie sert à faire des références, cela sert à ne pas duppliquer l'écriture de certains attributs
 
             if (!Directory.Exists(FilePath))
             {

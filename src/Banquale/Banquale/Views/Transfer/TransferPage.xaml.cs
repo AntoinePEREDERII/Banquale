@@ -1,4 +1,5 @@
-﻿using Banquale.Model;
+using Model;
+using System.Linq;
 namespace Banquale.Views.Transfer;
 
 public partial class TransferPage : ContentPage
@@ -11,8 +12,26 @@ public partial class TransferPage : ContentPage
 
     public async void Send_Clicked(Object sender, EventArgs e)
     {
-        Account.DoTransactions(Name, IBAN, Sum);
-        await Shell.Current.GoToAsync("//balance");
+        int count = Mgr.SelectedAccount.TransactionsList.Count;
+
+        if (string.IsNullOrEmpty(Name.Text) || string.IsNullOrEmpty(IBAN.Text) || string.IsNullOrEmpty(Sum.Text))
+        {
+            await DisplayAlert("Erreur", "Tout les champs doivent être complétés", "OK");
+            return;
+        }
+        foreach (var cust in Mgr.CustomersList)
+        {
+            foreach (var acc in cust.AccountsList)
+            {
+                if(acc.Name == Name.Text && acc.IBAN == IBAN.Text)
+                {
+                    acc.DoTransactions(acc, Convert.ToDouble(Sum.Text), true, count+1); // Type true car c'est un virement
+                    await Shell.Current.Navigation.PopAsync();
+                    return;
+                }
+            }
+        }
+        await DisplayAlert("Erreur", "Le compte n'existe pas", "OK");
     }
 
 }

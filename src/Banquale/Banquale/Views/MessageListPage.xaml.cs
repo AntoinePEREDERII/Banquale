@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Runtime.Serialization.DataContracts;
-using Banquale.Model;
+using Model;
 
 namespace Banquale.Views;
 
