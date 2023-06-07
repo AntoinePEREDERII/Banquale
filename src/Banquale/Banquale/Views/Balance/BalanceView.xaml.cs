@@ -35,6 +35,8 @@ public partial class BalanceView : ContentView
 
         //Mgr.SelectedTransaction = transaction;
 
+        Mgr.SelectedTransaction = Mgr.CustomersList[0].AccountsList[0].TransactionsList[0];
+
 
         await Navigation.PushModalAsync(new TransactionsPage());
     }

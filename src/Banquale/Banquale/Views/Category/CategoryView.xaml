@@ -5,7 +5,7 @@
     
     <VerticalStackLayout>
 
-        <ListView ItemsSource="{Binding TransactionsList}"
+        <ListView ItemsSource="{Binding CategoryList}"
                   Grid.Row="2"
                   SelectionMode="None">
 
@@ -16,7 +16,7 @@
                     <ViewCell>
 
                         <Grid
-                            ColumnDefinitions="40, 3*, *"
+                            ColumnDefinitions="*, *, *"
                             Margin="20, 5, 20, 5"
                             HorizontalOptions="Fill">
 
@@ -28,22 +28,11 @@
                             </Grid.GestureRecognizers>
 
                             <Label
-                                Text="{Binding Id}"
-                                Grid.Column="0"
+                                Text="{Binding .}"
+                                Grid.Column="1"
                                 x:Name="transactionId"/>
 
-                            <Label
-                                Text="{Binding Date, StringFormat='{0:ddd dd MMM yyyy}'}"
-                                Grid.Column="1"
-                                VerticalOptions="Center"
-                                Margin="10, 0, 0, 0"/>
-
-                            <Label
-                                Text="{Binding Sum, StringFormat='{0} €'}"
-                                Grid.Column="2"
-                                VerticalOptions="Center"
-                                HorizontalOptions="End"
-                                Margin="0, 0, 20, 0"/>
+                            
 
                         </Grid>
 

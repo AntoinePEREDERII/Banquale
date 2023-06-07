@@ -65,7 +65,7 @@ namespace Model
         /// Gets or sets the account(s) involved in the transaction.
         /// </summary>
         [DataMember(Order = 4)]
-        public Account InvolvedAccounts
+        public Account? InvolvedAccounts
         {
             get => involvedAccounts;
             set
@@ -77,13 +77,13 @@ namespace Model
             }
         }
         [DataMember]
-        private Account involvedAccounts;
+        private Account? involvedAccounts;
 
         /// <summary>
         /// Gets or sets the category of the transaction.
         /// </summary>
         [DataMember(Order = 5)]
-        public string Category
+        public string? Category
         {
             get => category;
             set
@@ -125,6 +125,7 @@ namespace Model
         /// <param name="date">The date of the transaction.</param>
         public Transaction(bool type, double sum, Account involvedAccounts, int id, DateTime date)
         {
+            Category = null;
             Type = type;
             Sum = sum;
             Id = id;

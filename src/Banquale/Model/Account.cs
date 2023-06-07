@@ -118,7 +118,7 @@ namespace Model
         /// <param name="sum">Somme de la transaction.</param>
         /// <param name="type">Type de transaction (débit ou crédit).</param>
         /// <param name="nb">Numéro de la transaction.</param>
-        public void DoTransactions(Account involvedAccount, Double sum, bool type, int nb)
+        public void DoTransactions(Account involvedAccount, double sum, bool type, int nb)
         {
             if (type) // si le type est True => c'est un débit, on doit donc ajouter la transaction pour l'autre compte
             {

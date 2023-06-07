@@ -9,19 +9,23 @@ public partial class App : Application
 
 	public Manager MyManager { get; private set; } = new Manager(new Stub.Stub() /*DataContractPersistance.DataContractPersXML()*/);
 
-	
+
 
 	public App()
 	{
 
 		MyManager.DataLoad();
 		MyManager.Persistence = new DataContractPersistance.DataContractPersXML();
-        MyManager.DataSave();
+		MyManager.DataSave();
 
 		InitializeComponent();
 
 		MainPage = new AppShell();
 
-	}
+		//MyManager.SelectedTransaction = MyManager.CustomersList[0].AccountsList[0].TransactionsList[0]; 
+
+        //MainPage = new Views.TransactionsPage();
+
+    }
 
 }
