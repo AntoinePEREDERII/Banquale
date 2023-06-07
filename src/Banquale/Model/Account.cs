@@ -109,7 +109,17 @@ namespace Model
         /// Obtient ou définit la liste des transactions effectuées sur le compte.
         /// </summary>
         [DataMember(Order = 5)]
-        public ObservableCollection<Transaction> TransactionsList { get; set; } = new ObservableCollection<Transaction>();
+        public ObservableCollection<Transaction> TransactionsList 
+        {
+            get => transactionsList;
+            set
+            {
+                transactionsList = value;
+                OnPropertyChanged(nameof(TransactionsList));
+            } 
+        } 
+
+        private ObservableCollection<Transaction> transactionsList;
 
         /// <summary>
         /// Effectue une transaction entre le compte courant et un compte tiers.
@@ -146,6 +156,7 @@ namespace Model
             Name = name;
             IBAN = iban;
             IBANHide = IBANToString();
+            TransactionsList = new ObservableCollection<Transaction>();
         }
 
         /// <summary>

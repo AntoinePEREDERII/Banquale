@@ -15,15 +15,21 @@ public partial class SwitchAccountPage : ContentPage
 
     public async void Transfer_Clicked(object sender, EventArgs e)
     {
-        Mgr.SelectedAccount = Mgr.SelectedCustomer.AccountsList[0]; // 0 � changer
-        if(Mgr.IsConsultant == true)
+        var selectedItem = (sender as Button)?.BindingContext as Account;
+
+        if (selectedItem != null)
         {
-            await Shell.Current.Navigation.PushAsync(new Balance.BalancePage());
+            Mgr.SelectedAccount = selectedItem;
+            if (Mgr.IsConsultant == true)
+            {
+                await Shell.Current.Navigation.PushAsync(new Balance.BalancePage());
+            }
+            else
+            {
+                await Shell.Current.GoToAsync("//balance");
+            }
         }
-        else
-        {
-            await Shell.Current.GoToAsync("//balance");
-        }
+        
     }
 
     async void DisconnectionClicked(object sender, EventArgs e)

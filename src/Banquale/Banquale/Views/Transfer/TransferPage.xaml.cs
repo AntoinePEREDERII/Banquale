@@ -25,7 +25,12 @@ public partial class TransferPage : ContentPage
             {
                 if(acc.Name == Name.Text && acc.IBAN == IBAN.Text)
                 {
-                    acc.DoTransactions(acc, Convert.ToDouble(Sum.Text), true, count+1); // Type true car c'est un virement
+                    if(Mgr.SelectedAccount.Balance - Convert.ToDouble(Sum.Text) < 0)
+                    {
+                        await DisplayAlert("Erreur", "Vous ne possèdez pas assez d'argent sur ce compte pour aboutir à la transaction", "OK");
+                        return;
+                    }
+                    Mgr.SelectedAccount.DoTransactions(acc, Convert.ToDouble(Sum.Text), true, count+1); // Type true car c'est un virement
                     await Shell.Current.Navigation.PopAsync();
                     return;
                 }
