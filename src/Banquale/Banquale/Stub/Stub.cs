@@ -25,26 +25,26 @@ namespace Banquale.Stub
             Account Account3 = new Account(3519, "Perotte", "FR7663522541416969585847002");
 
 
-            Transactions Transactions1 = new Transactions(true, 55, Account1, 1, new DateTime(2023, 6, 21, 15, 29, 20));
-            Transactions Transactions12 = new Transactions(true, 105, Account1, 2, new DateTime(2023, 8, 17, 18, 54, 35));
-            Transactions Transactions13 = new Transactions(true, 187, Account1, 3, new DateTime(2023, 5, 3, 8, 39, 49));
-            Transactions Transactions2 = new Transactions(false, 54.99, Account2, 4, new DateTime(2022, 8, 15));
-            Transactions Transactions3 = new Transactions(true, 1000, Account3, 5, new DateTime(2020, 9, 1, 20, 00, 00));
+            Transaction Transaction1 = new Transaction(true, 55, Account1, 1, new DateTime(2023, 6, 21, 15, 29, 20));
+            Transaction Transaction12 = new Transaction(true, 105, Account1, 2, new DateTime(2023, 8, 17, 18, 54, 35));
+            Transaction Transaction13 = new Transaction(true, 187, Account1, 3, new DateTime(2023, 5, 3, 8, 39, 49));
+            Transaction Transaction2 = new Transaction(false, 54.99, Account2, 4, new DateTime(2022, 8, 15));
+            Transaction Transaction3 = new Transaction(true, 1000, Account3, 5, new DateTime(2020, 9, 1, 20, 00, 00));
 
             Debug.WriteLine(Customer1.Name, Customer1.Password);
             List<Customer> CustomersList = new List<Customer>();
-            List<Transactions> TransactionsList= new List<Transactions>();
+            List<Transaction> TransactionsList= new List<Transaction>();
             List<Account> AccountsList = new List<Account>();
             
 
 
-            Account1.TransactionsList.Add(Transactions1);
-            Account1.TransactionsList.Add(Transactions12);
-            Account1.TransactionsList.Add(Transactions13);
-            Account1.TransactionsList.Add(Transactions2);
-            Account1.TransactionsList.Add(Transactions3);
+            Account1.TransactionsList.Add(Transaction1);
+            Account1.TransactionsList.Add(Transaction12);
+            Account1.TransactionsList.Add(Transaction13);
+            Account1.TransactionsList.Add(Transaction2);
+            Account1.TransactionsList.Add(Transaction3);
 
-            Account2.TransactionsList.Add(Transactions2);
+            Account2.TransactionsList.Add(Transaction2);
 
             Customer1.AccountsList.Add(Account1);
             Customer1.AccountsList.Add(Account2);

@@ -22,7 +22,7 @@ public partial class ConnectionPage : ContentPage
             return;
         }
 
-        if(currentId == 0)
+        if(currentId == 0 && password == "consultant")
         {
             Mgr.IsConsultant = true;
             await Navigation.PushModalAsync(new ConsultantHomePage());

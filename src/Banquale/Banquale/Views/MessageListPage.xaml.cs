@@ -12,6 +12,6 @@ public partial class MessageListPage : ContentPage
 	{
         Debug.WriteLine(Mgr.Consultant.MessagesList[0].Subject);
 		InitializeComponent();
-        BindingContext = Mgr.Consultant;
+        BindingContext = Mgr;
     }
 }

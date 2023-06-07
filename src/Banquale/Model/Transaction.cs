@@ -12,7 +12,7 @@ namespace Model
         /// <summary>
         /// Occurs when a property value changes.
         /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         void OnPropertyChanged(string propertyName)
         {

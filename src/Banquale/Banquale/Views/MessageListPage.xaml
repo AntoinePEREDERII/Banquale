@@ -3,20 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Banquale.Views.MessageListPage"
              Title="MessageListPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="True">
 
     <VerticalStackLayout>
 
-        <Label
-                                    Text="{Binding MessagesList[0].Subject}"
-                                    Grid.Column="1"
-                                    VerticalOptions="Center"
-                                    Margin="10, 0, 0, 0"
-                                BackgroundColor="Red"/>
+        <!--<Label
+            Text="rzklpkrz,e"
+            Grid.Column="1"
+            VerticalOptions="Center"
+            Margin="10, 0, 0, 0"
+            BackgroundColor="Red"/>-->
 
-        <!--<Label Text="{Binding }" />-->
 
-        <!--<ListView ItemsSource="{Binding Consultant}"
+        <ListView ItemsSource="{Binding Consultant.MessagesList}"
                   SelectionMode="None">
 
             <ListView.ItemTemplate>
@@ -25,17 +24,17 @@
 
                     <ViewCell>
 
-
-                       
-                            
+                        <Grid ColumnDefinitions="*, *, *">
                             
                             <Label
-                                    Text="Hello"
-                                    VerticalOptions="Center"
-                                    Margin="10, 0, 0, 0"/>
-                            
+                                Text="{Binding Subject}"
+                                Grid.Column="0"/>
 
+                            <Label
+                                Text="{Binding Description}"
+                                Grid.Column="2"/>
                         
+                        </Grid>
 
                     </ViewCell>
 
@@ -43,7 +42,7 @@
 
             </ListView.ItemTemplate>
 
-        </ListView>-->
+        </ListView>
 
     </VerticalStackLayout>
 </ContentPage>

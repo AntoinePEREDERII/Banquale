@@ -14,7 +14,7 @@ public partial class RequestPage : ContentPage
 
     public async void Send_Clicked(Object sender, EventArgs e)
     {
-        Account.DoRequest(Name.Text, IBAN.Text, Sum.Text);
+        //Account.DoRequest(Name.Text, IBAN.Text, Sum.Text);
         await Shell.Current.GoToAsync("//balance");
     }
 }
