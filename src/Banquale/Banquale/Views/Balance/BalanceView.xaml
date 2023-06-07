@@ -20,9 +20,9 @@
                             HorizontalOptions="Fill">
 
                             <Grid.GestureRecognizers>
-                                <!--<TapGestureRecognizer
+                                <TapGestureRecognizer
                                     Tapped="Transaction_Clicked"
-                                    NumberOfTapsRequired="1" />-->
+                                    NumberOfTapsRequired="1" />
 
                             </Grid.GestureRecognizers>
 

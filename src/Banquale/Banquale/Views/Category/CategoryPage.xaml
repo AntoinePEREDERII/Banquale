@@ -6,16 +6,7 @@
              Title="CategoryPage">
     
         <VerticalStackLayout
-            VerticalOptions="Center" >
-            <local:CategoryView />
-            <local:CategoryView />
-            <local:CategoryView />
-            <local:CategoryView />
-            <local:CategoryView />
-            <local:CategoryView />
-            <local:CategoryView />
-            <local:CategoryView />
-            <local:CategoryView />
+            VerticalOptions="Center">
             <local:CategoryView />
         </VerticalStackLayout>
 

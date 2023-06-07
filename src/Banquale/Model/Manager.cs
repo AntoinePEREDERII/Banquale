@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -27,7 +28,7 @@ namespace Model
         [DataMember]
         public List<Customer> CustomersList { get; private set; } // devient un set
 
-        public List<string> CategoryList { get; private set; } = new List<string> {"Automobile", "Santé", "Abonnement", "Logement", "Impôts et taxes", "Courses", "Loisirs et sorties", "Enfant(s)"};
+        public ObservableCollection<string> CategoryList { get; private set; } = new ObservableCollection<string> {"Automobile", "Santé", "Abonnement", "Logement", "Impôts et taxes", "Courses", "Loisirs et sorties", "Enfant(s)"};
 
         /// <summary>
         /// Consultant assigné au gestionnaire.
