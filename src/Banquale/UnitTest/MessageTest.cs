@@ -12,7 +12,8 @@ namespace UnitTest
         /// Point d'entrée du programme de test.
         /// </summary>
         /// <param name="args">Arguments de ligne de commande.</param>
-        static void Main(string[] args)
+        [Fact]
+        public void TestAMessage()
         {
             // Création d'un message
             Message message = new Message("Important", "Ceci est un message important.");

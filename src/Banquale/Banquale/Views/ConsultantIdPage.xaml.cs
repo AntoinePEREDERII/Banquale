@@ -1,24 +1,60 @@
+using System.Diagnostics;
 using Banquale.Views;
+using Model;
+
 namespace Banquale.Views;
 
 public partial class ConsultantIdPage : ContentPage
 {
-	public ConsultantIdPage()
+    public Manager Mgr => (App.Current as App).MyManager;
+
+    public ConsultantIdPage()
 	{
 		InitializeComponent();
 	}
 
+    //public async void Connection_Clicked(Object sender, EventArgs e)
+    //{
+    //    string id = ident.Text;
+
+    //    if (string.IsNullOrWhiteSpace(id))
+    //    {
+    //        await DisplayAlert("Erreur", "l'id ne doit pas être nulle", "OK");
+    //        return;
+    //    }
+
+    //    await Navigation.PushModalAsync(new Balance.BalancePage());
+    //}
+
     public async void Connection_Clicked(Object sender, EventArgs e)
     {
-        string id = ident.Text;
+        uint currentId = Convert.ToUInt32(ident.Text);
 
-        if (string.IsNullOrWhiteSpace(id))
+        if (string.IsNullOrWhiteSpace(ident.Text))
         {
-            await DisplayAlert("Erreur", "l'id ne doit pas être nulle", "OK");
+            await DisplayAlert("Erreur", "Il faut rentrer un ID", "OK");
             return;
         }
 
-        await Navigation.PushModalAsync(new BalancePage());
+        if (currentId == 0)
+        {
+            await DisplayAlert("Erreur", "Ce compte est innaccessible", "OK");
+            return;
+        }
+
+        Customer customer = Mgr.CustomersList.FirstOrDefault(u => u.Id == currentId);
+        if (customer == null)
+        {
+            await DisplayAlert("Erreur", "L'id entré est incorrect ou n'existe pas.", "OK");
+            return;
+        }
+
+        Mgr.SelectedCustomer = customer;
+
+        Debug.WriteLine(Mgr.IsConsultant);
+
+
+        await Navigation.PushModalAsync(new SwitchAccountPage());
     }
 
 }

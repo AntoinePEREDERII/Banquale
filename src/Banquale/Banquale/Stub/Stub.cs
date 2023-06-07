@@ -33,11 +33,10 @@ namespace Banquale.Stub
 
             Debug.WriteLine(Customer1.Name, Customer1.Password);
             List<Customer> CustomersList = new List<Customer>();
+
             List<Transaction> TransactionsList= new List<Transaction>();
+
             List<Account> AccountsList = new List<Account>();
-            
-
-
             Account1.TransactionsList.Add(Transaction1);
             Account1.TransactionsList.Add(Transaction12);
             Account1.TransactionsList.Add(Transaction13);
