@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
@@ -108,7 +109,7 @@ namespace Model
         /// Obtient ou définit la liste des transactions effectuées sur le compte.
         /// </summary>
         [DataMember(Order = 5)]
-        public List<Transaction> TransactionsList { get; set; } = new List<Transaction>();
+        public ObservableCollection<Transaction> TransactionsList { get; set; } = new ObservableCollection<Transaction>();
 
         /// <summary>
         /// Effectue une transaction entre le compte courant et un compte tiers.

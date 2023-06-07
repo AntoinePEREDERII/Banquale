@@ -60,6 +60,7 @@
 	  <None Remove="Resources\Images\Sources\home.svg" />
 	  <None Remove="Resources\Images\Sources\transactions.svg" />
 	  <None Remove="Resources\Images\sources\banquale.png" />
+	  <None Remove="Views\Balance\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiXaml Remove="Resources\Images\Images.xaml" />
@@ -71,6 +72,7 @@
 	<ItemGroup>
 	  <Folder Include="Stub\" />
 	  <Folder Include="Views\Category\" />
+	  <Folder Include="Views\Balance\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Include="Resources\Images\ImagesDictionary.xaml" />

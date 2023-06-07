@@ -27,6 +27,8 @@ namespace Model
         [DataMember]
         public List<Customer> CustomersList { get; private set; } // devient un set
 
+        public List<string> CategoryList { get; private set; } = new List<string> {"Automobile", "Santé", "Abonnement", "Logement", "Impôts et taxes", "Courses", "Loisirs et sorties", "Enfant(s)"};
+
         /// <summary>
         /// Consultant assigné au gestionnaire.
         /// </summary>
