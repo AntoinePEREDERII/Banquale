@@ -15,8 +15,7 @@ public partial class BalancePage : ContentPage
         {
             //Label lext = new Label { Text = "Hello" };
             //Grid.Add(lext);
-            Image backArrow = new Image { HeightRequest = 100 };
-            backArrow.SetBinding(Image.SourceProperty, "backArrowIcon");
+            Image backArrow = new Image { Source = "{StaticResource AccountIcon}", HeightRequest = 100 };
             Grid.Add(backArrow);
         }
     }

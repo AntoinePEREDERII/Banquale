@@ -4,20 +4,61 @@
              x:Class="Banquale.Views.CreateCustomerPage"
              Title="CreateCustomerPage">
 
-    <StackLayout Margin="20">
+    <StackLayout Margin="20"
+                 x:Name="StackLayout">
 
-        <Label Text="Informations du client" FontSize="Title" HorizontalOptions="Center" Margin="0,0,0,20" />
+        <Label
+            Text="Informations du client"
+            FontSize="Title"
+            HorizontalOptions="Center"
+            Margin="0,0,0,20" />
         
-        <Label Text="ID client" FontSize="Subtitle" />
-        <Entry x:Name="clientIdEntry" Placeholder="Entrez l'ID client" />
+        <Label
+            Text="Nom"
+            FontSize="Subtitle" />
+        <Entry
+            x:Name="NameEntry"
+            Placeholder="Entrez le nom" />
         
-        <Label Text="Nom" FontSize="Subtitle" />
-        <Entry x:Name="clientLastNameEntry" Placeholder="Entrez le nom" />
+        <Label
+            Text="Prénom"
+            FontSize="Subtitle" />
+        <Entry
+            x:Name="FirstNameEntry"
+            Placeholder="Entrez le prénom" />
+
+        <Label
+            Text="Mot de Passe"
+            FontSize="Subtitle" />
+        <Entry
+            x:Name="PasswordEntry"
+            Placeholder="Entrez le mot de passe" />
+
+        <Label
+            Text="Compte 1"
+            FontSize="Title" />
+        <Entry
+            x:Name="BalanceEntry"
+            Placeholder="Entrez le solde du compte" />
+
+        <Label
+            Text="Nom du compte"
+            FontSize="Subtitle" />
+        <Entry
+            x:Name="Name1Entry"
+            Placeholder="Entrez le nom" />
+
+        <Button
+            Text="Ajouter un compte"
+            HorizontalOptions="Center"
+            Margin="0,20,0,0"
+            Clicked="Account_Clicked"/>
         
-        <Label Text="Prénom" FontSize="Subtitle" />
-        <Entry x:Name="clientFirstNameEntry" Placeholder="Entrez le prénom" />
-        
-        <Button Text="Enregistrer" HorizontalOptions="Center" Margin="0,20,0,0" />
+        <Button
+            Text="Enregistrer"
+            HorizontalOptions="Center"
+            Margin="0,20,0,0"
+            Clicked="Create_Customer_Clicked"/>
 
     </StackLayout>
 
