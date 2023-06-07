@@ -21,16 +21,16 @@
                             HorizontalOptions="Fill">
 
                             <Grid.GestureRecognizers>
-                                <!--<TapGestureRecognizer
-                                    Tapped="Transaction_Clicked"
-                                    NumberOfTapsRequired="1" />-->
+                                <TapGestureRecognizer
+                                    Tapped="Category_Clicked"
+                                    NumberOfTapsRequired="1" />
 
                             </Grid.GestureRecognizers>
 
                             <Label
                                 Text="{Binding .}"
                                 Grid.Column="1"
-                                x:Name="transactionId"/>
+                                x:Name="categoryName"/>
 
                             
 

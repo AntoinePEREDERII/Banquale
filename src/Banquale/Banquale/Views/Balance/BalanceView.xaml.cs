@@ -16,7 +16,13 @@ public partial class BalanceView : ContentView
 
     public async void Transaction_Clicked(Object sender, EventArgs e)
     {
-        //uint TransactionId = Convert.ToUInt32(transactionId.Text);
+        var selectedItem = (sender as Grid)?.BindingContext as Transaction;
+
+        if (selectedItem != null)
+        {
+            Mgr.SelectedTransaction = selectedItem;
+            await Navigation.PushModalAsync(new TransactionsPage());
+        }
 
         //if (string.IsNullOrWhiteSpace(idLabel.Text))
         //{
@@ -35,9 +41,9 @@ public partial class BalanceView : ContentView
 
         //Mgr.SelectedTransaction = transaction;
 
-        Mgr.SelectedTransaction = Mgr.CustomersList[0].AccountsList[0].TransactionsList[0];
+        //Mgr.SelectedTransaction = Mgr.CustomersList[0].AccountsList[0].TransactionsList[0];
 
 
-        await Navigation.PushModalAsync(new TransactionsPage());
+        //await Navigation.PushModalAsync(new TransactionsPage());
     }
 }

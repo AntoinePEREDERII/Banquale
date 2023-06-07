@@ -11,4 +11,15 @@ public partial class CategoryView : ContentView
 		InitializeComponent();
 		BindingContext = Mgr;
 	}
+
+    public async void Category_Clicked(object sender, EventArgs e)
+	{
+        var selectedItem = (sender as Grid)?.BindingContext as string;
+        if (selectedItem != null)
+        {
+            Mgr.SelectedTransaction.ChangeCategory(selectedItem);
+            await Shell.Current.Navigation.PopAsync();
+        }
+        
+    }
 }
