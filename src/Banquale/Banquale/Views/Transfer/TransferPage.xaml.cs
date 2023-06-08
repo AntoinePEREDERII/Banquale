@@ -19,6 +19,11 @@ public partial class TransferPage : ContentPage
             await DisplayAlert("Erreur", "Tout les champs doivent être complétés", "OK");
             return;
         }
+        if(Name.Text == Mgr.SelectedAccount.Name && IBAN.Text == Mgr.SelectedAccount.IBAN)
+        {
+            await DisplayAlert("Erreur", "Vous ne pouvez vous faire de virement à vous même", "OK");
+            return;
+        }
         foreach (var cust in Mgr.CustomersList)
         {
             foreach (var acc in cust.AccountsList)
