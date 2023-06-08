@@ -127,19 +127,18 @@ namespace Model
         /// <param name="involvedAccount">Compte tiers impliqué dans la transaction.</param>
         /// <param name="sum">Somme de la transaction.</param>
         /// <param name="type">Type de transaction (débit ou crédit).</param>
-        /// <param name="nb">Numéro de la transaction.</param>
-        public void DoTransactions(Account involvedAccount, double sum, bool type, int nb)
+        public void DoTransactions(Account involvedAccount, double sum, bool type)
         {
             if (type) // si le type est True => c'est un débit, on doit donc ajouter la transaction pour l'autre compte
             {
-                Transaction transaction = new Transaction(type, sum, involvedAccount, nb, DateTime.Now);
+                Transaction transaction = new Transaction(type, sum, involvedAccount, DateTime.Now);
                 TransactionsList.Add(transaction);
                 Balance = Balance - sum;
-                involvedAccount.DoTransactions(this, sum, !type, nb + 1);
+                involvedAccount.DoTransactions(this, sum, !type);
             }
             else // Sinon, c'est un crédit, on a juste à l'ajouter à notre liste de transactions
             {
-                TransactionsList.Add(new Transaction(type, sum, involvedAccount, nb, DateTime.Now));
+                TransactionsList.Add(new Transaction(type, sum, involvedAccount, DateTime.Now));
                 Balance = Balance + sum;
             }
         }
