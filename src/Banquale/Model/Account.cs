@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
@@ -108,7 +109,17 @@ namespace Model
         /// Obtient ou définit la liste des transactions effectuées sur le compte.
         /// </summary>
         [DataMember(Order = 5)]
-        public List<Transaction> TransactionsList { get; set; } = new List<Transaction>();
+        public ObservableCollection<Transaction> TransactionsList 
+        {
+            get => transactionsList;
+            set
+            {
+                transactionsList = value;
+                OnPropertyChanged(nameof(TransactionsList));
+            } 
+        } 
+
+        private ObservableCollection<Transaction> transactionsList;
 
         /// <summary>
         /// Effectue une transaction entre le compte courant et un compte tiers.
@@ -117,7 +128,7 @@ namespace Model
         /// <param name="sum">Somme de la transaction.</param>
         /// <param name="type">Type de transaction (débit ou crédit).</param>
         /// <param name="nb">Numéro de la transaction.</param>
-        public void DoTransactions(Account involvedAccount, Double sum, bool type, int nb)
+        public void DoTransactions(Account involvedAccount, double sum, bool type, int nb)
         {
             if (type) // si le type est True => c'est un débit, on doit donc ajouter la transaction pour l'autre compte
             {
@@ -145,6 +156,7 @@ namespace Model
             Name = name;
             IBAN = iban;
             IBANHide = IBANToString();
+            TransactionsList = new ObservableCollection<Transaction>();
         }
 
         /// <summary>

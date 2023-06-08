@@ -4,21 +4,115 @@
              x:Class="Banquale.Views.CreateCustomerPage"
              Title="CreateCustomerPage">
 
-    <StackLayout Margin="20">
+    <VerticalStackLayout>
 
-        <Label Text="Informations du client" FontSize="Title" HorizontalOptions="Center" Margin="0,0,0,20" />
-        
-        <Label Text="ID client" FontSize="Subtitle" />
-        <Entry x:Name="clientIdEntry" Placeholder="Entrez l'ID client" />
-        
-        <Label Text="Nom" FontSize="Subtitle" />
-        <Entry x:Name="clientLastNameEntry" Placeholder="Entrez le nom" />
-        
-        <Label Text="Prénom" FontSize="Subtitle" />
-        <Entry x:Name="clientFirstNameEntry" Placeholder="Entrez le prénom" />
-        
-        <Button Text="Enregistrer" HorizontalOptions="Center" Margin="0,20,0,0" />
+        <Label
+            Text="Informations du client"
+            FontSize="Title"
+            HorizontalOptions="Center"
+            Margin="0,20,0,15"
+            TextColor="Red"/>
 
-    </StackLayout>
+        <StackLayout Margin="20"
+                     x:Name="StackLayout">
+
+            <Grid
+                ColumnDefinitions="*, *"
+                RowDefinitions="auto, auto">
+
+                    <Label
+                        Text="Nom"
+                        FontSize="Subtitle"
+                        Grid.Column="0"
+                        Grid.Row="0"/>
+                    <Entry
+                        x:Name="NameEntry"
+                        Placeholder="Entrez le nom"
+                        Grid.Column="0"
+                        Grid.Row="1" />
+
+                    <Label
+                        Text="Prénom"
+                        FontSize="Subtitle" 
+                        Grid.Column="1"
+                        Grid.Row="0"/>
+                    <Entry
+                        x:Name="FirstNameEntry"
+                        Placeholder="Entrez le prénom"
+                        Grid.Column="1"
+                        Grid.Row="1"/>
+
+            </Grid>
+
+            <Label
+                Text="Mot de Passe"
+                FontSize="Subtitle" />
+            <Entry
+                x:Name="PasswordEntry"
+                Placeholder="Entrez le mot de passe" />
+
+            <Label
+                Text="Compte 1"
+                FontSize="Title"
+                Margin="0, 10, 0, 10"
+                TextColor="DarkRed"/>
+
+            <Grid
+                ColumnDefinitions="*, *"
+                RowDefinitions="auto, auto">
+
+                    <Label
+                        Text="Solde"
+                        FontSize="Subtitle"
+                        Grid.Column="0"
+                        Grid.Row="0"/>
+                    <Entry
+                        x:Name="AccountBalanceEntry"
+                        Placeholder="Entrez le solde du compte"
+                        Keyboard="Numeric"
+                        Grid.Column="0"
+                        Grid.Row="1"/>
+
+                    <Label
+                        Text="Nom du compte"
+                        FontSize="Subtitle" 
+                        Grid.Column="1"
+                        Grid.Row="0"/>
+                    <Entry
+                        x:Name="AccountNameEntry"
+                        Placeholder="Entrez le nom du compte"
+                        Grid.Column="1"
+                        Grid.Row="1" />
+
+            </Grid>
+
+            <Label
+                Text="IBAN"
+                FontSize="Subtitle" />
+            <Entry
+                Text="FR "
+                x:Name="AccountIbanEntry"
+                Placeholder="Entrez l'IBAN du compte"
+                Keyboard="Telephone"/>
+
+        </StackLayout>
+
+        
+
+        <Button
+            Text="Ajouter un compte"
+            HorizontalOptions="Center"
+            Margin="0,20,0,0"
+            Clicked="Account_Clicked"/>
+        
+        <Button
+            Text="Enregistrer"
+            HorizontalOptions="Center"
+            Margin="0,20,0,0"
+            Clicked="Create_Customer_Clicked"/>
+
+    </VerticalStackLayout>
+
+    
 
 </ContentPage>

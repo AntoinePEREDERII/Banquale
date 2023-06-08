@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Banquale.Views.BalancePage"
-             Title="BalancePage"
+             x:Class="Banquale.Views.Balance.BalancePage"
+             xmlns:local="clr-namespace:Banquale.Views.Balance"
              Shell.NavBarIsVisible="False">
     
-    <Grid RowDefinitions="auto, auto, *">
+    <Grid RowDefinitions="auto, auto, *" x:Name="Grid">
 
         <Frame BackgroundColor="{StaticResource Key=Banquale}"
                CornerRadius="15"
@@ -72,61 +72,8 @@
         <Label Text="{Binding TransactionsList[0].Id}"
                x:Name="idLabel" />
 
-        <ListView ItemsSource="{Binding TransactionsList}"
-                  Grid.Row="2"
-                  SelectionMode="None">
-            <!--ItemSelected="Transactions_Clicked"-->
-
-            <ListView.ItemTemplate>
-
-                <DataTemplate>
-
-                    <ViewCell>
-
-                        <Grid
-                            ColumnDefinitions="40, 3*, *"
-                            Margin="20, 5, 20, 5"
-                            HorizontalOptions="Fill">
-
-                            <Grid.GestureRecognizers>
-                                <TapGestureRecognizer
-                                    Tapped="Transaction_Clicked"
-                                    NumberOfTapsRequired="1" />
-
-                            </Grid.GestureRecognizers>
-
-                            <!--<Image
-                                Source="dotnet_bot.png"
-                                Grid.Column="0"
-                                MaximumHeightRequest="30"/>-->
-
-                            <Label
-                                Text="{Binding Id}"
-                                Grid.Column="0"
-                                x:Name="transactionId"/>
-
-                            <Label
-                                Text="{Binding Date, StringFormat='{0:ddd dd MMM yyyy}'}"
-                                Grid.Column="1"
-                                VerticalOptions="Center"
-                                Margin="10, 0, 0, 0"/>
-
-                            <Label
-                                Text="{Binding Sum, StringFormat='{0} €'}"
-                                Grid.Column="2"
-                                VerticalOptions="Center"
-                                HorizontalOptions="End"
-                                Margin="0, 0, 20, 0"/>
-
-                        </Grid>
-
-                    </ViewCell>
-
-                </DataTemplate>
-
-            </ListView.ItemTemplate>
-
-        </ListView>
+        <local:BalanceView
+            Grid.Row="2"/>
 
     </Grid>
 </ContentPage>
