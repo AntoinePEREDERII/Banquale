@@ -5,6 +5,7 @@ name: CI
 trigger:
   branch:
     - master
+    - ci/*
   event:
     - push
 
