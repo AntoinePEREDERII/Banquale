@@ -91,7 +91,7 @@
         <Button
             Text="Faire opposition"
             Margin="0, 50, 0, 0"
-            Clicked="Objection_Clicked" x:Name="oppose"/>
+            Clicked="Objection_Clicked"/>
 
     </VerticalStackLayout>
 
