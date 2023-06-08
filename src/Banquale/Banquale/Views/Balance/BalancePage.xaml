@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Banquale.Views.Balance.BalancePage"
              xmlns:local="clr-namespace:Banquale.Views.Balance"
-             Title="BalancePage"
              Shell.NavBarIsVisible="False">
     
     <Grid RowDefinitions="auto, auto, *" x:Name="Grid">
