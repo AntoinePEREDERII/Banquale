@@ -28,9 +28,9 @@ namespace UnitTest
             Console.WriteLine("Transaction:");
             Console.WriteLine($"Type: {(transaction.Type ? "Débit" : "Crédit")}");
             Console.WriteLine($"Somme: {transaction.Sum}");
-            Console.WriteLine($"Compte impliqué: {transaction.InvolvedAccounts.Name}");
-            Console.WriteLine($"Catégorie: {transaction.Category}");
-            Console.WriteLine($"Date: {transaction.Date}");
+            Console.WriteLine($"Compte impliqué: {transaction?.InvolvedAccounts?.Name}");
+            Console.WriteLine($"Catégorie: {transaction?.Category}");
+            Console.WriteLine($"Date: {transaction?.Date}");
 
             Console.ReadLine();
         }
