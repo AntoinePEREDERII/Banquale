@@ -115,7 +115,6 @@ namespace Model
         [DataMember]
         private DateTime date;
 
-<<<<<<< HEAD:src/Banquale/Model/Transaction.cs
         /// <summary>
         /// Initializes a new instance of the <see cref="Transaction"/> class.
         /// </summary>
@@ -125,9 +124,6 @@ namespace Model
         /// <param name="id">The unique identifier of the transaction.</param>
         /// <param name="date">The date of the transaction.</param>
         public Transaction(bool type, double sum, Account involvedAccounts, int id, DateTime date)
-=======
-        public Transaction(bool type, double sum, Account involvedAccounts/*, string category*/, int id, DateTime date)
->>>>>>> b9413793a448a7f6b81d48c3a21bea9358db9927:src/Banquale/Model/Transactions.cs
         {
             Category = null;
             Type = type;

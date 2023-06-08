@@ -109,19 +109,13 @@ namespace Model
         /// Obtient ou définit la liste des transactions effectuées sur le compte.
         /// </summary>
         [DataMember(Order = 5)]
-<<<<<<< HEAD
         public ObservableCollection<Transaction> TransactionsList 
         {
-=======
-        public List<Transaction> TransactionsList 
-        { 
->>>>>>> b9413793a448a7f6b81d48c3a21bea9358db9927
             get => transactionsList;
             set
             {
                 transactionsList = value;
                 OnPropertyChanged(nameof(TransactionsList));
-<<<<<<< HEAD
             } 
         } 
 
@@ -134,13 +128,6 @@ namespace Model
         /// <param name="sum">Somme de la transaction.</param>
         /// <param name="type">Type de transaction (débit ou crédit).</param>
         /// <param name="nb">Numéro de la transaction.</param>
-=======
-            }
-        }
-
-        private List<Transaction> transactionsList;
-
->>>>>>> b9413793a448a7f6b81d48c3a21bea9358db9927
         public void DoTransactions(Account involvedAccount, double sum, bool type, int nb)
         {
             if (type) // si le type est True => c'est un débit, on doit donc ajouter la transaction pour l'autre compte
@@ -153,11 +140,7 @@ namespace Model
             else // Sinon, c'est un crédit, on a juste à l'ajouter à notre liste de transactions
             {
                 TransactionsList.Add(new Transaction(type, sum, involvedAccount, nb, DateTime.Now));
-<<<<<<< HEAD
                 Balance = Balance + sum;
-=======
-                Balance = Balance+sum;
->>>>>>> b9413793a448a7f6b81d48c3a21bea9358db9927
             }
         }
 
@@ -172,7 +155,6 @@ namespace Model
             Balance = balance;
             Name = name;
             IBAN = iban;
-            TransactionsList = new List<Transaction>();
             IBANHide = IBANToString();
             TransactionsList = new ObservableCollection<Transaction>();
         }
