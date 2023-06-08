@@ -8,6 +8,7 @@ public partial class CreateCustomerPage : ContentPage
 
     int nbAccount = 1;
 
+
     public CreateCustomerPage()
 	{
 		InitializeComponent();
@@ -45,13 +46,14 @@ public partial class CreateCustomerPage : ContentPage
 	public void Account_Clicked(object sender, EventArgs e)
 	{
 		nbAccount++;
-		if(nbAccount >= 4)
+		if(nbAccount >= 3)
 		{
-			DisplayAlert("Erreur", "Impossible d'ajouter plus de compte. Un client ne peut avoir plus de 3 comptes.", "OK");
+			DisplayAlert("Erreur", "Impossible d'ajouter plus de compte. Un client ne peut avoir plus de 2 comptes.", "OK");
 			return;
 		}
 		Label account = new Label { Text = "Compte " + Convert.ToString(nbAccount)};
-		account.FontSize = 20;
+		account.FontSize = 25;
+		account.TextColor = Colors.DarkRed;
 		Grid gridAccount = new Grid();
         ColumnDefinition col1 = new ColumnDefinition(GridLength.Star);
 		ColumnDefinition col2 = new ColumnDefinition(GridLength.Star);
@@ -62,11 +64,13 @@ public partial class CreateCustomerPage : ContentPage
 		gridAccount.ColumnDefinitions.Add(col1);
         gridAccount.ColumnDefinitions.Add(col2);
         Label balance = new Label { Text = "Solde" };
-		balance.FontSize = 12;
+		balance.FontSize = 16;
 		Entry balanceEntry = new Entry { Placeholder = "Entrez le solde du compte" };
         Label nameLabel = new Label { Text = "Nom du compte" };
+		nameLabel.FontSize = 16;
         Entry nameEntry = new Entry { Placeholder = "Entrez le nom du compte" };
         Label iban = new Label { Text = "IBAN" };
+		iban.FontSize = 16;
         Entry ibanEntry = new Entry { Placeholder = "Entrez l'IBAN du compte" };
         StackLayout.Add(account);
 		gridAccount.SetColumn(balance, 0);
