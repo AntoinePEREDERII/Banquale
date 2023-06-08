@@ -14,29 +14,17 @@
             Margin="10, 0, 0, 0"
             BackgroundColor="Red"/>-->
 
+        <!--<Label Text="{Binding CustomersList[0].Name}" />-->
 
-        <ListView ItemsSource="{Binding Consultant.MessagesList}"
+
+        <ListView ItemsSource="{Binding MessagesList}"
                   SelectionMode="None">
 
             <ListView.ItemTemplate>
 
                 <DataTemplate>
 
-                    <ViewCell>
-
-                        <Grid ColumnDefinitions="*, *, *">
-                            
-                            <Label
-                                Text="{Binding Subject}"
-                                Grid.Column="0"/>
-
-                            <Label
-                                Text="{Binding Description}"
-                                Grid.Column="2"/>
-                        
-                        </Grid>
-
-                    </ViewCell>
+                    <TextCell Text="{Binding Subject}" />
 
                 </DataTemplate>
 
