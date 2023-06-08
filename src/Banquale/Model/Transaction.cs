@@ -20,15 +20,9 @@ namespace Model
         }
 
         /// <summary>
-        /// Gets the unique identifier of the transaction.
-        /// </summary>
-        [DataMember(Order = 1)]
-        public int Id { get; private set; }
-
-        /// <summary>
         /// Gets or sets the type of the transaction (debit or credit).
         /// </summary>
-        [DataMember(Order = 2)]
+        [DataMember(Order = 1)]
         public bool Type
         {
             get => type;
@@ -46,7 +40,7 @@ namespace Model
         /// <summary>
         /// Gets or sets the sum of the transaction.
         /// </summary>
-        [DataMember(Order = 3)]
+        [DataMember(Order = 2)]
         public double Sum
         {
             get => sum;
@@ -64,7 +58,7 @@ namespace Model
         /// <summary>
         /// Gets or sets the account(s) involved in the transaction.
         /// </summary>
-        [DataMember(Order = 4)]
+        [DataMember(Order = 3)]
         public Account? InvolvedAccounts
         {
             get => involvedAccounts;
@@ -82,7 +76,7 @@ namespace Model
         /// <summary>
         /// Gets or sets the category of the transaction.
         /// </summary>
-        [DataMember(Order = 5)]
+        [DataMember(Order = 4)]
         public string? Category
         {
             get => category;
@@ -100,7 +94,7 @@ namespace Model
         /// <summary>
         /// Gets or sets the date of the transaction.
         /// </summary>
-        [DataMember(Order = 6)]
+        [DataMember(Order = 5)]
         public DateTime Date
         {
             get => date;
@@ -116,7 +110,7 @@ namespace Model
         private DateTime date;
 
 
-        [DataMember(Order = 7)]
+        [DataMember(Order = 6)]
         public bool IsOpposition { get; set;  }
 
 
@@ -128,12 +122,11 @@ namespace Model
         /// <param name="involvedAccounts">The account(s) involved in the transaction.</param>
         /// <param name="id">The unique identifier of the transaction.</param>
         /// <param name="date">The date of the transaction.</param>
-        public Transaction(bool type, double sum, Account involvedAccounts, int id, DateTime date)
+        public Transaction(bool type, double sum, Account involvedAccounts, DateTime date)
         {
             Category = null;
             Type = type;
             Sum = sum;
-            Id = id;
             InvolvedAccounts = involvedAccounts;
             Date = date;
             IsOpposition = false;

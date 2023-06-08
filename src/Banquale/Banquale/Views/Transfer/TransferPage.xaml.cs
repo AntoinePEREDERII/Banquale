@@ -12,7 +12,6 @@ public partial class TransferPage : ContentPage
 
     public async void Send_Clicked(Object sender, EventArgs e)
     {
-        int count = Mgr.SelectedAccount.TransactionsList.Count;
 
         if (string.IsNullOrEmpty(Name.Text) || string.IsNullOrEmpty(IBAN.Text) || string.IsNullOrEmpty(Sum.Text))
         {
@@ -35,7 +34,7 @@ public partial class TransferPage : ContentPage
                         await DisplayAlert("Erreur", "Vous ne possèdez pas assez d'argent sur ce compte pour aboutir à la transaction", "OK");
                         return;
                     }
-                    Mgr.SelectedAccount.DoTransactions(acc, Convert.ToDouble(Sum.Text), true, count+1); // Type true car c'est un virement
+                    Mgr.SelectedAccount.DoTransactions(acc, Convert.ToDouble(Sum.Text), true); // Type true car c'est un virement
                     await Shell.Current.Navigation.PopAsync();
                     return;
                 }
