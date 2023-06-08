@@ -15,7 +15,7 @@ namespace Banquale.DataContractPersistance
         public string FilePath { get; set; } = FileSystem.Current.AppDataDirectory;
 		public string FileName { get; set; } = "DataSave.xml";
 
-        public (List<Customer>, Consultant) DataLoad()
+        public (HashSet<Customer>, Consultant) DataLoad()
 		{
 			var serializer = new DataContractSerializer(typeof(DataToPersist));
 
@@ -49,7 +49,7 @@ namespace Banquale.DataContractPersistance
             return (data.customer, data.consultant);
 		}
 
-		public void DataSave(List<Customer> cu, Consultant co)
+		public void DataSave(HashSet<Customer> cu, Consultant co)
 		{
             var serializer = new DataContractSerializer(typeof(DataToPersist), new DataContractSerializerSettings() { PreserveObjectReferences = true }); 
             // La deuxième partie sert à faire des références, cela sert à ne pas duppliquer l'écriture de certains attributs

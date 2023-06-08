@@ -8,7 +8,7 @@ namespace Banquale.Stub
     public class Stub : IPersistenceManager
     {
 
-        public (List<Customer>, Consultant) DataLoad()
+        public (HashSet<Customer>, Consultant) DataLoad()
         {
             Consultant Consultant = new Consultant("Consultant", "Consultant", "Consultant"); // toujours creer en premier le consultant
 
@@ -25,7 +25,6 @@ namespace Banquale.Stub
             Account Account2 = new Account(9510, "Despoints", "FR7647858569691441525263003");
             Account Account3 = new Account(3519, "Perotte", "FR7663522541416969585847002");
 
-
             Transaction Transaction1 = new Transaction(true, 55, Account2, 1, new DateTime(2023, 6, 21, 15, 29, 20));
             Transaction Transaction12 = new Transaction(true, 105, Account2, 2, new DateTime(2023, 8, 17, 18, 54, 35));
             Transaction Transaction13 = new Transaction(true, 187, Account3, 3, new DateTime(2023, 5, 3, 8, 39, 49));
@@ -33,8 +32,9 @@ namespace Banquale.Stub
             Transaction Transaction3 = new Transaction(true, 1000, Account3, 5, new DateTime(2020, 9, 1, 20, 00, 00));
 
             Debug.WriteLine(Customer1.Name, Customer1.Password);
-            List<Customer> CustomersList = new List<Customer>();
 
+            Debug.WriteLine(Customer1.Name, Customer1.Password);
+            HashSet<Customer> CustomersList = new HashSet<Customer>();
             List<Transaction> TransactionsList= new List<Transaction>();
 
             List<Account> AccountsList = new List<Account>();
@@ -64,7 +64,7 @@ namespace Banquale.Stub
             return (CustomersList, Consultant);
         }
 
-        public void DataSave(List<Customer> c, Consultant consultant)
+        public void DataSave(HashSet<Customer> c, Consultant consultant)
         {
             throw new NotImplementedException();
         }

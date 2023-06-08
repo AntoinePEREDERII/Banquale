@@ -15,14 +15,14 @@ namespace Model
         /// <summary>
         /// Charge les données depuis une source de persistance.
         /// </summary>
-        /// <returns>Un tuple contenant la liste des clients et le consultant.</returns>
-        (List<Customer>, Consultant) DataLoad();
+        /// <returns>Un tuple contenant lle hashSet des clients et le consultant.</returns>
+        public (HashSet<Customer>, Consultant) DataLoad();
 
         /// <summary>
         /// Enregistre les données dans une source de persistance.
         /// </summary>
         /// <param name="cu">La liste des clients à enregistrer.</param>
         /// <param name="co">Le consultant à enregistrer.</param>
-        void DataSave(List<Customer> cu, Consultant co);
+        void DataSave(HashSet<Customer> cu, Consultant co);
     }
 }

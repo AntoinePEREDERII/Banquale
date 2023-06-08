@@ -18,7 +18,7 @@ namespace Banquale.DataContractPersistance
         public string FileName { get; set; } = "DataSave.json";
 
 
-        public (List<Customer>, Consultant) DataLoad()
+        public (HashSet<Customer>, Consultant) DataLoad()
         {
             DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(DataToPersist));
 
@@ -33,7 +33,7 @@ namespace Banquale.DataContractPersistance
 
         }
 
-        public void DataSave(List<Customer> cu, Consultant co)
+        public void DataSave(HashSet<Customer> cu, Consultant co)
         {
 
             DataToPersist data = new DataToPersist();
