@@ -22,6 +22,7 @@ public partial class TransactionsPage : ContentPage
 
     async void Objection_Clicked(System.Object sender, System.EventArgs e)
     {
+        Mgr.SelectedTransaction.IsOpposition = true;
         await Shell.Current.Navigation.PopAsync();
     }
 

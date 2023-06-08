@@ -115,6 +115,11 @@ namespace Model
         [DataMember]
         private DateTime date;
 
+
+        [DataMember(Order = 7)]
+        public bool IsOpposition { get; set;  }
+
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Transaction"/> class.
         /// </summary>
@@ -131,6 +136,7 @@ namespace Model
             Id = id;
             InvolvedAccounts = involvedAccounts;
             Date = date;
+            IsOpposition = false;
         }
 
         public void ChangeCategory(string newCateg)
