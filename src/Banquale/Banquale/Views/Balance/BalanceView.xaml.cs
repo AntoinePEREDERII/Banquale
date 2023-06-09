@@ -24,4 +24,11 @@ public partial class BalanceView : ContentView
             await Navigation.PushModalAsync(new TransactionsPage());
         }
     }
+
+    public void RefreshView()
+    {
+        BindingContext = Mgr.SelectedAccount;
+
+
+    }
 }
