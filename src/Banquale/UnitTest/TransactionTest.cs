@@ -22,7 +22,7 @@ namespace UnitTest
             Account account = new Account(1000, "John Doe", "FR123456789");
 
             // Création d'une transaction
-            Transaction transaction = new Transaction(true, 200, account, 1, DateTime.Now);
+            Transaction transaction = new Transaction(true, 200, account, DateTime.Now);
 
             // Affichage des informations de la transaction
             Console.WriteLine("Transaction:");

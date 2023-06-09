@@ -22,10 +22,5 @@ public partial class App : Application
 
 		MainPage = new AppShell();
 
-		//MyManager.SelectedTransaction = MyManager.CustomersList[0].AccountsList[0].TransactionsList[0]; 
-
-        //MainPage = new Views.TransactionsPage();
-
     }
-
 }
