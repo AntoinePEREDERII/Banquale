@@ -18,6 +18,7 @@
             Title="Solde"
             ContentTemplate="{DataTemplate balance:BalancePage}"
             Route="balance"
+            BindingContextChanged="ShellContent_BindingContextChanged"
             Icon="{StaticResource HomeIcon}"/>
 
         <ShellContent

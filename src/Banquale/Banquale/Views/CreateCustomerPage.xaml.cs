@@ -72,6 +72,8 @@ public partial class CreateCustomerPage : ContentPage
         Label iban = new Label { Text = "IBAN" };
 		iban.FontSize = 16;
         Entry ibanEntry = new Entry { Placeholder = "Entrez l'IBAN du compte" };
+		ibanEntry.Keyboard = Keyboard.Numeric;
+		//ibanEntry.TextChanged = IbanChanged;
         StackLayout.Add(account);
 		gridAccount.SetColumn(balance, 0);
 		gridAccount.SetRow(balance, 0);
@@ -92,11 +94,14 @@ public partial class CreateCustomerPage : ContentPage
 
 	public void IbanChanged(object sender, EventArgs e)
 	{
-		if(AccountIbanEntry.Text.Length < 3)
+		if(AccountIbanEntry.Text.Length < 2)
 		{
 			DisplayAlert("Erreur", "Vous ne pouvez pas effacer le FR !", "OK");
+            var cast = ((Entry)sender);
+            cast.Text = "FR";
+   //         cast.CursorPosition = 13;
+			//cast.SelectionLength = 10;
 		}
-		var cast = ((Entry)sender);
 	}
 
 }

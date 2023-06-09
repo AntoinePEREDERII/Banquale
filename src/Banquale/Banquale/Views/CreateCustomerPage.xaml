@@ -91,11 +91,12 @@
                 Text="IBAN"
                 FontSize="16" />
             <Entry
-                Text="FR "
+                Text="FR"
+                CursorPosition="2"
                 x:Name="AccountIbanEntry"
                 TextChanged="IbanChanged"
                 Placeholder="Entrez l'IBAN du compte"
-                Keyboard="Telephone"/>
+                Keyboard="Numeric"/>
 
         </StackLayout>
 

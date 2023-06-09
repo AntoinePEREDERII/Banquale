@@ -12,10 +12,4 @@ public partial class BalancePage : ContentPage
 		InitializeComponent();
         BindingContext = Mgr.SelectedAccount;
     }
-
-    public async void Balance_Clicked(object sender, EventArgs e)
-    {
-        await Shell.Current.Navigation.PushAsync(new NewPage1());
-    }
-
 }
