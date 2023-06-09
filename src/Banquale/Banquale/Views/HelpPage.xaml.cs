@@ -13,7 +13,7 @@ public partial class HelpPage : ContentPage
     {
         if(Subject.Text.Length >= 50 || Description.Text.Length >= 200)
         {
-            DisplayAlert("Erreur", "Trop de caracteres", "OK");
+            await DisplayAlert("Erreur", "Trop de caracteres", "OK");
         }
         else
         {

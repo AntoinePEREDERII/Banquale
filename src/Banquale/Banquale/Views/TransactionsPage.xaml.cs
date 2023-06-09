@@ -10,6 +10,7 @@ public partial class TransactionsPage : ContentPage
 	{
 		InitializeComponent();
         BindingContext = Mgr.SelectedTransaction;
+
         if(Mgr.IsConsultant == true && Mgr.SelectedTransaction.IsOpposition == false)
         {
             oppose.Text = "Aucune demande en cours";
@@ -24,6 +25,19 @@ public partial class TransactionsPage : ContentPage
         {
             oppose.Text = "Demande en cours";
         }
+
+        if(Mgr.SelectedTransaction.Type == true)
+        {
+            string price1 = sum.Text;
+            sum.Text = "- " + price1;
+            sum.TextColor = Colors.Red;
+        }
+        else if(Mgr.SelectedTransaction.Type == false)
+        {
+            string price2 = sum.Text;
+            sum.Text = "+ " + price2;
+            sum.TextColor = Colors.Green;
+        }
 	}
 
     async void Categ_Clicked(System.Object sender, System.EventArgs e)
@@ -36,23 +50,23 @@ public partial class TransactionsPage : ContentPage
         if(Mgr.IsConsultant == false && Mgr.SelectedTransaction.IsOpposition == false)
         {
             Mgr.SelectedTransaction.IsOpposition = true;
-            DisplayAlert("Opposition", "Votre demande d'opposition à bien été pris en compte", "OK");
+            await DisplayAlert("Opposition", "Votre demande d'opposition à bien été pris en compte", "OK");
             await Shell.Current.Navigation.PopAsync();
         }
         else if(Mgr.IsConsultant == true && Mgr.SelectedTransaction.IsOpposition == true)
         {
             Mgr.SelectedAccount.TransactionsList.Remove(Mgr.SelectedTransaction);
-            DisplayAlert("Opposition", "La demande d'opposition à été réalisé avec succé", "OK");
+            await DisplayAlert("Opposition", "La demande d'opposition à été réalisé avec succé", "OK");
             await Shell.Current.Navigation.PopAsync();
         }
         else if (Mgr.IsConsultant == true && Mgr.SelectedTransaction.IsOpposition == false)
         {
-            DisplayAlert("Erreur", "Aucune demande d'opposition est en cours sur cette transaction", "OK");
+            await DisplayAlert("Erreur", "Aucune demande d'opposition est en cours sur cette transaction", "OK");
             await Shell.Current.Navigation.PopAsync();
         }
         else if (Mgr.IsConsultant == false && Mgr.SelectedTransaction.IsOpposition == true)
         {
-            DisplayAlert("Opposition", "Votre demande est en cours. Veuillez patienter SVP.", "OK");
+            await DisplayAlert("Opposition", "Votre demande est en cours. Veuillez patienter SVP.", "OK");
             await Shell.Current.Navigation.PopAsync();
         }
     }
@@ -60,7 +74,8 @@ public partial class TransactionsPage : ContentPage
     async void Refuse_Clicked(System.Object sender, System.EventArgs e)
     {
         Mgr.SelectedTransaction.IsOpposition = false;
-        DisplayAlert("Opposition", "La demande d'opposition à bien été refusé", "OK");
+        await DisplayAlert("Opposition", "La demande d'opposition à bien été refusé", "OK");
+        refuseOpposition.IsVisible = false;
         await Shell.Current.Navigation.PopAsync();
     }
 }

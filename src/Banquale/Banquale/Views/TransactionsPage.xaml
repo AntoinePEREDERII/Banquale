@@ -17,7 +17,8 @@
             HorizontalOptions="Center"
             TextColor="{Binding Type, Converter={StaticResource bool2ColorConverters}}"
             FontSize="Large"
-            Margin="0, 0, 0, 20"/>
+            Margin="0, 0, 0, 20"
+            x:Name="sum"/>
 
         <Button
             Grid.Column="1"
