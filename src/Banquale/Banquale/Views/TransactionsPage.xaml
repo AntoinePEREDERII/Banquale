@@ -9,7 +9,9 @@
         <conv:Bool2ColorConverters x:Key="bool2ColorConverters"/>
     </ContentPage.Resources>
 
-    <VerticalStackLayout VerticalOptions="Center">
+    <VerticalStackLayout
+        VerticalOptions="Center">
+
         <Label
             Text="{Binding Sum, StringFormat='{0} €'}"
             HorizontalOptions="Center"
@@ -60,7 +62,15 @@
         <Button
             Text="Faire opposition"
             Margin="0, 50, 0, 0"
-            Clicked="Objection_Clicked" x:Name="oppose"/>
+            Clicked="Objection_Clicked"
+            x:Name="oppose"/>
+
+        <Button
+            Text="Refuser l'opposition"
+            Margin="0, 20, 0, 0"
+            IsVisible="false"
+            Clicked="Refuse_Clicked"
+            x:Name="refuseOpposition"/>
 
     </VerticalStackLayout>
 
