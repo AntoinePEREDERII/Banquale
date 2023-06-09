@@ -13,7 +13,8 @@
 
         <ListView
             ItemsSource="{Binding AccountsList}"
-            SelectionMode="None">
+            SelectionMode="None"
+            RowHeight="100">
 
             <ListView.ItemTemplate>
 
@@ -22,7 +23,7 @@
                     <ViewCell>
 
                         <VerticalStackLayout
-                            HeightRequest="84"
+                            HeightRequest="100"
                             Margin="10">
 
                             <Button

@@ -35,11 +35,6 @@
                             </Grid.GestureRecognizers>
 
                             <Label
-                                Text="{Binding Id}"
-                                Grid.Column="0"
-                                x:Name="transactionId"/>
-
-                            <Label
                                 Text="{Binding Date, StringFormat='{0:ddd dd MMM yyyy}'}"
                                 Grid.Column="1"
                                 VerticalOptions="Center"

@@ -36,8 +36,7 @@ public partial class SwitchAccountPage : ContentPage
     {
         if(Mgr.IsConsultant == true)
         {
-            //await Shell.Current.GoToAsync(;
-            Debug.WriteLine("Hello");
+            await Shell.Current.Navigation.PopAsync();
         }
         else
         {

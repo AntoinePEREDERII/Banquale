@@ -93,6 +93,7 @@
             <Entry
                 Text="FR "
                 x:Name="AccountIbanEntry"
+                TextChanged="IbanChanged"
                 Placeholder="Entrez l'IBAN du compte"
                 Keyboard="Telephone"/>
 
