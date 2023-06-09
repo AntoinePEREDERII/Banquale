@@ -20,6 +20,10 @@ public partial class RequestPage : ContentPage
             await DisplayAlert("Erreur", "Tout les champs doivent être complétés", "OK");
             return;
         }
+        else if(IBAN.Text.Length != 27)
+        {
+            await DisplayAlert("Erreur", "L'IBAN doit contenir exactement 25 chiffres.", "OK");
+        }
         if (Name.Text == Mgr.SelectedAccount.Name && IBAN.Text == Mgr.SelectedAccount.IBAN)
         {
             await DisplayAlert("Erreur", "Vous ne pouvez vous faire de demande à vous même", "OK");
@@ -44,5 +48,15 @@ public partial class RequestPage : ContentPage
             }
         }
         await DisplayAlert("Erreur", "Le compte n'existe pas", "OK");
+    }
+
+    public void IbanChanged(object sender, EventArgs e)
+    {
+        if (IBAN.Text.Length < 2)
+        {
+            DisplayAlert("Erreur", "Vous ne pouvez pas effacer le FR !", "OK");
+            var cast = ((Entry)sender);
+            cast.Text = "FR";
+        }
     }
 }

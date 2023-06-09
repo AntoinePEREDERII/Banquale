@@ -30,6 +30,7 @@
                 Placeholder="IBAN"
                 HorizontalOptions="Center"
                 WidthRequest="280"
+                TextChanged="IbanChanged"
                 x:Name="IBAN"
                 Keyboard="Numeric"/>
 

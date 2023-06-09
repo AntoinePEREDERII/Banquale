@@ -14,7 +14,7 @@ public partial class CreateCustomerPage : ContentPage
 		InitializeComponent();
 	}
 
-    public void Create_Customer_Clicked(System.Object sender, System.EventArgs e)
+    public async void Create_Customer_Clicked(System.Object sender, System.EventArgs e)
     {
 		string name = NameEntry.Text;
 		string firstName = FirstNameEntry.Text;
@@ -27,7 +27,11 @@ public partial class CreateCustomerPage : ContentPage
 			|| double.IsNegative(accountBalance) || string.IsNullOrWhiteSpace(accountName)
 			|| string.IsNullOrWhiteSpace(accountIban) || string.IsNullOrWhiteSpace(AccountBalanceEntry.Text))
 		{
-			DisplayAlert("Erreur", "Tous les champs doivent être renseignés et corect (pas de solde négatif)", "OK");
+			await DisplayAlert("Erreur", "Tous les champs doivent être renseignés et corect (pas de solde négatif)", "OK");
+		}
+		else if(AccountIbanEntry.Text.Length != 27)
+		{
+			await DisplayAlert("Erreur", "L'IBAN doit contenir exactement 25 chiffres.", "OK");
 		}
 		else
 		{
@@ -38,8 +42,8 @@ public partial class CreateCustomerPage : ContentPage
 			Debug.WriteLine(customer.Id);
 			Debug.WriteLine(customer.Password);
 			Debug.WriteLine(account.IBAN);
-			DisplayAlert("Création", "Client " + customer.Name +" crée avec succès.", "OK");
-			Shell.Current.Navigation.PopAsync();
+			await DisplayAlert("Création", "Client " + customer.Name +" crée avec succès.", "OK");
+			await Shell.Current.Navigation.PopAsync();
 		}
     }
 
@@ -99,8 +103,6 @@ public partial class CreateCustomerPage : ContentPage
 			DisplayAlert("Erreur", "Vous ne pouvez pas effacer le FR !", "OK");
             var cast = ((Entry)sender);
             cast.Text = "FR";
-   //         cast.CursorPosition = 13;
-			//cast.SelectionLength = 10;
 		}
 	}
 
