@@ -8,6 +8,16 @@ public partial class CreateCustomerPage : ContentPage
 
     int nbAccount = 1;
 
+	bool Account2 = false;
+
+    Label account = new Label { };
+    Grid gridAccount = new Grid();
+    Label balance = new Label { };
+    Entry balanceEntry = new Entry { };
+    Label nameLabel = new Label { };
+    Entry nameEntry = new Entry { };
+    Label iban = new Label { };
+    Entry ibanEntry = new Entry { };
 
     public CreateCustomerPage()
 	{
@@ -16,7 +26,11 @@ public partial class CreateCustomerPage : ContentPage
 
     public async void Create_Customer_Clicked(System.Object sender, System.EventArgs e)
     {
-		string name = NameEntry.Text;
+
+        double BalanceAccount2 = Convert.ToDouble(balanceEntry.Text);
+        string NameAccount2 = nameEntry.Text;
+        string IbanAccount2 = ibanEntry.Text;
+        string name = NameEntry.Text;
 		string firstName = FirstNameEntry.Text;
 		string password = PasswordEntry.Text;
 		string accountName = AccountNameEntry.Text;
@@ -25,40 +39,50 @@ public partial class CreateCustomerPage : ContentPage
 
 		if(string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(password)
 			|| double.IsNegative(accountBalance) || string.IsNullOrWhiteSpace(accountName)
-			|| string.IsNullOrWhiteSpace(accountIban) || string.IsNullOrWhiteSpace(AccountBalanceEntry.Text))
+			|| string.IsNullOrWhiteSpace(accountIban) || string.IsNullOrWhiteSpace(AccountBalanceEntry.Text)
+			|| Account2 == true && string.IsNullOrWhiteSpace(NameAccount2) || Account2 == true && string.IsNullOrWhiteSpace(IbanAccount2)
+			|| Account2 == true && double.IsNegative(BalanceAccount2) || Account2 == true && string.IsNullOrWhiteSpace(balanceEntry.Text))
 		{
 			await DisplayAlert("Erreur", "Tous les champs doivent être renseignés et corect (pas de solde négatif)", "OK");
 		}
-		else if(AccountIbanEntry.Text.Length != 27)
+		else if(AccountIbanEntry.Text.Length != 27 || IbanAccount2.Length != 27)
 		{
 			await DisplayAlert("Erreur", "L'IBAN doit contenir exactement 25 chiffres.", "OK");
 		}
 		else
 		{
 			Customer customer = new Customer(name, firstName, password);
-			Account account = new Account(accountBalance, accountName, accountIban);
-			customer.AccountsList.Add(account);
+			Account account1 = new Account(accountBalance, accountName, accountIban);
+            customer.AccountsList.Add(account1);
+            if (Account2 == true)
+			{
+                Account account2 = new Account(BalanceAccount2, NameAccount2, IbanAccount2);
+				customer.AccountsList.Add(account2);
+                Debug.WriteLine(account2.IBAN);
+            }
 			Mgr.CustomersList.Add(customer);
 			Debug.WriteLine(customer.Id);
 			Debug.WriteLine(customer.Password);
-			Debug.WriteLine(account.IBAN);
-			await DisplayAlert("Création", "Client " + customer.Name +" crée avec succès.", "OK");
+			Debug.WriteLine(account1.IBAN);
+			Debug.WriteLine(customer.AccountsList[0].Balance);
+            Debug.WriteLine(customer.AccountsList[1].Balance);
+            await DisplayAlert("Création", "Client " + customer.Name +" crée avec succès.", "OK");
 			await Shell.Current.Navigation.PopAsync();
 		}
     }
 
 	public void Account_Clicked(object sender, EventArgs e)
 	{
+		Account2 = true;
 		nbAccount++;
 		if(nbAccount >= 3)
 		{
 			DisplayAlert("Erreur", "Impossible d'ajouter plus de compte. Un client ne peut avoir plus de 2 comptes.", "OK");
 			return;
 		}
-		Label account = new Label { Text = "Compte " + Convert.ToString(nbAccount)};
-		account.FontSize = 25;
+		account.Text = "Compte " + Convert.ToString(nbAccount);
+        account.FontSize = 25;
 		account.TextColor = Colors.DarkRed;
-		Grid gridAccount = new Grid();
         ColumnDefinition col1 = new ColumnDefinition(GridLength.Star);
 		ColumnDefinition col2 = new ColumnDefinition(GridLength.Star);
 		RowDefinition row1 = new RowDefinition(GridLength.Auto);
@@ -67,17 +91,18 @@ public partial class CreateCustomerPage : ContentPage
         gridAccount.RowDefinitions.Add(row2);
 		gridAccount.ColumnDefinitions.Add(col1);
         gridAccount.ColumnDefinitions.Add(col2);
-        Label balance = new Label { Text = "Solde" };
+		balance.Text = "Solde";
 		balance.FontSize = 16;
-		Entry balanceEntry = new Entry { Placeholder = "Entrez le solde du compte" };
-        Label nameLabel = new Label { Text = "Nom du compte" };
+		balanceEntry.Placeholder = "Entrez le solde du compte";
+		balanceEntry.Keyboard = Keyboard.Numeric;
+		nameLabel.Text = "Nom du compte";
 		nameLabel.FontSize = 16;
-        Entry nameEntry = new Entry { Placeholder = "Entrez le nom du compte" };
-        Label iban = new Label { Text = "IBAN" };
+		nameEntry.Placeholder = "Entrez le nom du compte";
+		iban.Text = "IBAN";
 		iban.FontSize = 16;
-        Entry ibanEntry = new Entry { Placeholder = "Entrez l'IBAN du compte" };
+		ibanEntry.Text = "FR";
+		ibanEntry.Placeholder = "Entrez l'IBAN du compte";
 		ibanEntry.Keyboard = Keyboard.Numeric;
-		//ibanEntry.TextChanged = IbanChanged;
         StackLayout.Add(account);
 		gridAccount.SetColumn(balance, 0);
 		gridAccount.SetRow(balance, 0);

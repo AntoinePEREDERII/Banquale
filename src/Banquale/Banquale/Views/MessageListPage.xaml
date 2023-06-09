@@ -16,7 +16,7 @@
                 <DataTemplate>
 
                     <ViewCell>
-                        <!--Limiter le subject à un nombre de caractère -->
+                        
                         <Grid RowDefinitions="auto, auto">
 
                             <Label
