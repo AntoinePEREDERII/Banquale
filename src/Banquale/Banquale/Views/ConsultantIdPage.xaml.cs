@@ -13,19 +13,6 @@ public partial class ConsultantIdPage : ContentPage
 		InitializeComponent();
 	}
 
-    //public async void Connection_Clicked(Object sender, EventArgs e)
-    //{
-    //    string id = ident.Text;
-
-    //    if (string.IsNullOrWhiteSpace(id))
-    //    {
-    //        await DisplayAlert("Erreur", "l'id ne doit pas être nulle", "OK");
-    //        return;
-    //    }
-
-    //    await Navigation.PushModalAsync(new Balance.BalancePage());
-    //}
-
     public async void Connection_Clicked(Object sender, EventArgs e)
     {
         uint currentId = Convert.ToUInt32(ident.Text);

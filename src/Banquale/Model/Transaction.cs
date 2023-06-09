@@ -6,7 +6,7 @@ namespace Model
     /// <summary>
     /// Represents a transaction.
     /// </summary>
-    [DataContract(IsReference = true)]
+    [DataContract(IsReference = false)]
     public class Transaction : INotifyPropertyChanged
     {
         /// <summary>
