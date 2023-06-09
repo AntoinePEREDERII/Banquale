@@ -26,7 +26,7 @@
                Padding="15, 5, 15, 5">
 
             <Editor Placeholder="Decrivez votre demande ici."
-                    x:Name="Message"/>
+                    x:Name="Description"/>
 
         </Frame>
 

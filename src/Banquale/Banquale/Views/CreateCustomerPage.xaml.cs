@@ -86,12 +86,17 @@ public partial class CreateCustomerPage : ContentPage
         gridAccount.Children.Add(nameLabel);
         gridAccount.Children.Add(nameEntry);
         StackLayout.Add(gridAccount);
-        //StackLayout.Add(balance);
-        //      StackLayout.Add(balanceEntry);
-        //StackLayout.Add(nameLabel);
-        //StackLayout.Add(nameEntry);
         StackLayout.Add(iban);
         StackLayout.Add(ibanEntry);
     }
+
+	public void IbanChanged(object sender, EventArgs e)
+	{
+		if(AccountIbanEntry.Text.Length < 3)
+		{
+			DisplayAlert("Erreur", "Vous ne pouvez pas effacer le FR !", "OK");
+		}
+		var cast = ((Entry)sender);
+	}
 
 }
