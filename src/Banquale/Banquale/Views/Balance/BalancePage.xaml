@@ -22,11 +22,6 @@
                   RowDefinitions="auto, 35, *"
                   ColumnDefinitions="250, auto">
 
-                <Grid.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Tapped="Balance_Clicked"
-                        NumberOfTapsRequired="1" />
-                </Grid.GestureRecognizers>
 
                 <Label
                     Text="Compte Professionnel"
