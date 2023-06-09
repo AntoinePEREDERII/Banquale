@@ -56,6 +56,7 @@ namespace Banquale.Stub
             Customer1.AccountsList.Add(Account1);
             Customer1.AccountsList.Add(Account2);
 
+            Customer2.AccountsList.Add(Account3);
 
 
             CustomersList.Add(Customer1);

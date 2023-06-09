@@ -27,8 +27,4 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("consultant/createcustomer", typeof(CreateCustomerPage));
     }
 
-    void ShellContent_BindingContextChanged(System.Object sender, System.EventArgs e)
-    {
-        BindingContext = Mgr.SelectedAccount;
-    }
 }

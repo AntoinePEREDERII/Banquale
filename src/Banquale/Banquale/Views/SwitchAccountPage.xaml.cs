@@ -27,8 +27,9 @@ public partial class SwitchAccountPage : ContentPage
             }
             else
             {
-                //BalancePage.re
                 await Shell.Current.GoToAsync("//balance");
+                var balancePage = Shell.Current.CurrentPage as BalancePage;
+                balancePage?.RefreshPage();
             }
         }
         

@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:Banquale.Views"
              x:Class="Banquale.Views.SwitchAccountPage"
              Title="SwitchAccountPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
 
     
 	<VerticalStackLayout
