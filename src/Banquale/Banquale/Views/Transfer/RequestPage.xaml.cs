@@ -37,6 +37,7 @@ public partial class RequestPage : ContentPage
                         return;
                     }
                     acc.DoTransactions(acc, Convert.ToDouble(Sum.Text), true); // Type true car c'est un virement que le SelectedAccount reçoit
+                    Mgr.Persistence.DataSave(Mgr.CustomersList, Mgr.Consultant);
                     await Shell.Current.Navigation.PopAsync();
                     return;
                 }

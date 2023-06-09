@@ -35,6 +35,7 @@ public partial class TransferPage : ContentPage
                         return;
                     }
                     Mgr.SelectedAccount.DoTransactions(acc, Convert.ToDouble(Sum.Text), true); // Type true car c'est un virement
+                    Mgr.Persistence.DataSave(Mgr.CustomersList, Mgr.Consultant);
                     await Shell.Current.Navigation.PopAsync();
                     return;
                 }

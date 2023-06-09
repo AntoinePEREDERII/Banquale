@@ -23,6 +23,7 @@ public partial class TransactionsPage : ContentPage
     async void Objection_Clicked(System.Object sender, System.EventArgs e)
     {
         Mgr.SelectedTransaction.IsOpposition = true;
+        Mgr.Persistence.DataSave(Mgr.CustomersList, Mgr.Consultant);
         await Shell.Current.Navigation.PopAsync();
     }
 
