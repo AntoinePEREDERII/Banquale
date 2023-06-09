@@ -22,7 +22,6 @@
                   RowDefinitions="auto, 35, *"
                   ColumnDefinitions="250, auto">
 
-
                 <Label
                     Text="Compte Professionnel"
                     HorizontalOptions="Center"

@@ -1,14 +1,19 @@
 ﻿using Banquale.Views;
 using Banquale.Views.Category;
 using Banquale.Views.Transfer;
+using Model;
+
 namespace Banquale;
 
 public partial class AppShell : Shell
 {
-	public AppShell()
+
+    public Manager Mgr => (App.Current as App).MyManager;
+
+    public AppShell()
 	{
         InitializeComponent();
-        RegisterRoutes();
+        //RegisterRoutes();
     }
 
     private void RegisterRoutes()
@@ -22,4 +27,8 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("consultant/createcustomer", typeof(CreateCustomerPage));
     }
 
+    void ShellContent_BindingContextChanged(System.Object sender, System.EventArgs e)
+    {
+        BindingContext = Mgr.SelectedAccount;
+    }
 }

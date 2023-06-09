@@ -47,7 +47,6 @@
                                 VerticalOptions="Center"
                                 HorizontalOptions="End"
                                 Margin="0, 0, 20, 0"/>
-                                <!--Text="{Binding Sum, Converter={StaticResource int2StringConverters}, ConverterParameter={Binding Type}, StringFormat='{0} €'}"-->
                                 
 
                         </Grid>
