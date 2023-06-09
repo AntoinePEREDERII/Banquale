@@ -132,13 +132,13 @@ namespace Model
             if (type) // si le type est True => c'est un débit, on doit donc ajouter la transaction pour l'autre compte
             {
                 Transaction transaction = new Transaction(type, sum, involvedAccount, DateTime.Now);
-                TransactionsList.Add(transaction);
+                TransactionsList.Insert(0, transaction);
                 Balance = Balance - sum;
                 involvedAccount.DoTransactions(this, sum, !type);
             }
             else // Sinon, c'est un crédit, on a juste à l'ajouter à notre liste de transactions
             {
-                TransactionsList.Add(new Transaction(type, sum, involvedAccount, DateTime.Now));
+                TransactionsList.Insert(0, new Transaction(type, sum, involvedAccount, DateTime.Now));
                 Balance = Balance + sum;
             }
         }

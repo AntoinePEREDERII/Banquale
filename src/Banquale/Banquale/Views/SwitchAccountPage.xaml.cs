@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Banquale.Views.Balance;
 using Model;
 
 namespace Banquale.Views;
@@ -26,6 +27,7 @@ public partial class SwitchAccountPage : ContentPage
             }
             else
             {
+                //BalancePage.re
                 await Shell.Current.GoToAsync("//balance");
             }
         }

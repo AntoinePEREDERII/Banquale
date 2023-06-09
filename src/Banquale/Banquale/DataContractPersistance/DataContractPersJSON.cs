@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace Banquale.DataContractPersistance
 {
+
+    // Nous ne pouvons utiliser la persitance avec JSON dans notre application car la persitance avec JSON n'accepte pas
+    // les références, nous sommes pourtant obligé d'utiliser des références pour la sauvegarde des transactions
     public class DataContractPersJSON : IPersistenceManager
     {
 

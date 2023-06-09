@@ -69,6 +69,7 @@ public partial class TransactionsPage : ContentPage
             await DisplayAlert("Opposition", "Votre demande est en cours. Veuillez patienter SVP.", "OK");
             await Shell.Current.Navigation.PopAsync();
         }
+
     }
 
     async void Refuse_Clicked(System.Object sender, System.EventArgs e)

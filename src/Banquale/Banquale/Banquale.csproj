@@ -34,6 +34,7 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+		<Compile Remove="Views\Converters\ReverseList.cs" />
 		<MauiImage Include="Resources\Images\sources\accounts.svg" />
 		<MauiImage Include="Resources\Images\sources\dotnet_bot.svg" />
 		<MauiImage Include="Resources\Images\sources\help.svg" />

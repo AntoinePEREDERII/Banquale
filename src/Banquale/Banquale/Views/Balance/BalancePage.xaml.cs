@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Android.Telephony;
+using Model;
 
 namespace Banquale.Views.Balance;
 
@@ -12,4 +13,10 @@ public partial class BalancePage : ContentPage
 		InitializeComponent();
         BindingContext = Mgr.SelectedAccount;
     }
+
+    public void RefreshPage()
+    {
+        BindingContext = Mgr.SelectedAccount;
+    }
+
 }
