@@ -58,14 +58,7 @@ namespace Banquale.Views
         /// </summary>
         async void Categ_Clicked(System.Object sender, System.EventArgs e)
         {
-<<<<<<< HEAD
             await Shell.Current.Navigation.PushAsync(new CategoryPage());
-=======
-            Mgr.SelectedAccount.Balance += Mgr.SelectedTransaction.Sum;
-            Mgr.SelectedAccount.TransactionsList.Remove(Mgr.SelectedTransaction);
-            await DisplayAlert("Opposition", "La demande d'opposition à été réalisé avec succés", "OK");
-            await Shell.Current.Navigation.PopAsync();
->>>>>>> 093cffc19bc037cd518567f105548bd33f8fe902
         }
 
         /// <summary>
