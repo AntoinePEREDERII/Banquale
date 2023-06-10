@@ -107,9 +107,13 @@
             Clicked="Account_Clicked"/>
         
         <Button
-            Text="Enregistrer"
+            Text="Créer le Compte"
             HorizontalOptions="Center"
             Margin="0,20,0,0"
+            HeightRequest="50"
+            WidthRequest="200"
+            BorderColor="Red"
+            BorderWidth="1"
             Clicked="Create_Customer_Clicked"/>
 
     </VerticalStackLayout>

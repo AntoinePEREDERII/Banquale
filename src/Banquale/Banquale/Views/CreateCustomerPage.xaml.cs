@@ -37,7 +37,7 @@ public partial class CreateCustomerPage : ContentPage
 		double accountBalance = Convert.ToDouble(AccountBalanceEntry.Text);
 		string accountIban = AccountIbanEntry.Text;
 
-		if(string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(password)
+        if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(password)
 			|| double.IsNegative(accountBalance) || string.IsNullOrWhiteSpace(accountName)
 			|| string.IsNullOrWhiteSpace(accountIban) || string.IsNullOrWhiteSpace(AccountBalanceEntry.Text)
 			|| Account2 == true && string.IsNullOrWhiteSpace(NameAccount2) || Account2 == true && string.IsNullOrWhiteSpace(IbanAccount2)
@@ -101,6 +101,7 @@ public partial class CreateCustomerPage : ContentPage
 		iban.Text = "IBAN";
 		iban.FontSize = 16;
 		ibanEntry.Text = "FR";
+		ibanEntry.TextChanged += IbanChanged;
 		ibanEntry.Placeholder = "Entrez l'IBAN du compte";
 		ibanEntry.Keyboard = Keyboard.Numeric;
         StackLayout.Add(account);
@@ -123,11 +124,12 @@ public partial class CreateCustomerPage : ContentPage
 
 	public void IbanChanged(object sender, EventArgs e)
 	{
-		if(AccountIbanEntry.Text.Length < 2)
+		if(AccountIbanEntry.Text.Length < 2 || ibanEntry.Text.Length < 2)
 		{
 			DisplayAlert("Erreur", "Vous ne pouvez pas effacer le FR !", "OK");
             var cast = ((Entry)sender);
             cast.Text = "FR";
+			cast.CursorPosition = 3;
 		}
 	}
 
