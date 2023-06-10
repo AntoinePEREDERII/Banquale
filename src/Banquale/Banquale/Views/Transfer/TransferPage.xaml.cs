@@ -23,7 +23,7 @@ public partial class TransferPage : ContentPage
         {
             await DisplayAlert("Erreur", "L'IBAN doit contenir exactement 25 chiffres.", "OK");
         }
-        if (Name.Text == Mgr.SelectedAccount.Name && IBAN.Text == Mgr.SelectedAccount.IBAN)
+        if(Name.Text == Mgr.SelectedAccount.Name && IBAN.Text == Mgr.SelectedAccount.IBAN)
         {
             await DisplayAlert("Erreur", "Vous ne pouvez vous faire de virement à vous même", "OK");
             return;

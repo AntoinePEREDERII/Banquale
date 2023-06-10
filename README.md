@@ -78,4 +78,4 @@ The application is functional but the color is not good and the design is not fi
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
-This project was inspired by our mobile bank app, the need for a modern and user-friendly mobile banking application. Special thanks to the .NET MAUI community for their contributions and support.
+This project was inspired by our mobile bank app, the need for a modern and user-friendly mobile banking application. Special thanks to the .NET MAUI community for their contributions and support and Clement Freville for his support.
