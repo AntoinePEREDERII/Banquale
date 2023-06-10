@@ -5,7 +5,7 @@
              Title="MessageListPage"
              Shell.NavBarIsVisible="True">
 
-    <VerticalStackLayout>
+    <Grid>
 
         <ListView ItemsSource="{Binding Consultant.MessagesList}"
                   SelectionMode="None"
@@ -18,6 +18,12 @@
                     <ViewCell>
                         
                         <Grid RowDefinitions="auto, auto">
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="MessageDelete"
+                                    NumberOfTapsRequired="2" />
+                            </Grid.GestureRecognizers>
 
                             <Label
                                 Text="{Binding Subject}"
@@ -37,5 +43,5 @@
 
         </ListView>
 
-    </VerticalStackLayout>
+    </Grid>
 </ContentPage>
