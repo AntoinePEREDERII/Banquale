@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using Android.Telephony;
+using Model;
 
 namespace Banquale.Views.Balance;
 
@@ -7,22 +8,29 @@ public partial class BalancePage : ContentPage
 {
 	public Manager Mgr => (App.Current as App).MyManager;
 
+    //private BalanceView MybalanceView;
     public BalancePage()
 	{
 		InitializeComponent();
         BindingContext = Mgr.SelectedAccount;
-        if(Mgr.IsConsultant == true)
-        {
-            //Label lext = new Label { Text = "Hello" };
-            //Grid.Add(lext);
-            Image backArrow = new Image { Source = "{StaticResource AccountIcon}", HeightRequest = 100 };
-            Grid.Add(backArrow);
-        }
+        //MybalanceView = balanceViewContainer.FindByName<BalanceView>("balanceViewContainer");
     }
 
-    public async void Balance_Clicked(object sender, EventArgs e)
+    public void RefreshPage()
     {
-        await Shell.Current.Navigation.PushAsync(new NewPage1());
+        BindingContext = Mgr.SelectedAccount;
+        //MybalanceView.RefreshView();
+    }
+
+    public async void Transaction_Clicked(Object sender, EventArgs e)
+    {
+        var selectedItem = (sender as Grid)?.BindingContext as Transaction;
+
+        if (selectedItem != null)
+        {
+            Mgr.SelectedTransaction = selectedItem;
+            await Navigation.PushModalAsync(new TransactionsPage());
+        }
     }
 
 }

@@ -17,7 +17,7 @@ namespace Model
         /// Liste des messages du consultant.
         /// </summary>
         [DataMember]
-        public List<Message> MessagesList = new List<Message>();
+        public List<Message> MessagesList { get; } = new ();
 
         /// <summary>
         /// Constructeur de la classe Consultant.

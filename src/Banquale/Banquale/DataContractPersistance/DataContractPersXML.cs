@@ -10,12 +10,11 @@ namespace Banquale.DataContractPersistance
 {
 	public class DataContractPersXML : IPersistenceManager
 	{
-        //public string FilePath { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/datbase.xml";
 
         public string FilePath { get; set; } = FileSystem.Current.AppDataDirectory;
 		public string FileName { get; set; } = "DataSave.xml";
 
-        public (List<Customer>, Consultant) DataLoad()
+        public (HashSet<Customer>, Consultant) DataLoad()
 		{
 			var serializer = new DataContractSerializer(typeof(DataToPersist));
 
@@ -33,23 +32,10 @@ namespace Banquale.DataContractPersistance
                 data = new DataToPersist(); // Si le fichier n'existe pas, créez une nouvelle liste
             }
 
-   //         List<Customer> CustomersList;
-			//Consultant Consultant;
-
-			//using (Stream s = File.OpenRead(Path.Combine(FilePath, FileNameCustomer)))
-			//{
-			//	CustomersList = serializer.ReadObject(s) as List<Customer>;
-   //         }
-
-   //         using (Stream s = File.OpenRead(Path.Combine(FilePath, FileNameConsultant)))
-   //         {
-   //             Consultant = serializer2.ReadObject(s) as Consultant;
-   //         }
-
             return (data.customer, data.consultant);
 		}
 
-		public void DataSave(List<Customer> cu, Consultant co)
+		public void DataSave(HashSet<Customer> cu, Consultant co)
 		{
             var serializer = new DataContractSerializer(typeof(DataToPersist), new DataContractSerializerSettings() { PreserveObjectReferences = true }); 
             // La deuxième partie sert à faire des références, cela sert à ne pas duppliquer l'écriture de certains attributs
@@ -74,33 +60,6 @@ namespace Banquale.DataContractPersistance
                 }
             }
 
-
-   //         var serializer = new DataContractSerializer(typeof(List<Customer>));
-   //         var serializer2 = new DataContractSerializer(typeof(Consultant));
-
-   //         if (!Directory.Exists(FilePath))
-			//{
-			//	Debug.WriteLine("Directory created");
-			//	Debug.WriteLine(FilePath);
-			//	Directory.CreateDirectory(FilePath);
-			//}
-
-			//var settings = new XmlWriterSettings() { Indent = true };
-   //         using (TextWriter tw = File.CreateText(Path.Combine(FilePath, FileNameCustomer))) 
-			//{
-			//	using (XmlWriter writer = XmlWriter.Create(tw, settings))
-			//	{
-			//		serializer.WriteObject(writer, cu);
-			//	}
-			//}
-
-   //         using (TextWriter tw2 = File.CreateText(Path.Combine(FilePath, FileNameConsultant)))
-   //         {
-   //             using (XmlWriter writer2 = XmlWriter.Create(tw2, settings))
-   //             {
-   //                 serializer.WriteObject(writer2, co);
-   //             }
-   //         }
         }
     }
 }

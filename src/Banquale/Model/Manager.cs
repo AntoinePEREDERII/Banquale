@@ -26,7 +26,7 @@ namespace Model
         /// Liste des clients gérés par le gestionnaire.
         /// </summary>
         [DataMember]
-        public List<Customer> CustomersList { get; private set; } // devient un set
+        public HashSet<Customer> CustomersList { get; private set; }
 
         public ObservableCollection<string> CategoryList { get; private set; } = new ObservableCollection<string> {"Automobile", "Santé", "Abonnement", "Logement", "Impôts et taxes", "Courses", "Loisirs et sorties", "Enfant(s)"};
 
@@ -101,18 +101,18 @@ namespace Model
         /// Constructeur du gestionnaire avec un gestionnaire de persistance spécifié.
         /// </summary>
         /// <param name="persistence">Gestionnaire de persistance.</param>
-        public Manager(IPersistenceManager persistence)
-        {
-            CustomersList = new List<Customer>();
-            Persistence = persistence;
-        }
+		public Manager(IPersistenceManager persistence)
+		{
+            CustomersList = new HashSet<Customer>();
+			Persistence = persistence;
+		}
 
         /// <summary>
         /// Constructeur du gestionnaire sans gestionnaire de persistance.
         /// </summary>
         public Manager()
         {
-            CustomersList = new List<Customer>();
+            CustomersList = new HashSet<Customer>();
         }
 
         /// <summary>
@@ -127,16 +127,6 @@ namespace Model
         }
 
         /// <summary>
-        /// Récupère le client à la position spécifiée dans la liste des clients.
-        /// </summary>
-        /// <param name="place">Position du client.</param>
-        /// <returns>Le client à la position spécifiée.</returns>
-        public Customer GetCustomer(int place)
-        {
-            return CustomersList[place];
-        }
-
-        /// <summary>
         /// Enregistre les données dans la source de persistance.
         /// </summary>
         public void DataSave()
@@ -148,10 +138,10 @@ namespace Model
         /// Charge les données depuis la source de persistance.
         /// </summary>
         public void DataLoad()
-        {
-            var data = Persistence.DataLoad();
+		{
+			var data = Persistence.DataLoad();
 
-            CustomersList.AddRange(data.Item1);
+            CustomersList =data.Item1;
 
             Consultant = data.Item2;
         }

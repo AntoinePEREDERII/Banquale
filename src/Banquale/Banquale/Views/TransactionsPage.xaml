@@ -2,46 +2,23 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Banquale.Views.TransactionsPage"
+             xmlns:conv="clr-namespace:Banquale.Views.Converters"
              Title="TransactionsPage">
-    
-    <!--<Grid RowDefinitions="2*, *, 0*, *, 0*, *, *, *, *, *, *">
-        
-        <Grid Grid.Row="1"  ColumnDefinitions="2*, *, 2*">
-            <Label Grid.Column="1"
-                   Text="Prix"
-                   HorizontalOptions="Center"
-                   FontSize="Large"/>
-        </Grid>
 
-        <Grid Grid.Row="3" ColumnDefinitions="*, *, *">
-            <Label Grid.Column="1"
-                   Text="poiuytreza"
-                   HorizontalOptions="Center"/>
-        </Grid>
+    <ContentPage.Resources>
+        <conv:Bool2ColorConverters x:Key="bool2ColorConverters"/>
+    </ContentPage.Resources>
 
-        <Grid Grid.Row="5" ColumnDefinitions="*, 4*, *">
-            <Button Grid.Column="1" Text="Categorie" FontSize="Medium" />
-        </Grid>
+    <VerticalStackLayout
+        VerticalOptions="Center">
 
-        <Grid Grid.Row="7" RowDefinitions="auto, *, *" ColumnDefinitions="*, auto, *">
-            <Label Grid.Row="0" Grid.Column="1" Text="  Paiment par carte &#x0a;4859 **** **** 9985" VerticalOptions="Center"/>
-            <BoxView Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand"
-                 HeightRequest="1.3"/>
-            <Label Grid.Row="2" Grid.Column="1" Text="En date du 15/06/2023"/>
-        </Grid>
-
-        <Grid Grid.Row="9" ColumnDefinitions="*, 4*, *">
-            <Button Grid.Column="1" Text="Faire opposition"/>
-        </Grid>
-        
-    </Grid>-->
-
-    <VerticalStackLayout VerticalOptions="Center">
         <Label
             Text="{Binding Sum, StringFormat='{0} €'}"
             HorizontalOptions="Center"
+            TextColor="{Binding Type, Converter={StaticResource bool2ColorConverters}}"
             FontSize="Large"
-            Margin="0, 0, 0, 20"/>
+            Margin="0, 0, 0, 20"
+            x:Name="sum"/>
 
         <Button
             Grid.Column="1"
@@ -86,7 +63,15 @@
         <Button
             Text="Faire opposition"
             Margin="0, 50, 0, 0"
-            Clicked="Objection_Clicked" x:Name="oppose"/>
+            Clicked="Objection_Clicked"
+            x:Name="oppose"/>
+
+        <Button
+            Text="Refuser l'opposition"
+            Margin="0, 20, 0, 0"
+            IsVisible="false"
+            Clicked="Refuse_Clicked"
+            x:Name="refuseOpposition"/>
 
     </VerticalStackLayout>
 

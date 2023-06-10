@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:Banquale.Views"
              x:Class="Banquale.Views.SwitchAccountPage"
              Title="SwitchAccountPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False">
 
     
 	<VerticalStackLayout
@@ -13,7 +14,8 @@
 
         <ListView
             ItemsSource="{Binding AccountsList}"
-            SelectionMode="None">
+            SelectionMode="None"
+            RowHeight="100">
 
             <ListView.ItemTemplate>
 
@@ -22,7 +24,7 @@
                     <ViewCell>
 
                         <VerticalStackLayout
-                            HeightRequest="84"
+                            HeightRequest="100"
                             Margin="10">
 
                             <Button

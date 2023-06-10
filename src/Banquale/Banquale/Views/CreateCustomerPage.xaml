@@ -8,7 +8,7 @@
 
         <Label
             Text="Informations du client"
-            FontSize="Title"
+            FontSize="30"
             HorizontalOptions="Center"
             Margin="0,20,0,15"
             TextColor="Red"/>
@@ -22,7 +22,7 @@
 
                     <Label
                         Text="Nom"
-                        FontSize="Subtitle"
+                        FontSize="16"
                         Grid.Column="0"
                         Grid.Row="0"/>
                     <Entry
@@ -33,7 +33,7 @@
 
                     <Label
                         Text="Prénom"
-                        FontSize="Subtitle" 
+                        FontSize="16" 
                         Grid.Column="1"
                         Grid.Row="0"/>
                     <Entry
@@ -46,14 +46,15 @@
 
             <Label
                 Text="Mot de Passe"
-                FontSize="Subtitle" />
+                FontSize="16" />
             <Entry
                 x:Name="PasswordEntry"
-                Placeholder="Entrez le mot de passe" />
+                Placeholder="Entrez le mot de passe"
+                IsPassword="True"/>
 
             <Label
                 Text="Compte 1"
-                FontSize="Title"
+                FontSize="25"
                 Margin="0, 10, 0, 10"
                 TextColor="DarkRed"/>
 
@@ -63,7 +64,7 @@
 
                     <Label
                         Text="Solde"
-                        FontSize="Subtitle"
+                        FontSize="16"
                         Grid.Column="0"
                         Grid.Row="0"/>
                     <Entry
@@ -75,7 +76,7 @@
 
                     <Label
                         Text="Nom du compte"
-                        FontSize="Subtitle" 
+                        FontSize="16" 
                         Grid.Column="1"
                         Grid.Row="0"/>
                     <Entry
@@ -88,16 +89,16 @@
 
             <Label
                 Text="IBAN"
-                FontSize="Subtitle" />
+                FontSize="16" />
             <Entry
-                Text="FR "
+                Text="FR"
+                CursorPosition="2"
                 x:Name="AccountIbanEntry"
+                TextChanged="IbanChanged"
                 Placeholder="Entrez l'IBAN du compte"
-                Keyboard="Telephone"/>
+                Keyboard="Numeric"/>
 
         </StackLayout>
-
-        
 
         <Button
             Text="Ajouter un compte"

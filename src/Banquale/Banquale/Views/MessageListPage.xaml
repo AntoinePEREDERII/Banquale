@@ -7,24 +7,29 @@
 
     <VerticalStackLayout>
 
-        <!--<Label
-            Text="rzklpkrz,e"
-            Grid.Column="1"
-            VerticalOptions="Center"
-            Margin="10, 0, 0, 0"
-            BackgroundColor="Red"/>-->
-
-        <!--<Label Text="{Binding CustomersList[0].Name}" />-->
-
-
-        <ListView ItemsSource="{Binding MessagesList}"
-                  SelectionMode="None">
+        <ListView ItemsSource="{Binding Consultant.MessagesList}"
+                  SelectionMode="None"
+                  RowHeight="100">
 
             <ListView.ItemTemplate>
 
                 <DataTemplate>
 
-                    <TextCell Text="{Binding Subject}" />
+                    <ViewCell>
+                        
+                        <Grid RowDefinitions="auto, auto">
+
+                            <Label
+                                Text="{Binding Subject}"
+                                FontSize="Title"
+                                Padding="10"/>
+                            <Label
+                                Text="{Binding Description}"
+                                Grid.Row="1"/>
+
+                        </Grid>
+
+                    </ViewCell>
 
                 </DataTemplate>
 

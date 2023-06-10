@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Banquale.Views.Balance;
 using Model;
 
 namespace Banquale.Views;
@@ -12,6 +13,13 @@ public partial class SwitchAccountPage : ContentPage
 		InitializeComponent();
         BindingContext = Mgr.SelectedCustomer;
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        RefreshData();
+    }
 
     public async void Transfer_Clicked(object sender, EventArgs e)
     {
@@ -27,6 +35,8 @@ public partial class SwitchAccountPage : ContentPage
             else
             {
                 await Shell.Current.GoToAsync("//balance");
+                var balancePage = Shell.Current.CurrentPage as BalancePage;
+                balancePage?.RefreshPage();
             }
         }
         
@@ -36,8 +46,7 @@ public partial class SwitchAccountPage : ContentPage
     {
         if(Mgr.IsConsultant == true)
         {
-            //await Shell.Current.GoToAsync(;
-            Debug.WriteLine("Hello");
+            await Shell.Current.Navigation.PopAsync();
         }
         else
         {
@@ -45,4 +54,9 @@ public partial class SwitchAccountPage : ContentPage
         }
     }
 
+
+    private void RefreshData()
+    {
+        BindingContext = Mgr.SelectedCustomer;
+    }
 }

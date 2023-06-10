@@ -26,10 +26,11 @@
                Padding="3">
 
             <Entry
-                Text="FR "
+                Text="FR"
                 Placeholder="IBAN (FR)"
                 HorizontalOptions="Center"
                 WidthRequest="280"
+                TextChanged="IbanChanged"
                 x:Name="IBAN"
                 Keyboard="Numeric"/>
 
@@ -54,7 +55,8 @@
             Margin="0, 75, 0, 0"
             MinimumHeightRequest="80"
             WidthRequest="300"
-            MaximumWidthRequest="400"/>
+            MaximumWidthRequest="400"
+            Clicked="Send_Clicked"/>
 
     </VerticalStackLayout>
 

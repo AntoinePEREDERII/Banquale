@@ -39,7 +39,7 @@ namespace UnitTest
             // Effectuer une transaction entre les comptes
             double amount = 200;
             Console.WriteLine($"\nEffectuer une transaction de {amount} du compte 1 vers le compte 2...");
-            account1.DoTransactions(account2, amount, true, 1);
+            account1.DoTransactions(account2, amount, true);
 
             // Affichage des informations des comptes après la transaction
             Console.WriteLine("\nAprès la transaction:");

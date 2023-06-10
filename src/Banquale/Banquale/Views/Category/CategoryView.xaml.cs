@@ -18,6 +18,7 @@ public partial class CategoryView : ContentView
         if (selectedItem != null)
         {
             Mgr.SelectedTransaction.ChangeCategory(selectedItem);
+            Mgr.Persistence.DataSave(Mgr.CustomersList, Mgr.Consultant);
             await Shell.Current.Navigation.PopAsync();
         }
         
