@@ -14,6 +14,13 @@ public partial class SwitchAccountPage : ContentPage
         BindingContext = Mgr.SelectedCustomer;
 	}
 
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        RefreshData();
+    }
+
     public async void Transfer_Clicked(object sender, EventArgs e)
     {
         var selectedItem = (sender as Button)?.BindingContext as Account;
@@ -47,4 +54,9 @@ public partial class SwitchAccountPage : ContentPage
         }
     }
 
+
+    private void RefreshData()
+    {
+        BindingContext = Mgr.SelectedCustomer;
+    }
 }

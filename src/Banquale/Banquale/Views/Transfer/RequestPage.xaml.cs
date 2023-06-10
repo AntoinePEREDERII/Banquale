@@ -40,7 +40,7 @@ public partial class RequestPage : ContentPage
                         await DisplayAlert("Erreur", "Le compte ne possède assez d'argent sur son compte pour aboutir à la transaction", "OK");
                         return;
                     }
-                    acc.DoTransactions(acc, Convert.ToDouble(Sum.Text), true); // Type true car c'est un virement que le SelectedAccount reçoit
+                    acc.DoTransactions(Mgr.SelectedAccount, Convert.ToDouble(Sum.Text), true); // Type true car c'est un virement que le SelectedAccount reçoit
                     Mgr.Persistence.DataSave(Mgr.CustomersList, Mgr.Consultant);
                     await Shell.Current.Navigation.PopAsync();
                     return;
