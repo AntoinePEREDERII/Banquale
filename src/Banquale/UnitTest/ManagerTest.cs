@@ -1,11 +1,15 @@
-﻿using Model;
+﻿/// \file
+/// \brief Définition des tests pour la classe Consultant.
+/// \author PEREDERII Antoine, LOUVET Titouan
+
+using Model;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using UnitTest;
 using Xunit;
 
-namespace Model.Tests
+namespace UnitTest
 {
     /// <summary>
     /// Classe de tests pour la classe Manager.

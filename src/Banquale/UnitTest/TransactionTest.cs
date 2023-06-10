@@ -1,6 +1,6 @@
 ﻿/// \file
-/// \brief Fichier de test pour la classe Transaction.
-/// \author PEREDERII Antoine
+/// \brief Définition des tests pour la classe Consultant.
+/// \author PEREDERII Antoine, LOUVET Titouan
 
 using System;
 using System.Collections.Generic;
