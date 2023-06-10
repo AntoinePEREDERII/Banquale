@@ -69,10 +69,6 @@
             Color="{StaticResource Key=Gray100}"
             Grid.Row="1"
             HeightRequest="1"/>
-
-        <!--<local:BalanceView
-            Grid.Row="2"
-            x:Name="balanceViewContainer"/>-->
         
         <VerticalStackLayout Grid.Row="2">
             <ListView ItemsSource="{Binding TransactionsList}"
@@ -85,7 +81,7 @@
                     <ViewCell>
 
                         <Grid
-                            ColumnDefinitions="40, 3*, *"
+                            ColumnDefinitions="*, *"
                             Margin="20, 5, 20, 5"
                             HorizontalOptions="Fill">
 
