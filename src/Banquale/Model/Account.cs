@@ -1,6 +1,6 @@
 ﻿/// \file
 /// \brief Définition de la classe Account.
-/// \author Votre nom
+/// \author PEREDERII Antoine, LOUVET Titouan
 
 using System;
 using System.Collections.Generic;
@@ -109,15 +109,15 @@ namespace Model
         /// Obtient ou définit la liste des transactions effectuées sur le compte.
         /// </summary>
         [DataMember(Order = 5)]
-        public ObservableCollection<Transaction> TransactionsList 
+        public ObservableCollection<Transaction> TransactionsList
         {
             get => transactionsList;
             set
             {
                 transactionsList = value;
                 OnPropertyChanged(nameof(TransactionsList));
-            } 
-        } 
+            }
+        }
 
         private ObservableCollection<Transaction> transactionsList;
 

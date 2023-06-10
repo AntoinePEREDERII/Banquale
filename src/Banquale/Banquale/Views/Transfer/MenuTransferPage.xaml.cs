@@ -1,25 +1,40 @@
-﻿namespace Banquale.Views.Transfer;
-
-public partial class MenuTransferPage : ContentPage
+﻿namespace Banquale.Views.Transfer
 {
-	public MenuTransferPage()
-	{
-        InitializeComponent();
-	}
-
-    public async void RIB_Clicked(object sender, EventArgs e)
+    /// <summary>
+    /// Page de menu pour les transferts.
+    /// </summary>
+    public partial class MenuTransferPage : ContentPage
     {
-        await Shell.Current.Navigation.PushAsync(new RibPage());
-    }
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe MenuTransferPage.
+        /// </summary>
+        public MenuTransferPage()
+        {
+            InitializeComponent();
+        }
 
-    public async void Request_Clicked(object sender, EventArgs e)
-    {
-        await Shell.Current.Navigation.PushAsync(new RequestPage());
-    }
+        /// <summary>
+        /// Gère l'événement du bouton "RIB".
+        /// </summary>
+        public async void RIB_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.Navigation.PushAsync(new RibPage());
+        }
 
-    public async void Transfer_Clicked(object sender, EventArgs e)
-    {
-        await Shell.Current.Navigation.PushAsync(new TransferPage());
-    }
+        /// <summary>
+        /// Gère l'événement du bouton "Demande".
+        /// </summary>
+        public async void Request_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.Navigation.PushAsync(new RequestPage());
+        }
 
+        /// <summary>
+        /// Gère l'événement du bouton "Transfert".
+        /// </summary>
+        public async void Transfer_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.Navigation.PushAsync(new TransferPage());
+        }
+    }
 }

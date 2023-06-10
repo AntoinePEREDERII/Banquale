@@ -1,6 +1,6 @@
 ﻿/// \file
 /// \brief Définition de la classe Customer.
-/// \author Votre nom
+/// \author PEREDERII Antoine, LOUVET Titouan
 
 using System;
 using System.Collections.Generic;

@@ -2,46 +2,62 @@ using System.Diagnostics;
 using Banquale.Views;
 using Model;
 
-namespace Banquale.Views;
-
-public partial class ConsultantIdPage : ContentPage
+namespace Banquale.Views
 {
-    public Manager Mgr => (App.Current as App).MyManager;
-
-    public ConsultantIdPage()
-	{
-		InitializeComponent();
-	}
-
-    public async void Connection_Clicked(Object sender, EventArgs e)
+    /// <summary>
+    /// Page d'identification du consultant.
+    /// </summary>
+    public partial class ConsultantIdPage : ContentPage
     {
-        uint currentId = Convert.ToUInt32(ident.Text);
+        /// <summary>
+        /// Obtient le gestionnaire de l'application à partir de l'instance de l'application.
+        /// </summary>
+        public Manager Mgr => (App.Current as App).MyManager;
 
-        if (string.IsNullOrWhiteSpace(ident.Text))
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe ConsultantIdPage.
+        /// </summary>
+        public ConsultantIdPage()
         {
-            await DisplayAlert("Erreur", "Il faut rentrer un ID", "OK");
-            return;
+            InitializeComponent();
         }
 
-        if (currentId == 0)
+        /// <summary>
+        /// Gère l'événement du bouton de connexion.
+        /// </summary>
+        public async void Connection_Clicked(Object sender, EventArgs e)
         {
-            await DisplayAlert("Erreur", "Ce compte est innaccessible", "OK");
-            return;
+            // Récupération de l'ID entré
+            uint currentId = Convert.ToUInt32(ident.Text);
+
+            // Validation de l'ID
+            if (string.IsNullOrWhiteSpace(ident.Text))
+            {
+                await DisplayAlert("Erreur", "Il faut rentrer un ID", "OK");
+                return;
+            }
+
+            if (currentId == 0)
+            {
+                await DisplayAlert("Erreur", "Ce compte est inaccessible", "OK");
+                return;
+            }
+
+            // Recherche du client correspondant à l'ID
+            Customer customer = Mgr.CustomersList.FirstOrDefault(u => u.Id == currentId);
+            if (customer == null)
+            {
+                await DisplayAlert("Erreur", "L'ID entré est incorrect ou n'existe pas.", "OK");
+                return;
+            }
+
+            // Sélection du client dans le gestionnaire
+            Mgr.SelectedCustomer = customer;
+
+            Debug.WriteLine(Mgr.IsConsultant);
+
+            // Navigation vers la page de sélection du compte
+            await Navigation.PushModalAsync(new SwitchAccountPage());
         }
-
-        Customer customer = Mgr.CustomersList.FirstOrDefault(u => u.Id == currentId);
-        if (customer == null)
-        {
-            await DisplayAlert("Erreur", "L'id entré est incorrect ou n'existe pas.", "OK");
-            return;
-        }
-
-        Mgr.SelectedCustomer = customer;
-
-        Debug.WriteLine(Mgr.IsConsultant);
-
-
-        await Navigation.PushModalAsync(new SwitchAccountPage());
     }
-
 }

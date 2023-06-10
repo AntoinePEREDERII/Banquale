@@ -1,4 +1,9 @@
-﻿using System.ComponentModel;
+﻿/// \file
+/// \brief Définition de la classe Message.
+/// \author PEREDERII Antoine, LOUVET Titouan
+
+
+using System.ComponentModel;
 using System.Runtime.Serialization;
 
 namespace Model

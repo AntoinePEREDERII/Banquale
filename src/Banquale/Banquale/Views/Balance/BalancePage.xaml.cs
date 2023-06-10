@@ -1,36 +1,44 @@
 ﻿using Android.Telephony;
 using Model;
 
-namespace Banquale.Views.Balance;
-
-
-public partial class BalancePage : ContentPage
+namespace Banquale.Views.Balance
 {
-	public Manager Mgr => (App.Current as App).MyManager;
-
-    //private BalanceView MybalanceView;
-    public BalancePage()
-	{
-		InitializeComponent();
-        BindingContext = Mgr.SelectedAccount;
-        //MybalanceView = balanceViewContainer.FindByName<BalanceView>("balanceViewContainer");
-    }
-
-    public void RefreshPage()
+    /// <summary>
+    /// Page de balance.
+    /// </summary>
+    public partial class BalancePage : ContentPage
     {
-        BindingContext = Mgr.SelectedAccount;
-        //MybalanceView.RefreshView();
-    }
+        public Manager Mgr => (App.Current as App).MyManager;
 
-    public async void Transaction_Clicked(Object sender, EventArgs e)
-    {
-        var selectedItem = (sender as Grid)?.BindingContext as Transaction;
-
-        if (selectedItem != null)
+        /// <summary>
+        /// Constructeur de la page BalancePage.
+        /// </summary>
+        public BalancePage()
         {
-            Mgr.SelectedTransaction = selectedItem;
-            await Navigation.PushModalAsync(new TransactionsPage());
+            InitializeComponent();
+            BindingContext = Mgr.SelectedAccount;
+        }
+
+        /// <summary>
+        /// Actualise la page.
+        /// </summary>
+        public void RefreshPage()
+        {
+            BindingContext = Mgr.SelectedAccount;
+        }
+
+        /// <summary>
+        /// Gère le clic sur une transaction.
+        /// </summary>
+        public async void Transaction_Clicked(Object sender, EventArgs e)
+        {
+            var selectedItem = (sender as Grid)?.BindingContext as Transaction;
+
+            if (selectedItem != null)
+            {
+                Mgr.SelectedTransaction = selectedItem;
+                await Navigation.PushModalAsync(new TransactionsPage());
+            }
         }
     }
-
 }

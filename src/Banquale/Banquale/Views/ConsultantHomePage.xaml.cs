@@ -1,33 +1,48 @@
-namespace Banquale.Views;
-
-public partial class ConsultantHomePage : ContentPage
+namespace Banquale.Views
 {
-	public ConsultantHomePage()
-	{
-		InitializeComponent();
-	}
-
-    async void DisconnectionClicked(System.Object sender, System.EventArgs e)
+    /// <summary>
+    /// Page d'accueil du consultant.
+    /// </summary>
+    public partial class ConsultantHomePage : ContentPage
     {
-        await Shell.Current.GoToAsync("///connection");
-    }
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe ConsultantHomePage.
+        /// </summary>
+        public ConsultantHomePage()
+        {
+            InitializeComponent();
+        }
 
-    async void Id_Clicked(System.Object sender, System.EventArgs e)
-    {
-        await Shell.Current.Navigation.PushAsync(new ConsultantIdPage());
-        //await Shell.Current.GoToAsync("..");
-    }
+        /// <summary>
+        /// Gère l'événement du bouton de déconnexion.
+        /// </summary>
+        async void DisconnectionClicked(System.Object sender, System.EventArgs e)
+        {
+            await Shell.Current.GoToAsync("///connection");
+        }
 
-    async void Create_Customer_Clicked(System.Object sender, System.EventArgs e)
-    {
-        await Shell.Current.Navigation.PushAsync(new CreateCustomerPage());
-        //await Shell.Current.GoToAsync("///createcustomer");
-    }
+        /// <summary>
+        /// Gère l'événement du bouton d'identification du client.
+        /// </summary>
+        async void Id_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await Shell.Current.Navigation.PushAsync(new ConsultantIdPage());
+        }
 
-    async void Message_Clicked(System.Object sender, System.EventArgs e)
-    {
-        await Shell.Current.Navigation.PushAsync(new MessageListPage());
-        //await Shell.Current.GoToAsync("///createcustomer");
-    }
+        /// <summary>
+        /// Gère l'événement du bouton de création de client.
+        /// </summary>
+        async void Create_Customer_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await Shell.Current.Navigation.PushAsync(new CreateCustomerPage());
+        }
 
+        /// <summary>
+        /// Gère l'événement du bouton de messagerie.
+        /// </summary>
+        async void Message_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await Shell.Current.Navigation.PushAsync(new MessageListPage());
+        }
+    }
 }

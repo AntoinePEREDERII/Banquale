@@ -1,34 +1,44 @@
 ﻿using System.Diagnostics;
 using Model;
 
-namespace Banquale.Views.Balance;
-
-public partial class BalanceView : ContentView
+namespace Banquale.Views.Balance
 {
-
-    public Manager Mgr => (App.Current as App).MyManager;
-
-    public BalanceView()
-	{
-		InitializeComponent();
-        BindingContext = Mgr.SelectedAccount;
-    }
-
-    public async void Transaction_Clicked(Object sender, EventArgs e)
+    /// <summary>
+    /// Vue pour afficher les différentes transactions d'un compte.
+    /// </summary>
+    public partial class BalanceView : ContentView
     {
-        var selectedItem = (sender as Grid)?.BindingContext as Transaction;
+        public Manager Mgr => (App.Current as App).MyManager;
 
-        if (selectedItem != null)
+        /// <summary>
+        /// Constructeur de la vue BalanceView.
+        /// </summary>
+        public BalanceView()
         {
-            Mgr.SelectedTransaction = selectedItem;
-            await Navigation.PushModalAsync(new TransactionsPage());
+            InitializeComponent();
+            BindingContext = Mgr.SelectedAccount;
         }
-    }
 
-    public void RefreshView()
-    {
-        BindingContext = Mgr.SelectedAccount;
+        /// <summary>
+        /// Gère l'événement de clic sur une transaction.
+        /// </summary>
+        public async void Transaction_Clicked(Object sender, EventArgs e)
+        {
+            var selectedItem = (sender as Grid)?.BindingContext as Transaction;
 
+            if (selectedItem != null)
+            {
+                Mgr.SelectedTransaction = selectedItem;
+                await Navigation.PushModalAsync(new TransactionsPage());
+            }
+        }
 
+        /// <summary>
+        /// Rafraîchit la vue.
+        /// </summary>
+        public void RefreshView()
+        {
+            BindingContext = Mgr.SelectedAccount;
+        }
     }
 }

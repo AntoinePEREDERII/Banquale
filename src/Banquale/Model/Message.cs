@@ -1,6 +1,6 @@
 ﻿/// \file
 /// \brief Définition de la classe Message.
-/// \author Votre nom
+/// \author PEREDERII Antoine, LOUVET Titouan
 
 using System;
 using System.ComponentModel;
@@ -38,8 +38,6 @@ namespace Model
 
         private string subject;
 
-        
-
         /// <summary>
         /// Description du message.
         /// </summary>
@@ -56,6 +54,7 @@ namespace Model
         }
 
         private string description;
+
         /// <summary>
         /// Constructeur de la classe Message.
         /// </summary>

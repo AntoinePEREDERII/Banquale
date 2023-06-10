@@ -1,6 +1,6 @@
 ﻿/// \file
 /// \brief Définition de la classe Consultant.
-/// \author Votre nom
+/// \author PEREDERII Antoine, LOUVET Titouan
 
 using System;
 using System.Runtime.Serialization;

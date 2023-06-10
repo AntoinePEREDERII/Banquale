@@ -1,13 +1,20 @@
 using Model;
 
-namespace Banquale.Views.Category;
-
-public partial class CategoryPage : ContentPage
+namespace Banquale.Views.Category
 {
+    /// <summary>
+    /// Page de catégorie.
+    /// </summary>
+    public partial class CategoryPage : ContentPage
+    {
+        public Manager Mgr => (App.Current as App).MyManager;
 
-    public Manager Mgr => (App.Current as App).MyManager;
-    public CategoryPage()
-	{
-		InitializeComponent();
-	}
+        /// <summary>
+        /// Constructeur de la page CategoryPage.
+        /// </summary>
+        public CategoryPage()
+        {
+            InitializeComponent();
+        }
+    }
 }

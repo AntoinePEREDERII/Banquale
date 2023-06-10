@@ -1,6 +1,6 @@
 ﻿/// \file
 /// \brief Définition de l'interface IPersistenceManager.
-/// \author Votre nom
+/// \author PEREDERII Antoine, LOUVET Titouan
 
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace Model
         /// <summary>
         /// Charge les données depuis une source de persistance.
         /// </summary>
-        /// <returns>Un tuple contenant lle hashSet des clients et le consultant.</returns>
+        /// <returns>Un tuple contenant le hashSet des clients et le consultant.</returns>
         public (HashSet<Customer>, Consultant) DataLoad();
 
         /// <summary>
