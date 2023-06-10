@@ -55,8 +55,9 @@ public partial class TransactionsPage : ContentPage
         }
         else if(Mgr.IsConsultant == true && Mgr.SelectedTransaction.IsOpposition == true)
         {
+            Mgr.SelectedAccount.Balance += Mgr.SelectedTransaction.Sum;
             Mgr.SelectedAccount.TransactionsList.Remove(Mgr.SelectedTransaction);
-            await DisplayAlert("Opposition", "La demande d'opposition à été réalisé avec succé", "OK");
+            await DisplayAlert("Opposition", "La demande d'opposition à été réalisé avec succés", "OK");
             await Shell.Current.Navigation.PopAsync();
         }
         else if (Mgr.IsConsultant == true && Mgr.SelectedTransaction.IsOpposition == false)
