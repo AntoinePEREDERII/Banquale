@@ -3,7 +3,6 @@
 # Banquale - Android Bank App
 
 [![Build Status](https://codefirst.iut.uca.fr/api/badges/antoine.perederii/Banquale/status.svg)](https://codefirst.iut.uca.fr/antoine.perederii/Banquale)
-[![Quality Gate Status](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=Banquale&metric=alert_status&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=Banquale)
 [![Bugs](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=Banquale&metric=bugs&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=Banquale)
 [![Coverage](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=Banquale&metric=coverage&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=Banquale)
 [![Vulnerabilities](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=Banquale&metric=vulnerabilities&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=Banquale)
@@ -39,12 +38,14 @@ Documentation and information about `Banquale` are available [here](https://code
 The application is functional but the color is not good and the design is not finished. All the C# code is not commented and the documentation is not finished.
 
 ## Screen Capture
+<div>
 <img src="./Documentation/images/splash.jpg" height="280">
 <img src="./Documentation/images/connection.jpg" height="280">
 <img src="./Documentation/images/balance.jpg" height="280">
 <img src="./Documentation/images/help.jpg" height="280">
 <img src="./Documentation/images/customer.jpg" height="280">
 <img src="./Documentation/images/payement.jpg" height="280">
+</div>
 
 ## Usage
 * The application is used to manage your bank account
