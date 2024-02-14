@@ -4,7 +4,6 @@
 
 [![Build Status](https://codefirst.iut.uca.fr/api/badges/antoine.perederii/Banquale/status.svg)](https://codefirst.iut.uca.fr/antoine.perederii/Banquale)
 [![Bugs](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=Banquale&metric=bugs&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=Banquale)
-[![Coverage](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=Banquale&metric=coverage&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=Banquale)
 [![Vulnerabilities](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=Banquale&metric=vulnerabilities&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=Banquale)
 
 # Table of Content
